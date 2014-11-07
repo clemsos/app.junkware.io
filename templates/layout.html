@@ -20,10 +20,6 @@
 </head>
 <body>
   <div class="container" role="main" id="main">
-  <div class="alert alert-save alert-success alert-dismissible" role="alert">
-    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-    <strong>Saved!</strong> Your junk has been saved in the db.
-  </div>
     <div class="navbar navbar-default navbar-fixed-bottom" role="navigation">
       <div class="container">
         <div class="navbar-header">
@@ -43,13 +39,18 @@
             </ul>
             <ul class="nav navbar-nav navbar-right object-navbar hidden">
               <li>
-                  <a href="/junk/{{ objectId }}/dna" class="btn btn-link">
-                      <i class="fa fa-leaf"></i> DNA
+                 <a href="/junk/{{ objectId }}/text" class="btn btn-link">
+                    <i class="fa fa-file-text"></i> Description
+                </a>
+              </li>
+              <li>
+                  <a href="/junk/{{ objectId }}/3d" class="btn btn-link">
+                      <i class="fa fa-question"></i> 3D Shape
                   </a>
               </li>
               <li>
-                  <a href="/junk/{{ objectId }}/brain" class="btn btn-link">
-                      <i class="fa fa-headphones"></i> Biometrics
+                  <a href="/junk/{{ objectId }}/dna" class="btn btn-link">
+                      <i class="fa fa-leaf"></i> DNA
                   </a>
               </li>
               <li>
@@ -57,32 +58,14 @@
                       <i class="fa fa-meh-o"></i> Molecule
                   </a>
               </li>
-              <li>
-                  <a href="/junk/{{ objectId }}/3d" class="btn btn-link">
-                      <i class="fa fa-question"></i> 3D Shape
-                  </a>
-              </li>
+
              <!--  <li>
                 <a href="#" data-toggle="collapse" data-target="#devices">
                 <i class="fa fa-caret-down"></i> Devices 
                 </a>
               </li>
               --> 
-              <li>
-                 <a href="/junk/{{ objectId }}/text" class="btn btn-link">
-                    <i class="fa fa-file-text"></i> Description
-                </a>
-              </li>
-              <li>
-                  <a href="/junk/{{ objectId }}/photo" class="btn btn-lin active junk-photo">
-                      <i class="fa fa-user"></i> Photo
-                  </a>
-              </li>
-              <li>
-                  <a href="/api/junk/{{ objectId }}" class="btn btn-lin active junk-save">
-                      <i class="fa fa-save"></i> Save
-                  </a>
-              </li>
+              
               <li>
                   <a href="/junk/{{ objectId }}/print" class="btn btn-lin active junk-print">
                       <i class="fa fa-print"></i> Print
@@ -110,32 +93,7 @@
       })
       e.preventDefault();
     })
-
-    $(".alert-save").hide();
-
-    $("a.junk-save").click(function(e){
-      var url = $(this).attr('href');
-      console.log(url);
-      console.log(junk);
-      e.preventDefault();
-
-      $.ajax({
-          url: url,
-          type: 'PUT',
-          data: JSON.stringify(junk),
-          success: function(result) {
-              // Do something with the result
-              console.log(result);
-              $(".alert-save").show();
-          }
-      });
-    });
-    /*
-      $.post(url, function (junk) {
-         console.log(data);
-      })
-    */
-    })
+  })
 
 </script>
 

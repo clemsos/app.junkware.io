@@ -1,6 +1,6 @@
 var shapeData;
 
-requirejs(['camera', 'renderer','scene', 'mesh', 'gui', 'stats', 'controls', 'settings'], function(camera, renderer, scene, Mesh, gui, stats, controls,settings) {
+requirejs(['camera', 'renderer','scene', 'mesh', 'stats', 'controls', 'settings'], function(camera, renderer, scene, Mesh, stats, controls,settings) {
   if (!Detector.webgl) {
     Detector.addGetWebGLMessage();
     return;
@@ -33,10 +33,30 @@ requirejs(['camera', 'renderer','scene', 'mesh', 'gui', 'stats', 'controls', 'se
   // console.log(controls);
   
   // controls.target.z = 150;
-  shapeData=gui.controls;
+    shapeData= {
+      t1 : 0,
+      d1 : 0,
+
+      m1 : junk.shape.m1,
+      n11 : junk.shape.n11,
+      n12 : junk.shape.n12,
+      n13 : junk.shape.n13,
+
+      t2 : 0,
+      d2 : 0,
+      m2 : junk.shape.m2,
+      n21 : junk.shape.n21,
+      n22 : junk.shape.n22,
+      n23 : junk.shape.n23,
+
+      c1 : 2,
+      c2 : 4,
+      c3 : 1
+  };
+
   initAxis();
-  var mesh = new Mesh(gui.controls);
-  gui.onChange(mesh.update.bind(mesh));
+  var mesh = new Mesh(shapeData);
+  // gui.onChange(mesh.update.bind(mesh));
   // eventHandler.init(mesh);
 
   // LIGHTS
@@ -86,7 +106,7 @@ requirejs(['camera', 'renderer','scene', 'mesh', 'gui', 'stats', 'controls', 'se
   }, 1000)
 
   var objectHearthBeat = function  (_scale) {
-    console.log(scene.scale);
+    // console.log(scene.scale);
     scene.scale.x = random(1,1+_scale);
     scene.scale.y = random(1,1+_scale);
     scene.scale.z = random(1,1+_scale);

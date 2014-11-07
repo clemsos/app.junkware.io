@@ -1,15 +1,14 @@
 {% extends "layout.html" %}
 
 {% block content %}
+
 <div id="dashboard-header row">
     <h2 class="junk-title">{{ junk.title }} <small class="objectId">#{{ objectId }}</small></h2>
-    <ul class="nav nav-tabs">
-    </ul>
 </div>
 
 <div class="container">
     {% block junkview %}
-    {% endblock %} 
+    {% endblock %}
 </div>
 {% endblock %}    
 

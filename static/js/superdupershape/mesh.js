@@ -14,7 +14,7 @@ define(['superDuperShape', 'scene', 'settings'], function(superDuperShape, scene
     },
 
     createMeshObject: function(settings) {
-
+      // console.log(settings);
       this.geometry = new THREE.Geometry();
       this.geometry.dynamic = true;
       var thetaSteps = globalSettings.thetaSteps;

@@ -188,7 +188,7 @@ DNAViewer.prototype.display = function() {
         .attr("filter", "url(#bands)")
 
         .transition()
-            .duration(27000)
+            .duration(7000)
             .delay(function(d, i){
                 return i * 750
             })

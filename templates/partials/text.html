@@ -1,19 +1,13 @@
-{% extends "dashboard_layout.html" %}
+{% extends "single_layout.html" %}
+
 {% block junkview %}
-        <div class="row">
-            <a href="#" class="get-description btn btn-default btn-xs">Description</a>
-            <a href="#" class="get-abstract btn btn-default btn-xs">Abstract</a>
-            <a href="#" class="get-title btn btn-default btn-xs">Title</a>
-        </div>
 
         <div class="jumbotron">
-            <p class="junk-abstract">{{ junk.abstract }}</p>
+            <p class="junk-abstract"></p>
         </div>
         <br>
         <div class="junk-description">
-            {% for desc in junk.description %}
-               <div class="message">{{ desc }}</div>
-            {% endfor %}
+            
         </div>
 
 {% endblock %}
@@ -37,31 +31,13 @@
     var terminal= new Terminal(".junk-description", "    ",["ok","test"] );
     terminal.init();
 
-    $(".get-title").click(function (e) {
-        $.get("/api/junk/{{objectId}}/title", function(data){
-            $(".junk-title").text(data.title);
-            $(".junk-title").shuffleLetters();
-            junk.title=data.title;
-        })
-    })
+    $(".junk-abstract").text(junk.abstract);
+    $(".junk-abstract").shuffleLetters();
 
-    $(".get-abstract").click(function (e) {
-        $.get("/api/junk/{{objectId}}/abstract", function(data){
-            $(".junk-abstract").text(data.abstract)
-            $(".junk-abstract").shuffleLetters();
-            junk.abstract = data.abstract;
-        })
-    })
+    $(".junk-description").html("");
+    terminal.addMessages(junk.description)
 
-    $(".get-description").click(function (e) {
-        $.get("/api/junk/{{objectId}}/description", function(data){
-            // console.log(data.description);
-            $(".junk-description").html("");
-            junk.description = data.description;
-            terminal.addMessages(data.description)
 
-        })
-    })
 
 </script>
 {% endblock %}

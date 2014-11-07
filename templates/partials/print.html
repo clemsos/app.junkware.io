@@ -3,22 +3,40 @@
     <link rel="stylesheet" href="/css/print.css">
 </head>
 <body>
+
     <h1>{{ junk.title }}</h1>
     <h2>#{{ objectId }}</h2>
     <p class="abstract">{{ junk.abstract }}</p>
-    <p>ISSUE DATE : {{ junk.created_at}}</p>
+    <p class="issue-date">ISSUE DATE : {{ junk.created_at}}</p>
+    <div class="logo">
+        <img src="/img/logo-text-BW.png" alt="logo" width="200px">
+    </div>
     <div id="qrcontainer">
         <div id="qrcode"></div>
     </div>
 
+    <h4>Description</h4>
+    <div class="junk-description">
+        {% for desc in junk.description %}
+           <p class="message">{{ desc }}</p>
+        {% endfor %}
+    </div>
+    <h4>DNA</h4>
+    <p>{{ junk.dna}}</p>
+
+    <br>
+    <h4 class="abstract">{{ junk.title }}</h4>
+    <p class="issue-date">ISSUE DATE : {{ junk.created_at}}</p>
+    <br>
     <div class="logo">
         <img src="/img/logo-text-BW.png" alt="logo" width="200px">
     </div>
+
 </body>
 
 <script type="text/javascript" src="/js/qrcode.min.js"></script>
 <script type="text/javascript">
-    window.onload = function() { window.print(); }
+    // window.onload = function() { window.print(); }
     new QRCode(document.getElementById("qrcode"),{
         text: "http://app.junkware.io/junk/{{ objectId }}",
         width: 100,

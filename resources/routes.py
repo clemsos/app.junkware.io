@@ -1,8 +1,6 @@
 import os
 import json
 import random
-import subprocess
-import serial
 from flask import render_template, jsonify, send_from_directory, request, make_response
 from resources import app, api, mongo
 from Junk import Junk, JunkList
@@ -44,20 +42,12 @@ def data_static_proxy(path):
     # send_static_file will guess the correct MIME type
     return app.send_static_file(os.path.join('data', path))
 
-'''
+# junks
+
 @app.route('/junks')
 def junk_index():
     junks= [x for x in mongo.db.junks.find()]
     return render_template('index.html', junks=junks)
-
-@app.route('/junk/new')
-def junk_new():
-    return render_template('junk/create.html')
-
-@app.route('/junk/partials/<path:path>')
-def partials(path):
-    print path
-    return render_template(os.path.join('partials',path+".html"))
 
 @app.route('/junk/<ObjectId:objectId>')
 def junwkare(objectId):
@@ -65,30 +55,40 @@ def junwkare(objectId):
     del junk["_id"]
     return render_template('junk/view.html', objectId=objectId, junk=junk)
 
+@app.route('/junk/partials/<path:path>')
+def partials(path):
+    print path
+    return render_template(os.path.join('partials',path+".html"))
+
+
 @app.route('/junk/<ObjectId:objectId>/<path:path>')
 def single_junk(objectId, path):
     junk=mongo.db.junks.find_one_or_404({"_id": objectId})
     del junk["_id"]
     return render_template(os.path.join('partials',path+".html"), objectId=objectId, junk=junk)
 
+# API
+api.add_resource(JunkList, '/api/junks')
+api.add_resource(Junk, '/api/junk/<ObjectId:junk_id>')
+
+@app.route('/api/junk/<ObjectId:objectId>/dna')
+def get_junk_dna(objectId):
+    junk=mongo.db.junks.find_one_or_404({"_id": objectId})
+    return jsonify({"dna":junk["dna"]})
+
+@app.route('/api/junk/<ObjectId:objectId>/molecule')
+def get_junk_molecule(objectId):
+    junk=mongo.db.junks.find_one_or_404({"_id": objectId})
+    return jsonify({"molecule":junk["molecule"]})
+
 # data
-@app.route('/data/randomDNA')
-def get_dna():
-    my_dna=get_random_dna()
-    return jsonify({"dna":my_dna})
-
-@app.route('/data/randomMolecule')
-def get_molecules_list():
-    files=os.listdir("../../junkware-data/molecules")
-    molecules=[mol for mol in files if mol[-4:][:3]=="pdb"]
-    print molecules
-    return jsonify({"molecules":molecules})
-
 @app.route('/data/molecules/<path:path>')
 def get_molecule_file(path):
-    app_path =os.path.dirname(os.path.abspath(os.getcwd()))
-    data_path= os.path.join(os.path.dirname(app_path), 'junkware-data')
+    print path
+    app_path = os.getcwd()
+    data_path= os.path.join(app_path, 'data')
     molecule_path=os.path.join(data_path, "molecules")
+    print molecule_path
     return send_from_directory(molecule_path, path)
 
 @app.route('/data/toStl/<ObjectId:objectId>', methods = ['POST']) 
@@ -147,74 +147,7 @@ def getSTL(objectId):
 
 
 
-headset_thread=None
-oxymeter_thread=None
-
-@app.route('/devices/eeg/start') 
-def start_eeg():
-    print "start headset thread"
-    headset_thread = Thread(target=get_data_from_eeg_headset)
-    var.headset_on = True
-    headset_thread.start()
-    return jsonify({"info":"headset connected."})
-
-@app.route('/devices/eeg/stop') 
-def stop_eeg():
-    print "stop headset thread"
-    var.headset_on = False
-    return jsonify({"info":"headset stopped."})
-
-@app.route('/devices/eeg/test') 
-def test_eeg():
-    return jsonify({"state": var.headset_on })
-
-@app.route('/devices/oxymeter/start') 
-def start_oxymeter():
-    print "start oxymon thread"
-    oxymeter_thread = Thread(target=get_data_from_oxymon)
-    oxymeter_thread.start()
-    var.oxymeter_on = True
-    return jsonify({"info":"oxymon connected."})
-
-@app.route('/devices/oxymeter/stop') 
-def stop_oxymeter():
-    print "stop oxymon thread" 
-    print "from routes", var.headset_on
-    var.oxymeter_on = False
-    return jsonify({"info":"oxymon stopped."})
-
-@app.route('/devices/oxymeter/test') 
-def test_oxymeter():
-    return jsonify({"state": var.oxymeter_on })
-
-# check if arduino is connected
-
-# arduino = serial.Serial('/dev/ttyACM0',9600)
-
-@app.route('/devices/sequencer/start') 
-def start_sequencer():
-    if(arduino is not None) :
-        time.sleep(2) # waiting the initialization...
-        print("initialising")
-        arduino.write('I') # init
-        return jsonify({"state": "done" })
-    else:
-        return jsonify({"state": "arduino missing" })
-
-
-# API
-api.add_resource(JunkList, '/api/junks')
-api.add_resource(Junk, '/api/junk/<ObjectId:junk_id>')
-
-@app.route('/api/junk/<ObjectId:objectId>/dna')
-def get_junk_dna(objectId):
-    junk=mongo.db.junks.find_one_or_404({"_id": objectId})
-    return jsonify({"dna":junk["dna"]})
-
-@app.route('/api/junk/<ObjectId:objectId>/molecule')
-def get_junk_molecule(objectId):
-    junk=mongo.db.junks.find_one_or_404({"_id": objectId})
-    return jsonify({"molecule":junk["molecule"]})
+'''
 
 @app.route('/api/junk/<ObjectId:objectId>/title')
 def get_junk_title(objectId):
@@ -273,3 +206,24 @@ def get_junk_description(objectId):
     return jsonify({ "description" : description })
 
 '''
+
+template_scad = """
+include <supershape.scad>
+
+create_supershape();
+
+module create_supershape()
+{
+    scale([10,10,10])
+    RenderSuperShape(
+        #SHAPE1#
+        #SHAPE2#
+        phisteps = 8,
+        thetasteps = 64,
+        points=false,
+        pointcolor=[1,1,1],
+        wireframe=false,
+        faces=true);
+
+}
+"""

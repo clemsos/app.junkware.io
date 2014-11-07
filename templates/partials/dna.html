@@ -1,14 +1,12 @@
-{% extends "dashboard_layout.html" %}
+{% extends "single_layout.html" %}
 
 {% block junkview %}
 
-<!-- <div>
-    <input class="btn btn-default" type="button" value="Load DNA" id="loadDNA"/>
-    <input class="btn btn-default" type="button" value="Create SVG" id="createSVG"/>
-    <input class="btn btn-default" type="button" value="Turn ON" id="subButton"/>
-    <input class="btn btn-default" type="button" value="Reset" id="reset"/>
-</div> -->
-
+<h4>DNA Sequence</h4>
+<br>
+<a style="word-wrap: break-word;" class="dna-seq">{{ junk.dna }}</a>
+<br>
+<br>
 <p id="DNA_sequence"></p>
 <div class="dna"></div>
 {% endblock %}
@@ -16,7 +14,12 @@
 {% block junkscripts %}
 <script src="/libs/d3/d3.min.js"></script>
 <script src="/js/electrophoresis.js"></script>
+<script src="/js/jquery.shuffleLetters.js"></script>
 <script>
+
+    
+    $(".dna-seq").shuffleLetters();
+
     // load DNA Sequence
     var getSequence = function(_url, callback){
         $.get(_url, function (data) {
