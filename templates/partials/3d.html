@@ -1,0 +1,59 @@
+{% extends "dashboard_layout.html" %}
+
+{% block junkview %}
+
+<div id="container"></div>
+
+<div id="three-axis"></div>
+{% endblock %}
+
+{% block junkscripts %}
+<script type="x-shader/x-vertex" id="vertexshader">
+
+  attribute vec3 a_color;
+
+  varying vec3 cl;
+  varying vec3 vNormal;
+
+  void main() {
+  vNormal = normal;
+  gl_Position = projectionMatrix *
+  modelViewMatrix *
+  vec4(position,1.0);
+  cl = a_color;
+  }
+</script>
+
+<script type="x-shader/x-fragment" id="fragmentshader">
+
+  varying vec3 cl;
+  varying vec3 vNormal;
+
+  void main() {
+  vec3 light = vec3(0.5,0.2,1.0);
+
+  light = normalize(light);
+
+  float dProd = max(0.0, dot(abs(vNormal), light));
+
+  gl_FragColor = vec4(cl*(dProd), 1.0);
+  }
+</script>
+
+
+
+<script src="/libs/dat.gui/dat.gui.js"></script>
+<script src="/libs/stats.js/build/stats.min.js"></script>
+
+
+<script src="/js/superdupershape/lib/threejs/three.min.js"></script>
+<script src="/js/superdupershape/lib/threejs/Detector.js"></script>
+<script src="/js/superdupershape/lib/threex/THREEx.WindowResize.js"></script>
+<script src="/js/superdupershape/lib/threex/THREEx.FullScreen.js"></script>
+<script src="/js/superdupershape/lib/threex/THREEx.screenshot.js"></script>
+<script src="/js/superdupershape/lib/rainbob-vis/rainbowvis.js"></script>
+<!-- <script src="/js/superdupershape/lib/trackbackControls.js"></script> -->
+<script src="/js/superdupershape/lib/orbitControls.js"></script>
+
+<script src="/libs/requirejs/require.js" data-main="/js/superdupershape/startSuperShape.js"></script>
+{% endblock %}

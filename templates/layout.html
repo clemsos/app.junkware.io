@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Junkware</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="Junkware, an art & tech generative project." />
+    <meta name="keywords" content="junkware, biohack, DNA, biometrics, NLG, patents, three.js, d3.js, generative design" />
+    <link rel="canonical" href="http://junkware.io" />
+
+    <script type="text/javascript" src="/libs/jquery/dist/jquery.js"></script>
+    <!-- <script>jQuery.noConflict();</script> -->
+
+    <script type="text/javascript" src="/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="/css/bootstrap-cyborg.min.css">
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    {% block styles %}{% endblock %}
+</head>
+<body>
+  <div class="container" role="main" id="main">
+  <div class="alert alert-save alert-success alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+    <strong>Saved!</strong> Your junk has been saved in the db.
+  </div>
+    <div class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Junkware</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav main-nav navbar-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/junks">Shop</a></li>
+            <li class="active"><a href="/junk/new">Create new</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right object-navbar hidden">
+              <li>
+                  <a href="/junk/{{ objectId }}/dna" class="btn btn-link">
+                      <i class="fa fa-leaf"></i> DNA
+                  </a>
+              </li>
+              <li>
+                  <a href="/junk/{{ objectId }}/brain" class="btn btn-link">
+                      <i class="fa fa-headphones"></i> Biometrics
+                  </a>
+              </li>
+              <li>
+                  <a href="/junk/{{ objectId }}/molecule" class="btn btn-link">
+                      <i class="fa fa-meh-o"></i> Molecule
+                  </a>
+              </li>
+              <li>
+                  <a href="/junk/{{ objectId }}/3d" class="btn btn-link">
+                      <i class="fa fa-question"></i> 3D Shape
+                  </a>
+              </li>
+             <!--  <li>
+                <a href="#" data-toggle="collapse" data-target="#devices">
+                <i class="fa fa-caret-down"></i> Devices 
+                </a>
+              </li>
+              --> 
+              <li>
+                 <a href="/junk/{{ objectId }}/text" class="btn btn-link">
+                    <i class="fa fa-file-text"></i> Description
+                </a>
+              </li>
+              <li>
+                  <a href="/junk/{{ objectId }}/photo" class="btn btn-lin active junk-photo">
+                      <i class="fa fa-user"></i> Photo
+                  </a>
+              </li>
+              <li>
+                  <a href="/api/junk/{{ objectId }}" class="btn btn-lin active junk-save">
+                      <i class="fa fa-save"></i> Save
+                  </a>
+              </li>
+              <li>
+                  <a href="/junk/{{ objectId }}/print" class="btn btn-lin active junk-print">
+                      <i class="fa fa-print"></i> Print
+                  </a>
+              </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+
+      </div>
+    </div>
+    {% for message in get_flashed_messages() %}
+      <div class="flash">{{ message }}</div>
+    {% endfor %}
+
+    {% block content %}{% endblock %}
+
+</body>
+<script type="text/javascript" src="/js/main.js"></script>
+<script>
+  jQuery(document).ready(function($){
+    $("#devices a").click(function(e){
+      console.log($(this).attr('href'));
+      $.get($(this).attr('href'), function (data) {
+        console.log(data);
+      })
+      e.preventDefault();
+    })
+
+    $(".alert-save").hide();
+
+    $("a.junk-save").click(function(e){
+      var url = $(this).attr('href');
+      console.log(url);
+      console.log(junk);
+      e.preventDefault();
+
+      $.ajax({
+          url: url,
+          type: 'PUT',
+          data: JSON.stringify(junk),
+          success: function(result) {
+              // Do something with the result
+              console.log(result);
+              $(".alert-save").show();
+          }
+      });
+    });
+    /*
+      $.post(url, function (junk) {
+         console.log(data);
+      })
+    */
+    })
+
+</script>
+
+{% block scripts %}{% endblock %}
+
+<html>
