@@ -1,0 +1,11 @@
+{
+  "name": "threejs-exporters",
+  "version": "0.0.66",
+  "description": "Three.js exporters",
+  "keywords": [
+    "threejs",
+    "exporters",
+    "three.js"
+  ],
+  "license": "MIT"
+}
