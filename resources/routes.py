@@ -91,6 +91,7 @@ def get_molecule_file(path):
     print molecule_path
     return send_from_directory(molecule_path, path)
 
+'''
 @app.route('/data/toStl/<ObjectId:objectId>', methods = ['POST']) 
 def convertToSTL(objectId):
 
@@ -146,67 +147,6 @@ def getSTL(objectId):
     return response
 
 
-
-'''
-
-@app.route('/api/junk/<ObjectId:objectId>/title')
-def get_junk_title(objectId):
-    junk=mongo.db.junks.find_one_or_404({"_id": objectId})
-    pats=patents.get_records_by_ids(junk["patents_ids"])
-
-    # title
-    titles=""
-    for t in pats[1]:
-        titles += " "+t
-    title= MarkovGenerator(titles).generate_text(size=random.randint(4,7)).title()
-
-    return jsonify({ "title" : title })
-
-@app.route('/api/junk/<ObjectId:objectId>/abstract')
-def get_junk_abstract(objectId):
-    junk=mongo.db.junks.find_one_or_404({"_id": objectId})
-    pats=patents.get_records_by_ids(junk["patents_ids"])
-
-    # abstract
-    abstract_corpus_path = os.path.join(os.path.dirname(os.getcwd()), 'corpus_abstract')
-    abstract_generator = ObjectGenerator(abstract_corpus_path)
-
-    # add patents to corpus
-    for abstract in pats[0]:
-        clean_abstract=NLP(abstract).filter_out_nastyness()
-        abstract_generator.add_to_corpus(clean_abstract)
-        # print type(clean_abstract)
-
-    # create abstract
-    abstract_generator.load_corpus()
-    abstract = abstract_generator.generate_definition(1,10)
-    print abstract
-
-    return jsonify({ "abstract" : abstract })
-
-@app.route('/api/junk/<ObjectId:objectId>/description')
-def get_junk_description(objectId):
-    junk=mongo.db.junks.find_one_or_404({"_id": objectId})
-    pats=patents.get_records_by_ids(junk["patents_ids"])
-
-    # abstract
-    abstract_corpus_path = os.path.join(os.path.dirname(os.getcwd()), 'corpus_abstract')
-    abstract_generator = ObjectGenerator(abstract_corpus_path)
-
-    # add patents to corpus
-    for abstract in pats[0]:
-        clean_abstract=NLP(abstract).filter_out_nastyness()
-        abstract_generator.add_to_corpus(clean_abstract)
-
-    # description
-    description = []
-    for i  in range(0,random.randint(10,25)):
-        description.append(abstract_generator.generate_definition(1,random.randint(30,150)))
-
-    return jsonify({ "description" : description })
-
-'''
-
 template_scad = """
 include <supershape.scad>
 
@@ -227,3 +167,4 @@ module create_supershape()
 
 }
 """
+'''
