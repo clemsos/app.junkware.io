@@ -8,7 +8,12 @@ from Junk import Junk, JunkList
 # routes
 @app.route('/')
 def home():
-    return render_template('home.html')
+    junks= [x for x in mongo.db.junks.find()]
+    return render_template('home.html', junks=junks)
+
+@app.route('/terminal')
+def terminal():
+    return render_template('terminal.html')
 
 # STATIC
 @app.route('/js/<path:path>')

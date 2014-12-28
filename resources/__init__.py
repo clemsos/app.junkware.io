@@ -8,7 +8,7 @@ import jinja2
 
 MONGO_URL = os.environ.get('MONGO_URL')
 if not MONGO_URL:
-    MONGO_URL = "mongodb://localhost:27017/junks";
+    MONGO_URL = "mongodb://localhost:27017/junks"
 
 ASSETS_DIR=os.path.join(os.path.dirname(os.path.abspath(__file__)), '../static')
 

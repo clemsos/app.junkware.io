@@ -1,15 +1,36 @@
 <!DOCTYPE HTML>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
 <html>
 <head>
-    <title>Junkware</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    <meta name="description" content="Junkware, an art & tech generative project." />
-    <meta name="keywords" content="junkware, biohack, DNA, biometrics, NLG, patents, three.js, d3.js, generative design" />
-    <link rel="canonical" href="http://junkware.io" />
+  <title>Junkware</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1">
 
-    <script type="text/javascript" src="/libs/jquery/dist/jquery.js"></script>
-    <!-- <script>jQuery.noConflict();</script> -->
+  <meta name="description" content="Junkware, an art+tech generative project." />
+  <meta name="keywords" content="junkware, biohack, DNA, biometrics, NLG, patents, three.js, d3.js, generative design" />
+  <link rel="canonical" href="http://junkware.io" />
+
+
+  <script type="text/javascript" src="/libs/jquery/dist/jquery.js"></script>
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <!--[if lt IE 9]>
+  <link rel="stylesheet" type="text/css" media="all" href="css/IE.css">
+  <![endif]-->
+
 
     <script type="text/javascript" src="/libs/bootstrap/dist/js/bootstrap.min.js"></script>
 
@@ -17,86 +38,87 @@
     <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/style.css">
     {% block styles %}{% endblock %}
-</head>
-<body>
-  <div class="container" role="main" id="main">
-    <div class="navbar navbar-default navbar-fixed-bottom" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/">Junkware</a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav main-nav navbar-nav">
-            <li><a href="/">Home</a></li>
-            <li><a href="/junks">Shop</a></li>
-            <li class="active"><a href="/junk/new">Create new</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right object-navbar hidden">
-              <li>
-                 <a href="/junk/{{ objectId }}/text" class="btn btn-link">
+      </head>
+      <body>
+
+        <div class="container" role="main" id="main">
+          <div class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+            <div class="container">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Junkware</a>
+              </div>
+              <div class="navbar-collapse collapse">
+                <ul class="nav main-nav navbar-nav">
+                  <li><a href="/">Home</a></li>
+                  <li><a href="/junks">Shop</a></li>
+                  <li class="active"><a href="/junk/new">Create new</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right object-navbar hidden">
+                  <li>
+                   <a href="/junk/{{ objectId }}/text" class="btn btn-link">
                     <i class="fa fa-file-text"></i> Description
-                </a>
-              </li>
-              <li>
+                  </a>
+                </li>
+                <li>
                   <a href="/junk/{{ objectId }}/3d" class="btn btn-link">
-                      <i class="fa fa-question"></i> 3D Shape
+                    <i class="fa fa-question"></i> 3D Shape
                   </a>
-              </li>
-              <li>
+                </li>
+                <li>
                   <a href="/junk/{{ objectId }}/dna" class="btn btn-link">
-                      <i class="fa fa-leaf"></i> DNA
+                    <i class="fa fa-leaf"></i> DNA
                   </a>
-              </li>
-              <li>
+                </li>
+                <li>
                   <a href="/junk/{{ objectId }}/molecule" class="btn btn-link">
-                      <i class="fa fa-meh-o"></i> Molecule
+                    <i class="fa fa-meh-o"></i> Molecule
                   </a>
-              </li>
+                </li>
 
              <!--  <li>
                 <a href="#" data-toggle="collapse" data-target="#devices">
                 <i class="fa fa-caret-down"></i> Devices 
                 </a>
               </li>
-              --> 
-              
-              <li>
-                  <a href="/junk/{{ objectId }}/print" class="btn btn-lin active junk-print">
-                      <i class="fa fa-print"></i> Print
-                  </a>
-              </li>
+            --> 
+
+            <li>
+              <a href="/junk/{{ objectId }}/print" class="btn btn-lin active junk-print">
+                <i class="fa fa-print"></i> Print
+              </a>
+            </li>
           </ul>
         </div><!--/.nav-collapse -->
 
       </div>
     </div>
     {% for message in get_flashed_messages() %}
-      <div class="flash">{{ message }}</div>
+    <div class="flash">{{ message }}</div>
     {% endfor %}
 
     {% block content %}{% endblock %}
 
-</body>
-<script type="text/javascript" src="/js/main.js"></script>
-<script>
-  jQuery(document).ready(function($){
-    $("#devices a").click(function(e){
-      console.log($(this).attr('href'));
-      $.get($(this).attr('href'), function (data) {
-        console.log(data);
+  </body>
+  <script type="text/javascript" src="/js/main.js"></script>
+  <script>
+    jQuery(document).ready(function($){
+      $("#devices a").click(function(e){
+        console.log($(this).attr('href'));
+        $.get($(this).attr('href'), function (data) {
+          console.log(data);
+        })
+        e.preventDefault();
       })
-      e.preventDefault();
     })
-  })
 
-</script>
+  </script>
 
-{% block scripts %}{% endblock %}
+  {% block scripts %}{% endblock %}
 
-<html>
+  <html>
