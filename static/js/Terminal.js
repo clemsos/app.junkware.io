@@ -1,6 +1,9 @@
 
 function Terminal(_div,_header) {
-    this.div = _div;
+
+    this.parentDiv = $(_div);
+    this.parentDiv.append("<div class='container'></div>");
+    this.div=_div+" .container";
     this.header = _header;
     this.infiniteLoop =false;
 }
@@ -31,16 +34,18 @@ Terminal.prototype.blink = function(){
     },500);
 }
 
-Terminal.prototype.addMessage = function(_text){
+Terminal.prototype.addMessage = function(_header, _text){
     this.caret().remove();
-    var from = this.header;
+    var from = _header || this.header;
     var text = _text;
 
+    console.log(from);
     var div = $("<div class='message'></div>");
     $(this.div).append(div);
+
     var self = this;
-    div.append("<p class='terminal-header'>" + from + "</p>");
-    div.find(".terminal-header").css("color", "green");
+    div.append("<p class='terminal-header'>" + from + " </p>");
+    // div.find(".terminal-header").css("color", "green");
 
     //text
     var t = 0;
@@ -50,33 +55,33 @@ Terminal.prototype.addMessage = function(_text){
 
         t = Math.floor(Math.random()*600);
         setTimeout(function(){
-            div.append("<p>" + text + (spli.length>1 ? "..." : "") + "</p> ");
-            div.shuffleLetters();
+            div.append("<p class='junk-text'>" + text + (spli.length>1 ? "..." : "") + "</p> ");
+            div.find(".junk-text").shuffleLetters();
             self.createCaret(div);
         }, t);
     }
     
     if(this.infiniteLoop ==true) {
-        while($(this.div).height() > $(this.div+"-container").height()){
+        while($(this.parentDiv).height() > $(this.div).height()){
             $('.message').first().remove();
             // console.log($('#content').height(), window.innerHeight);
         }
     }
 }
 
-Terminal.prototype.addMessages = function(_text_array) {
-        var data = _text_array; 
-        console.log("messages : ",data.length);
+Terminal.prototype.addMessages = function(data) {
+        var texts = data;
+        console.log("messages : ",texts.length);
         var self=this;
         var i =0;
         function messageTimeout() {
             setTimeout(function () {
                 console.log(i);
-                if(i < data.length) {
-                    self.addMessage(data[i]);
+                if(i < texts.length) {
+                    self.addMessage(texts[i].title, texts[i].abstract);
                     i++;
                     messageTimeout();
-                } else if ( i == data.length && this.infiniteLoop ==true) {
+                } else if ( i == texts.length && this.infiniteLoop == true) {
                     i=0;
                 }
             }, 500+Math.floor(Math.random()>.8 ? 1000+Math.random()*2000 : Math.random()*1000));

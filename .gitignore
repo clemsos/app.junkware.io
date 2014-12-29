@@ -3,6 +3,7 @@ data
 deploy.md
 static/.webassets-cache
 assets/old_css
+uploads/original
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

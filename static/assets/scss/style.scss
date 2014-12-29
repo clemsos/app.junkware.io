@@ -1,6 +1,9 @@
 @import "compass/reset";
 @import "compass/css3";
+
 @import "plugins/zen";
+@import "plugins/fancybox";
+
 @import "includes/mixins";
 @import "includes/layout";
 @import "includes/typo";
@@ -8,18 +11,11 @@
   
 
 @import "partials/items-grid"; 
+@import "partials/terminal"; 
 
 $zen-column-count: 12;  
 // $zen-gutter-width:0;
 $zen-grid-width:100%;
-
-// html { 
-//   background: url(../uploads/skunkdog_7.jpg) no-repeat center center fixed; 
-//   -webkit-background-size: cover;
-//   -moz-background-size: cover;
-//   -o-background-size: cover;
-//   background-size: cover;
-// }
 
 em  {
     color : $highlight-color;
@@ -165,6 +161,13 @@ img {
 }
 
 #home {
+
+    background: url(/uploads/finger_tent.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
     .header {
         position: relative;
         top : 190px;
@@ -191,7 +194,10 @@ img {
     $zen-column-count: 16;
 
     .pic {
-        @include zen-grid-item(10, 0);
+        @include zen-grid-item(9, 1);
+        #terminal {
+            max-height :600px;
+        }
     }
 
     .text {
@@ -201,12 +207,45 @@ img {
             padding-bottom: 15px;
         }
     }
+
+        #bargraph {
+        
+        .bar {
+          fill: #00CC00;
+        }
+
+        .bar:hover {
+          fill: brown;
+        }
+
+        .axis {
+          fill: #00CC00;
+          font: 10px sans-serif;
+        }
+
+        .axis path,
+        .axis line {
+          fill: none;
+          stroke: #00CC00;
+          shape-rendering: crispEdges;
+        }
+
+        .x.axis path {
+          /*display: none;*/
+        }
+    }
 }
 
-.pic-strip {
+#junks {
     background: rgba(0,0,0,.9);
-    img {
-        width: 33%;
+
+    .page-section {
+        width: 90%;
+        margin : 0 auto;
+    }
+    .item {
+        width: 130px;
+        // padding: 5px;
         // width: calc(100%/3);
     }
 }
@@ -239,6 +278,7 @@ img {
         @include zen-grid-item(8, 5);
     }
 }
+
 
 #galerie {
     background: rgba(0,0,0,.9);

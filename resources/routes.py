@@ -5,11 +5,17 @@ from flask import render_template, jsonify, send_from_directory, request, make_r
 from resources import app, api, mongo
 from Junk import Junk, JunkList
 
+GALLERY_PATH=os.path.join("uploads","gallery")
+
 # routes
 @app.route('/')
 def home():
-    junks= [x for x in mongo.db.junks.find()]
-    return render_template('home/index.html', junks=junks)
+    gallery_path = os.path.join(os.getcwd(), GALLERY_PATH)
+    gallery_files = [pic for pic in os.listdir(gallery_path) if not os.path.isdir(pic)]
+    gallery_files.remove("thumb")
+    for f in gallery_files : print f
+    junks= [x for x in mongo.db.junks.find().limit(8)]
+    return render_template('home/index.html', junks=junks, gallery=gallery_files)
 
 @app.route('/terminal')
 def terminal():
@@ -46,6 +52,13 @@ def img_static_proxy(path):
 def data_static_proxy(path):
     # send_static_file will guess the correct MIME type
     return app.send_static_file(os.path.join('data', path))
+
+@app.route('/uploads/<path:path>')
+def uploads_static(path):
+    uploads_dir=os.path.join(os.getcwd(), os.path.join('uploads'))
+    # print uploads_dir
+    # return app.send_file(os.path.join(uploads_dir, path))
+    return send_from_directory(uploads_dir, path)
 
 # junks
 

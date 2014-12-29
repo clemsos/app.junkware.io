@@ -4,7 +4,9 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <title>Junkware Terminal</title>
-    <link href="css/terminal.css" rel="stylesheet" type="text/css" />
+      {% assets "terminal_css" %}
+        <link rel=stylesheet type=text/css href="{{ ASSET_URL }}">
+      {% endassets %}
 </head>
 <body>
 

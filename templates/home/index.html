@@ -1,99 +1,174 @@
 {% extends "layout.html" %}
-{% block content %}
-<!-- 
-<div id="curtains"></div>
-<iframe id="terminal" src="/terminal" frameborder="0" width="100%" ></iframe> 
--->
 
-<div class="container">
-  {% include "home/_intro.html" %}
-  {% include "home/_junks.html" %}
-</div>
+{% block content %}
+
+    <!-- <div id="curtains"></div>
+    <iframe id="terminal" src="/terminal" frameborder="0" width="100%" ></iframe>  -->
+
+    {% include "home/_intro.html" %}
+    {% include "home/_about.html" %}
+    {% include "home/_book.html" %}
+    {% include "home/_install.html" %}
+    {% include "home/_junks.html" %}
+    {% include "home/_credits.html" %}
 
 {% endblock %}
 
+{% block navbar %}
+   <footer class="footer">
+        <div class="nav-menu">
+            <ul>
+                <li>
+                    <ul>
+                        <li class="lifting"><a class="go-way-up" href="#home"><strong>Home</strong></a></li>
+                        <li class="lifting"><a class="go-under" href="#about"><strong></strong>About</a></li>
+                        <li class="lifting"><a class="go-way-under" href="#zine">Book</a></li>
+                        <li class="lifting"><a class="go-way-under" href="#galerie">Installation</a></li>
+                        <li class="lifting"><a class="go-way-under" href="#contact">Contact</a></li>
+                    </ul>
+                    <a class="menu-trigger" href="#">Menu</a>
+                </li>
+            </ul>
+            <!-- <span class="intro-arrow">&darr;</span> -->
+            <!-- <div class="footer-bg"></div> -->
+        </div>
+    </footer>
+{% endblock%}
+
 {% block styles %}
-<style>
+{% endblock %}
 
-body {
-    background:#000;
-}
-/* intro */
-.intro-wrapper {
-position: relative;
-}
+{% block scripts %}
+    <!-- <script src="js/jquery.min.js"></script> -->
+    <script type="text/javascript" src="/js/jquery.timer.js"></script>
+    <script  type="text/javascript" src="/js/jquery.nicescroll.js"></script>
+    <script  type="text/javascript" src="/js/jquery.fancybox.js"></script>
+    <script  type="text/javascript" src="/js/jquery.masonry.min.js"></script>
+    <script  type="text/javascript" src="/libs/d3/d3.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.shuffleLetters.js"></script>
+    <script type="text/javascript" src="/js/Terminal.js"></script>
 
-.intro {
-margin: 120px auto;
-}
+    <script>
+      $("body").getNiceScroll().resize();
+      $("body").niceScroll();
 
-.intro h1 {
-font-family: 'BebasNeueRegular';
-font-size: 140px;
-font-weight: 100;
-font-style: normal;
-text-align: center;
--webkit-font-smoothing: antialiased;
-color: #fff;
-margin: 15px 0 0 0;
-text-transform: none;
-}
+      // image viewer
+        $(".fancybox").fancybox({
+            padding : 0,
+            helpers : {
+                overlay : {
+                    css : {
+                        'background' : 'rgba(0, 0, 0, 0.65)'
+                    }
+                }
+            }
+        });
 
-.introduction i {
-  font-size: 10pt;
-}
-
-.introduction h3, .introduction div {
-font-family: 'Roboto', sans-serif;
-font-size: 15px;
-line-height: 1.5;
-font-style: normal;
-font-weight: 400;
-letter-spacing: 1px;
-color: #fff;
-text-shadow: 1px 1px 2px #000;
-}
-
-.introduction h3 span, .introduction div span {
-/*display: inline-block;*/
-}
-
-.introduction h3 {
-margin: 0 auto;
-width: 400px;
-border-bottom: 1px solid #fff;
-padding: 0 0 15px 0;
-}
-
-.introduction span:hover, .introduction h1:hover {
-color: #00CC00;
-transition: color 0.5s;
-}
-
-.introduction span {
-  background-color:rgba(0,0,0,.7);
-} 
-
-.intro-line {
-width: 100px;
-height: 1px;
-background: #fff;
-margin: 5px 15px;
-}
-
-.intro-pages {
-margin-top: 0;
-}
-
-.intro-arrow {
-  color: #fff;
-}
+      // junk gallery
+        $('#junks').masonry({
+              columnWidth: 150,
+              itemSelector: '.item'
+        });
 
 
-header.text p{
-  font-size: 1.2em;
-  text-align: justify;
-  padding: 0px 0 10px 0;
-}
-</style>
+      // terminal
+      var terminal = new Terminal("#terminal", "user@machine $ ")
+      terminal.init(); // start caret
+      terminal.infiniteLoop =true;
+
+      $.get("/api/junks", function(junks){
+          console.log(junks);
+          terminal.addMessages(junks);
+      })
+
+      // graph 
+          var isDraw=false;
+          var svg,x,y,width,height,margin;
+          var brainValues=[
+                  {
+                      "name": "attention",
+                      "value":  Math.random()*200
+                  },
+                  {
+                      "name" : "meditation",
+                      "value":  Math.random()*200
+                  }];
+
+          margin = {top: 20, right: 20, bottom: 30, left: 40};
+                  width = 200 - margin.left - margin.right;
+                  height = 300 - margin.top - margin.bottom;
+
+          x = d3.scale.ordinal()
+              .rangeRoundBands([0, width], .1);
+
+          y = d3.scale.linear()
+              .range([height, 0]);
+
+          var xAxis = d3.svg.axis()
+              .scale(x)
+              .orient("bottom");
+
+          var yAxis = d3.svg.axis()
+              .scale(y)
+              .orient("left");
+              // .ticks(10, "%");
+
+          svg = d3.select("#bargraph").append("svg")
+              .attr("width", width + margin.left + margin.right)
+              .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+              .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+          x.domain(brainValues.map(function(d) { return d.name; }));
+          y.domain([0, 200]);
+
+          svg.append("g")
+            .attr("class", "x axis")
+            .attr("transform", "translate(0," + height + ")")
+            .call(xAxis);
+
+          svg.append("g")
+            .attr("class", "y axis")
+            .call(yAxis)
+          .append("text")
+            .attr("transform", "rotate(-90)")
+            .attr("y", 6)
+            .attr("dy", ".71em")
+            .style("text-anchor", "end")
+            .text("Value");
+       
+          svg.selectAll(".bar")
+            .data(brainValues)
+          .enter().append("rect")
+            .attr("class", "bar")
+            .attr("x", function(d) { return x(d.value); })
+            .attr("width", x.rangeBand())
+            .attr("y", function(d) { return y(d.value); })
+            .attr("height", function(d) { return height - y(d.value); });
+
+          function updateBarGraph () {
+              brainValues=[
+                  {
+                      "name": "attention",
+                      "value":  Math.random()*200
+                  },
+                  {
+                      "name" : "meditation",
+                      "value":  Math.random()*200
+                  }];
+
+              svg.selectAll(".bar")
+                .data(brainValues)
+                .transition()
+                .attr("x", function(d) { return x(d.name); })
+                .attr("width", x.rangeBand())
+                .attr("y", function(d) { return y(d.value); })
+                .attr("height", function(d) { return height - y(d.value); });
+          }
+
+          setInterval(function() { // auto update values of bar graph
+               updateBarGraph();
+          }, 1000);
+
+    </script>
 {% endblock %}

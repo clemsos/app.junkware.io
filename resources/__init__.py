@@ -21,7 +21,7 @@ app.jinja_loader=jinja2.FileSystemLoader('templates')
 # compass config
 assets = Environment(app)
 
-main_scss = Bundle('assets/scss/style.scss', filters='compass', output='css/style.css')
+main_scss = Bundle('assets/scss/style.scss', 'assets/scss/media.scss', filters='compass', output='css/style.css')
 assets.register('main_scss', main_scss)
 
 dashboard_css = Bundle('assets/scss/dashboard.scss', filters='compass', output='css/dashboard.css')
@@ -32,6 +32,9 @@ assets.register('dashboard_css', dashboard_css)
 
 print_css = Bundle('assets/scss/print.scss', filters='compass', output='css/print.css')
 assets.register('print_css', print_css)
+
+terminal_css = Bundle('assets/scss/partials/terminal.scss', filters='compass', output='css/terminal.css')
+assets.register('terminal_css', terminal_css)
 
 # mongo db
 app.config['MONGO_URI'] = MONGO_URL

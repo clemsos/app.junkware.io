@@ -64,6 +64,316 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
+/*! fancyBox v2.1.5 fancyapps.com | fancyapps.com/fancybox/#license */
+/* line 2, ../assets/scss/plugins/fancybox.scss */
+.fancybox-wrap,
+.fancybox-skin,
+.fancybox-outer,
+.fancybox-inner,
+.fancybox-image,
+.fancybox-wrap iframe,
+.fancybox-wrap object,
+.fancybox-nav,
+.fancybox-nav span,
+.fancybox-tmp {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: none;
+  vertical-align: top;
+}
+
+/* line 20, ../assets/scss/plugins/fancybox.scss */
+.fancybox-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 8020;
+}
+
+/* line 27, ../assets/scss/plugins/fancybox.scss */
+.fancybox-skin {
+  position: relative;
+  background: #f9f9f9;
+  color: #444;
+  text-shadow: none;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+
+/* line 37, ../assets/scss/plugins/fancybox.scss */
+.fancybox-opened {
+  z-index: 8030;
+}
+
+/* line 41, ../assets/scss/plugins/fancybox.scss */
+.fancybox-opened .fancybox-skin {
+  -webkit-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* line 47, ../assets/scss/plugins/fancybox.scss */
+.fancybox-outer, .fancybox-inner {
+  position: relative;
+}
+
+/* line 51, ../assets/scss/plugins/fancybox.scss */
+.fancybox-inner {
+  overflow: hidden;
+}
+
+/* line 55, ../assets/scss/plugins/fancybox.scss */
+.fancybox-type-iframe .fancybox-inner {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* line 59, ../assets/scss/plugins/fancybox.scss */
+.fancybox-error {
+  color: #444;
+  font: 14px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
+  margin: 0;
+  padding: 15px;
+  white-space: nowrap;
+}
+
+/* line 67, ../assets/scss/plugins/fancybox.scss */
+.fancybox-image, .fancybox-iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 73, ../assets/scss/plugins/fancybox.scss */
+.fancybox-image {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* line 78, ../assets/scss/plugins/fancybox.scss */
+#fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
+  background-image: url("fancybox_sprite.png");
+}
+
+/* line 82, ../assets/scss/plugins/fancybox.scss */
+#fancybox-loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -22px;
+  margin-left: -22px;
+  background-position: 0 -108px;
+  opacity: 0.8;
+  cursor: pointer;
+  z-index: 8060;
+}
+
+/* line 94, ../assets/scss/plugins/fancybox.scss */
+#fancybox-loading div {
+  width: 44px;
+  height: 44px;
+  background: url("fancybox_loading.gif") center center no-repeat;
+}
+
+/* line 100, ../assets/scss/plugins/fancybox.scss */
+.fancybox-close {
+  position: absolute;
+  top: -18px;
+  right: -18px;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  z-index: 8040;
+}
+
+/* line 110, ../assets/scss/plugins/fancybox.scss */
+.fancybox-nav {
+  position: absolute;
+  top: 0;
+  width: 40%;
+  height: 100%;
+  cursor: pointer;
+  text-decoration: none;
+  background: transparent url("blank.gif");
+  /* helps IE */
+  -webkit-tap-highlight-color: transparent;
+  z-index: 8040;
+}
+
+/* line 122, ../assets/scss/plugins/fancybox.scss */
+.fancybox-prev {
+  left: 0;
+}
+
+/* line 126, ../assets/scss/plugins/fancybox.scss */
+.fancybox-next {
+  right: 0;
+}
+
+/* line 130, ../assets/scss/plugins/fancybox.scss */
+.fancybox-nav span {
+  position: absolute;
+  top: 50%;
+  width: 36px;
+  height: 34px;
+  margin-top: -18px;
+  cursor: pointer;
+  z-index: 8040;
+  visibility: hidden;
+}
+
+/* line 141, ../assets/scss/plugins/fancybox.scss */
+.fancybox-prev span {
+  left: 10px;
+  background-position: 0 -36px;
+}
+
+/* line 146, ../assets/scss/plugins/fancybox.scss */
+.fancybox-next span {
+  right: 10px;
+  background-position: 0 -72px;
+}
+
+/* line 151, ../assets/scss/plugins/fancybox.scss */
+.fancybox-nav:hover span {
+  visibility: visible;
+}
+
+/* line 155, ../assets/scss/plugins/fancybox.scss */
+.fancybox-tmp {
+  position: absolute;
+  top: -99999px;
+  left: -99999px;
+  visibility: hidden;
+  max-width: 99999px;
+  max-height: 99999px;
+  overflow: visible !important;
+}
+
+/* Overlay helper */
+/* line 167, ../assets/scss/plugins/fancybox.scss */
+.fancybox-lock {
+  overflow: hidden !important;
+  width: auto;
+}
+
+/* line 172, ../assets/scss/plugins/fancybox.scss */
+.fancybox-lock body {
+  overflow: hidden !important;
+}
+
+/* line 176, ../assets/scss/plugins/fancybox.scss */
+.fancybox-lock-test {
+  overflow-y: hidden !important;
+}
+
+/* line 180, ../assets/scss/plugins/fancybox.scss */
+.fancybox-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  display: none;
+  z-index: 8010;
+  background: url("fancybox_overlay.png");
+}
+
+/* line 190, ../assets/scss/plugins/fancybox.scss */
+.fancybox-overlay-fixed {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+/* line 196, ../assets/scss/plugins/fancybox.scss */
+.fancybox-lock .fancybox-overlay {
+  overflow: auto;
+  overflow-y: scroll;
+}
+
+/* Title helper */
+/* line 203, ../assets/scss/plugins/fancybox.scss */
+.fancybox-title {
+  visibility: hidden;
+  font: normal 13px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
+  position: relative;
+  text-shadow: none;
+  z-index: 8050;
+}
+
+/* line 211, ../assets/scss/plugins/fancybox.scss */
+.fancybox-opened .fancybox-title {
+  visibility: visible;
+}
+
+/* line 215, ../assets/scss/plugins/fancybox.scss */
+.fancybox-title-float-wrap {
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  margin-bottom: -35px;
+  z-index: 8050;
+  text-align: center;
+}
+
+/* line 224, ../assets/scss/plugins/fancybox.scss */
+.fancybox-title-float-wrap .child {
+  display: inline-block;
+  margin-right: -100%;
+  padding: 2px 20px;
+  background: transparent;
+  /* Fallback for web browsers that doesn't support RGBa */
+  background: rgba(0, 0, 0, 0.8);
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  text-shadow: 0 1px 2px #222;
+  color: #FFF;
+  font-weight: bold;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+/* line 240, ../assets/scss/plugins/fancybox.scss */
+.fancybox-title-outside-wrap {
+  position: relative;
+  margin-top: 10px;
+  color: #fff;
+}
+
+/* line 246, ../assets/scss/plugins/fancybox.scss */
+.fancybox-title-inside-wrap {
+  padding-top: 10px;
+}
+
+/* line 250, ../assets/scss/plugins/fancybox.scss */
+.fancybox-title-over-wrap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #fff;
+  padding: 10px;
+  background: #000;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/*Retina graphics!*/
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  /* line 265, ../assets/scss/plugins/fancybox.scss */
+  #fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
+    background-image: url("fancybox_sprite@2x.png");
+    background-size: 44px 152px;
+    /*The size of the normal image, half the size of the hi-res image*/
+  }
+
+  /* line 270, ../assets/scss/plugins/fancybox.scss */
+  #fancybox-loading div {
+    background-image: url("fancybox_loading@2x.gif");
+    background-size: 24px 24px;
+    /*The size of the normal image, half the size of the hi-res image*/
+  }
+}
 /* line 45, ../assets/scss/plugins/zen.scss */
 section:before, section:after {
   content: "";
@@ -305,35 +615,83 @@ p a:hover {
   margin-top: 20px;
 }
 
-/* line 24, ../assets/scss/style.scss */
+@font-face {
+  font-family: 'Oxygen Mono2';
+  src: url("fonts/OxygenMono-Regular-webfont.eot"), url("fonts/OxygenMono-Regular-webfont.woff") format("woff"), url("fonts/OxygenMono-Regular-webfont.ttf") format("truetype"), url("fonts/OxygenMono-Regular-webfont.otf") format("opentype"), url("fonts/OxygenMono-Regular-webfont.svg#Oxygen Mono2") format("svg");
+}
+/* line 10, ../assets/scss/partials/terminal.scss */
+#terminal {
+  background: black;
+  color: #00CC00;
+  width: 100%;
+  height: 100%;
+  line-height: 1em;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+  font-family: 'Oxygen Mono', 'Oxygen Mono2', Monaco, Menlo, Andale, Arial, sans-serif;
+  text-align: left;
+  font-size: 8pt;
+  font-weight: light;
+  overflow: hidden;
+}
+/* line 27, ../assets/scss/partials/terminal.scss */
+#terminal .container {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  z-index: 1;
+}
+/* line 40, ../assets/scss/partials/terminal.scss */
+#terminal .message {
+  margin: 0;
+  padding: 0;
+}
+/* line 45, ../assets/scss/partials/terminal.scss */
+#terminal .terminal-header {
+  color: #ff0000;
+  margin-right: 10px;
+}
+/* line 50, ../assets/scss/partials/terminal.scss */
+#terminal p {
+  margin: 0;
+  padding: 0;
+  display: inline;
+  font-weight: lighter;
+}
+/* line 57, ../assets/scss/partials/terminal.scss */
+#terminal .blink {
+  visibility: visible;
+}
+
+/* line 20, ../assets/scss/style.scss */
 em {
   color: #fff;
   font-weight: 800;
 }
 
-/* line 29, ../assets/scss/style.scss */
+/* line 25, ../assets/scss/style.scss */
 a, a:visited {
   text-decoration: none;
   color: #555;
 }
 
-/* line 34, ../assets/scss/style.scss */
+/* line 30, ../assets/scss/style.scss */
 a:hover {
   color: #000;
 }
 
-/* line 38, ../assets/scss/style.scss */
+/* line 34, ../assets/scss/style.scss */
 h3:hover, p:hover {
   color: #DDB313;
 }
 
-/* line 42, ../assets/scss/style.scss */
+/* line 38, ../assets/scss/style.scss */
 img {
   max-width: 100%;
   height: auto;
 }
 
-/* line 47, ../assets/scss/style.scss */
+/* line 43, ../assets/scss/style.scss */
 .footer {
   position: fixed;
   bottom: 0;
@@ -342,7 +700,7 @@ img {
   height: 85px;
   z-index: 15;
 }
-/* line 55, ../assets/scss/style.scss */
+/* line 51, ../assets/scss/style.scss */
 .footer .footer-bg {
   position: fixed;
   width: 300px;
@@ -352,7 +710,7 @@ img {
   background: url(../img/footer-bg.png) no-repeat left bottom;
 }
 
-/* line 65, ../assets/scss/style.scss */
+/* line 61, ../assets/scss/style.scss */
 .nav-menu {
   font-family: 'LeagueGothicRegular', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 20px;
@@ -366,7 +724,7 @@ img {
   position: absolute;
   z-index: 10;
 }
-/* line 80, ../assets/scss/style.scss */
+/* line 76, ../assets/scss/style.scss */
 .nav-menu a.menu-trigger {
   background: url(../img/menu-trigger-black.png) no-repeat;
   width: 30px;
@@ -375,63 +733,63 @@ img {
   padding: 0;
   text-indent: -10000px;
 }
-/* line 89, ../assets/scss/style.scss */
+/* line 85, ../assets/scss/style.scss */
 .nav-menu a.menu-trigger:hover {
   background: url(../img/menu-trigger-white.png) no-repeat;
   width: 30px;
   height: 30px;
   text-indent: -10000px;
 }
-/* line 96, ../assets/scss/style.scss */
+/* line 92, ../assets/scss/style.scss */
 .nav-menu a {
   color: #000;
   font-weight: normal;
   text-decoration: none;
 }
-/* line 102, ../assets/scss/style.scss */
+/* line 98, ../assets/scss/style.scss */
 .nav-menu a:hover {
   color: #555;
 }
-/* line 106, ../assets/scss/style.scss */
+/* line 102, ../assets/scss/style.scss */
 .nav-menu ul, .nav-menu li {
   margin: 0;
   padding: 0;
 }
-/* line 111, ../assets/scss/style.scss */
+/* line 107, ../assets/scss/style.scss */
 .nav-menu .lifting {
   margin: 0 0 8px 10px;
   height: 20px;
 }
-/* line 116, ../assets/scss/style.scss */
+/* line 112, ../assets/scss/style.scss */
 .nav-menu .left-bottom .lifting-first {
   margin: 0 0 14px 0;
   height: 20px;
 }
-/* line 121, ../assets/scss/style.scss */
+/* line 117, ../assets/scss/style.scss */
 .nav-menu li a, .nav-menu li {
   float: left;
   text-transform: uppercase;
   height: 20px;
 }
-/* line 127, ../assets/scss/style.scss */
+/* line 123, ../assets/scss/style.scss */
 .nav-menu li {
   position: relative;
   margin: 7px 0 0 0;
   padding: 0 0 10px 0;
   background: none;
 }
-/* line 134, ../assets/scss/style.scss */
+/* line 130, ../assets/scss/style.scss */
 .nav-menu li a {
   padding: 0 5px 10px 5px;
   text-decoration: none;
   -moz-transition: 0.2s ease-in;
   -webkit-transition: 0.2s ease-in;
 }
-/* line 141, ../assets/scss/style.scss */
+/* line 137, ../assets/scss/style.scss */
 .nav-menu li a:hover {
   background: none;
 }
-/* line 145, ../assets/scss/style.scss */
+/* line 141, ../assets/scss/style.scss */
 .nav-menu li ul {
   display: none;
   left: 0;
@@ -439,35 +797,43 @@ img {
   bottom: 100%;
   background: none;
 }
-/* line 153, ../assets/scss/style.scss */
+/* line 149, ../assets/scss/style.scss */
 .nav-menu li:hover ul {
   display: block;
   width: auto;
 }
-/* line 158, ../assets/scss/style.scss */
+/* line 154, ../assets/scss/style.scss */
 .nav-menu li ul a {
   white-space: nowrap;
 }
-/* line 162, ../assets/scss/style.scss */
+/* line 158, ../assets/scss/style.scss */
 .nav-menu li ul a:hover {
   color: #555;
 }
 
-/* line 168, ../assets/scss/style.scss */
+/* line 163, ../assets/scss/style.scss */
+#home {
+  background: url(/uploads/finger_tent.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+/* line 171, ../assets/scss/style.scss */
 #home .header {
   position: relative;
   top: 190px;
   text-align: center;
 }
-/* line 173, ../assets/scss/style.scss */
+/* line 176, ../assets/scss/style.scss */
 #home .header p.intro-line {
   font-size: 20px;
 }
-/* line 176, ../assets/scss/style.scss */
+/* line 179, ../assets/scss/style.scss */
 #home .header p:hover {
   color: #DDB313;
 }
-/* line 180, ../assets/scss/style.scss */
+/* line 183, ../assets/scss/style.scss */
 #home .header p {
   font-family: 'Roboto', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-align: center;
@@ -476,11 +842,11 @@ img {
   font-size: 14px;
 }
 
-/* line 193, ../assets/scss/style.scss */
+/* line 196, ../assets/scss/style.scss */
 #about .pic {
   float: left;
-  width: 83.33333%;
-  margin-left: -8.33333%;
+  width: 75%;
+  margin-left: 0%;
   margin-right: -75%;
   padding-left: 10px;
   padding-right: 10px;
@@ -490,7 +856,11 @@ img {
   box-sizing: border-box;
   word-wrap: break-word;
 }
-/* line 197, ../assets/scss/style.scss */
+/* line 198, ../assets/scss/style.scss */
+#about .pic #terminal {
+  max-height: 600px;
+}
+/* line 203, ../assets/scss/style.scss */
 #about .text {
   float: left;
   width: 25%;
@@ -504,34 +874,63 @@ img {
   box-sizing: border-box;
   word-wrap: break-word;
 }
-/* line 199, ../assets/scss/style.scss */
+/* line 205, ../assets/scss/style.scss */
 #about .text p {
   padding-right: 20px;
   padding-bottom: 15px;
 }
+/* line 213, ../assets/scss/style.scss */
+#about #bargraph .bar {
+  fill: #00CC00;
+}
+/* line 217, ../assets/scss/style.scss */
+#about #bargraph .bar:hover {
+  fill: brown;
+}
+/* line 221, ../assets/scss/style.scss */
+#about #bargraph .axis {
+  fill: #00CC00;
+  font: 10px sans-serif;
+}
+/* line 226, ../assets/scss/style.scss */
+#about #bargraph .axis path,
+#about #bargraph .axis line {
+  fill: none;
+  stroke: #00CC00;
+  shape-rendering: crispEdges;
+}
+/* line 233, ../assets/scss/style.scss */
+#about #bargraph .x.axis path {
+  /*display: none;*/
+}
 
-/* line 206, ../assets/scss/style.scss */
-.pic-strip {
+/* line 239, ../assets/scss/style.scss */
+#junks {
   background: rgba(0, 0, 0, 0.9);
 }
-/* line 208, ../assets/scss/style.scss */
-.pic-strip img {
-  width: 33%;
+/* line 242, ../assets/scss/style.scss */
+#junks .page-section {
+  width: 90%;
+  margin: 0 auto;
+}
+/* line 246, ../assets/scss/style.scss */
+#junks .item {
+  width: 130px;
 }
 
-/* line 214, ../assets/scss/style.scss */
+/* line 253, ../assets/scss/style.scss */
 #zine {
   background: rgba(0, 0, 0, 0.9);
 }
-/* line 218, ../assets/scss/style.scss */
+/* line 257, ../assets/scss/style.scss */
 #zine h3 {
   font-size: 40px;
 }
-/* line 221, ../assets/scss/style.scss */
+/* line 260, ../assets/scss/style.scss */
 #zine h4 {
   margin-top: 10px;
 }
-/* line 224, ../assets/scss/style.scss */
+/* line 263, ../assets/scss/style.scss */
 #zine .text {
   float: left;
   width: 33.33333%;
@@ -545,17 +944,17 @@ img {
   box-sizing: border-box;
   word-wrap: break-word;
 }
-/* line 227, ../assets/scss/style.scss */
+/* line 266, ../assets/scss/style.scss */
 #zine .text p {
   padding-left: 30px;
   padding-bottom: .8em;
 }
-/* line 231, ../assets/scss/style.scss */
+/* line 270, ../assets/scss/style.scss */
 #zine .text h5 {
   padding-left: 30px;
   text-align: justify;
 }
-/* line 237, ../assets/scss/style.scss */
+/* line 276, ../assets/scss/style.scss */
 #zine .pic {
   float: left;
   width: 66.66667%;
@@ -570,26 +969,211 @@ img {
   word-wrap: break-word;
 }
 
-/* line 243, ../assets/scss/style.scss */
+/* line 283, ../assets/scss/style.scss */
 #galerie {
   background: rgba(0, 0, 0, 0.9);
 }
-/* line 246, ../assets/scss/style.scss */
+/* line 286, ../assets/scss/style.scss */
 #galerie .galerie {
   max-height: 100%;
 }
 
-/* line 252, ../assets/scss/style.scss */
+/* line 292, ../assets/scss/style.scss */
 #contact .page-section {
   padding-top: 10%;
 }
-/* line 255, ../assets/scss/style.scss */
+/* line 295, ../assets/scss/style.scss */
 #contact p {
   text-align: center;
   padding-bottom: 8px;
 }
-/* line 259, ../assets/scss/style.scss */
+/* line 299, ../assets/scss/style.scss */
 #contact .special-request {
   width: 50%;
   margin: 0 auto;
+}
+
+/* Media Queries */
+/* Smaller than standard 960 (devices and browsers) */
+@media only screen and (max-width: 959px) {
+  /* line 15, ../assets/scss/media.scss */
+  #about .pic {
+    float: left;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: -100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+  /* line 20, ../assets/scss/media.scss */
+  #about .text {
+    clear: left;
+    float: left;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: -100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+
+  /* line 28, ../assets/scss/media.scss */
+  #zine .text {
+    clear: left;
+    float: left;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: -100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+  /* line 32, ../assets/scss/media.scss */
+  #zine .pic {
+    clear: left;
+    float: left;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: -100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+}
+/* Tablet Portrait size to standard 960 (devices and browsers) */
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+  /* line 43, ../assets/scss/media.scss */
+  h1 {
+    font-size: 100px;
+    margin-top: 50px;
+  }
+
+  /* line 48, ../assets/scss/media.scss */
+  #home .header p.intro-line {
+    font-size: 16px;
+  }
+
+  /* line 52, ../assets/scss/media.scss */
+  #about .text p, #zine .text p {
+    padding: 5px 25px;
+  }
+
+  /* line 56, ../assets/scss/media.scss */
+  .lower-page {
+    padding: 50px 0;
+  }
+
+  /* line 60, ../assets/scss/media.scss */
+  #zine .text h5 {
+    padding: 10px 25px 40px 25px;
+  }
+
+  /* line 64, ../assets/scss/media.scss */
+  #contact .special-request {
+    width: 60%;
+  }
+
+  /* line 68, ../assets/scss/media.scss */
+  h2 {
+    font-size: 40px;
+  }
+}
+/* All Mobile Sizes (devices and browser) */
+/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  /* line 84, ../assets/scss/media.scss */
+  h1 {
+    padding-top: 35px;
+    font-size: 105px;
+  }
+
+  /* line 89, ../assets/scss/media.scss */
+  .lower-page {
+    padding: 50px 0;
+  }
+
+  /* line 93, ../assets/scss/media.scss */
+  #home .header p.intro-line {
+    font-size: 16px;
+  }
+
+  /* line 97, ../assets/scss/media.scss */
+  h3 {
+    font-size: 55px;
+  }
+
+  /* line 101, ../assets/scss/media.scss */
+  #zine .text {
+    padding-bottom: 20px;
+  }
+
+  /* line 105, ../assets/scss/media.scss */
+  #about .text p, #zine .text p {
+    padding: 5px 20px;
+  }
+
+  /* line 109, ../assets/scss/media.scss */
+  #zine .text h5 {
+    padding: 5px 20px 20px 20px;
+  }
+
+  /* line 113, ../assets/scss/media.scss */
+  #contact .special-request {
+    width: 70%;
+  }
+}
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+@media only screen and (max-width: 479px) {
+  /* line 123, ../assets/scss/media.scss */
+  h1 {
+    margin-top: 50px;
+    font-size: 80px;
+  }
+
+  /* line 128, ../assets/scss/media.scss */
+  h2 {
+    font-size: 30px;
+  }
+
+  /* line 132, ../assets/scss/media.scss */
+  p {
+    padding: 5px 5px;
+  }
+
+  /* line 138, ../assets/scss/media.scss */
+  #home .header p .intro-line {
+    font-size: 12px;
+  }
+
+  /* line 143, ../assets/scss/media.scss */
+  #about .text p, #zine .text p {
+    padding: 5px 5px;
+  }
+
+  /* line 147, ../assets/scss/media.scss */
+  #zine .text h5 {
+    padding: 10px 5px 20px 5px;
+  }
+
+  /* line 151, ../assets/scss/media.scss */
+  #contact .special-request {
+    width: 100%;
+  }
 }

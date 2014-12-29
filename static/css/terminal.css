@@ -1,0 +1,92 @@
+@font-face {
+  font-family: 'Oxygen Mono2';
+  src: url("fonts/OxygenMono-Regular-webfont.eot"), url("fonts/OxygenMono-Regular-webfont.woff") format("woff"), url("fonts/OxygenMono-Regular-webfont.ttf") format("truetype"), url("fonts/OxygenMono-Regular-webfont.otf") format("opentype"), url("fonts/OxygenMono-Regular-webfont.svg#Oxygen Mono2") format("svg");
+}
+/* line 10, ../assets/scss/partials/terminal.scss */
+body {
+  background: black url("/img/screenshot3D.png") no-repeat top center;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  line-height: 1em;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+  font-family: 'Oxygen Mono', 'Oxygen Mono2', Monaco, Menlo, Andale, Arial, sans-serif;
+  text-align: left;
+  font-size: 8pt;
+  font-weight: light;
+  overflow: hidden;
+}
+
+/* line 27, ../assets/scss/partials/terminal.scss */
+#container {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  left: 10px;
+  right: 10px;
+  top: 0px;
+  bottom: 0px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* line 39, ../assets/scss/partials/terminal.scss */
+#content {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  color: #00CC00;
+  top: 10px;
+  z-index: 1;
+}
+
+/* line 49, ../assets/scss/partials/terminal.scss */
+#terminal {
+  width: 960px;
+  margin: 0 auto;
+}
+
+/* line 54, ../assets/scss/partials/terminal.scss */
+#terminal-container {
+  height: 50%;
+}
+
+/* line 58, ../assets/scss/partials/terminal.scss */
+#curtains {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: url(../img/curtains.png) repeat top left;
+  z-index: 100;
+  opacity: 0.69;
+  background-color: black;
+}
+
+/* line 68, ../assets/scss/partials/terminal.scss */
+.message {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 73, ../assets/scss/partials/terminal.scss */
+.fromTo {
+  color: #ff0000;
+  margin-right: 10px;
+}
+
+/* line 78, ../assets/scss/partials/terminal.scss */
+p {
+  margin: 0;
+  padding: 0;
+  display: inline;
+  font-weight: lighter;
+}
+
+/* line 85, ../assets/scss/partials/terminal.scss */
+.blink {
+  visibility: visible;
+}

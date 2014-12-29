@@ -1,0 +1,12 @@
+<section id="install" class="lower-page">
+<h3>Installation</h3>
+    {% for pic in gallery %}
+        <a href="uploads/gallery/{{ pic }}" class="fancybox">
+            <img src="uploads/gallery/thumb/{{ pic }}"
+                alt="Junkware image"
+                title="Junkware pic"
+                data-fullsrc="uploads/gallery/{{ pic }}"
+                />
+        </a>
+    {% endfor %}
+</section>

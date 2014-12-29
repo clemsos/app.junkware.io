@@ -1,3 +1,16 @@
-{% for junk in junks %}
-        {% include "junks/_item.html" %}
-{% endfor %}
+<section id="junks" class="">
+    <h3>Junks</h3>
+    <div class="page-section">
+        {% for junk in junks %}
+        <div class="junk item">
+            <h4>
+                <a href="/junk/{{junk._id }}"> 
+                    {{ junk.title }}
+                </a>
+            </h4>
+            <p>{{ junk.created_at }}</p>
+            <p>{{ junk.abstract }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
