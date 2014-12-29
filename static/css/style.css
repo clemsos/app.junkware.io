@@ -1,158 +1,595 @@
-@charset "utf-8";
-/* CSS Document */
+@import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css);
+/* line 5, ../../../../../.rvm/gems/ruby-1.9.3-p551/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../.rvm/gems/ruby-1.9.3-p551/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../.rvm/gems/ruby-1.9.3-p551/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../.rvm/gems/ruby-1.9.3-p551/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../.rvm/gems/ruby-1.9.3-p551/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../.rvm/gems/ruby-1.9.3-p551/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../.rvm/gems/ruby-1.9.3-p551/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../.rvm/gems/ruby-1.9.3-p551/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../.rvm/gems/ruby-1.9.3-p551/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 45, ../assets/scss/plugins/zen.scss */
+section:before, section:after {
+  content: "";
+  display: table;
+}
+/* line 50, ../assets/scss/plugins/zen.scss */
+section:after {
+  clear: both;
+}
+
+/* line 7, ../assets/scss/includes/_layout.scss */
+section.fullwidth {
+  width: 100%;
+}
+
+/* line 10, ../assets/scss/includes/_layout.scss */
+.page {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 16, ../assets/scss/includes/_layout.scss */
+.page-section {
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+  z-index: 1;
+}
+
+/* line 23, ../assets/scss/includes/_layout.scss */
+.upper-page {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* line 31, ../assets/scss/includes/_layout.scss */
+.lower-page {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  background: rgba(0, 0, 0, 0.9);
+}
 
 /* fonts */
 @font-face {
-    font-family: 'BebasNeueRegular';
-    src: url('fonts/bebasneue-webfont.eot');
-    src: url('fonts/bebasneue-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/bebasneue-webfont.woff') format('woff'),
-         url('fonts/bebasneue-webfont.ttf') format('truetype'),
-         url('fonts/bebasneue-webfont.svg#BebasNeueRegular') format('svg');
-    font-style: normal;
-    font-weight: normal;
+  font-family: 'BebasNeueRegular';
+  src: url("fonts/bebasneue-webfont.eot");
+  src: url("fonts/bebasneue-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/bebasneue-webfont.woff") format("woff"), url("fonts/bebasneue-webfont.ttf") format("truetype"), url("fonts/bebasneue-webfont.svg#BebasNeueRegular") format("svg");
+  font-style: normal;
+  font-weight: normal;
 }
-
 @font-face {
-    font-family: 'LeagueGothicRegular';
-    src: url('fonts/leaguegothic-regular-webfont.eot');
-    src: url('fonts/leaguegothic-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/leaguegothic-regular-webfont.woff') format('woff'),
-         url('fonts/leaguegothic-regular-webfont.ttf') format('truetype'),
-         url('fonts/leaguegothic-regular-webfont.svg#LeagueGothicRegular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
+  font-family: 'LeagueGothicRegular';
+  src: url("fonts/leaguegothic-regular-webfont.eot");
+  src: url("fonts/leaguegothic-regular-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/leaguegothic-regular-webfont.woff") format("woff"), url("fonts/leaguegothic-regular-webfont.ttf") format("truetype"), url("fonts/leaguegothic-regular-webfont.svg#LeagueGothicRegular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* line 28, ../assets/scss/includes/_typo.scss */
+html {
+  line-height: 1;
+  height: 100%;
 }
 
-
-/* reset */
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-margin: 0;
-padding: 0;
-border: 0;
-font-size: 100%;
-font: inherit;
-vertical-align: baseline;
-}
-
-html, body {
-height: 100%;
-}
-
+/* line 33, ../assets/scss/includes/_typo.scss */
 body {
-line-height: 1;
+  font-family: 'Roboto', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+  font-style: normal;
+  font-weight: normal;
+  text-align: center;
+  color: #bbb;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  width: 100%;
+  height: 100%;
 }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-display: block;
-}
-
-ol, ul {
-list-style: none;
-}
-
-blockquote, q {
-quotes: none;
-}
-
-blockquote:before, blockquote:after, q:before, q:after {
-content: '';
-content: none;
-}
-
-table {
-border-collapse: collapse;
-border-spacing: 0;
-}
-
-*:focus {  
-outline: none;
-}
-
-/* general */
-body {
-font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
-font-size: 12px;
-line-height: 1.5;
-font-style: normal;
-font-weight: normal;
-text-align: center;
-color: #fff;
-background: #000;
--webkit-font-smoothing: antialiased;
--webkit-text-size-adjust: 100%;
-width: 100%;
-height: 100%;
-}
-
+/* line 47, ../assets/scss/includes/_typo.scss */
 h1 {
-font-family: 'LeagueGothicRegular';
-font-size: 100px;
-font-weight: 100;
-font-style: normal;
-text-align: center;
-text-transform: uppercase;
--webkit-font-smoothing: antialiased;
-color: #000;
-line-height: 1;
-margin: 20px 0 0 0;
-padding: 0;
+  font-family: 'LeagueGothicRegular';
+  font-size: 150px;
+  font-weight: 100;
+  font-style: normal;
+  text-align: center;
+  text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
+  color: #e5e5e5;
+  line-height: 1;
+  margin: 20px 0 0 0;
+  padding: 0;
 }
 
+/* line 61, ../assets/scss/includes/_typo.scss */
 h2 {
-font-family: 'LeagueGothicRegular';
-font-size: 40px;
-font-weight: 100;
-font-style: normal;
-text-align: center;
-text-transform: uppercase;
--webkit-font-smoothing: antialiased;
-color: #555;
-line-height: 1;
-margin: 20px 0 20px 0;
-padding: 0;
+  font-family: 'LeagueGothicRegular';
+  font-size: 60px;
+  font-weight: 100;
+  font-style: normal;
+  text-align: center;
+  text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
+  color: #e5e5e5;
+  line-height: 1;
+  margin: 20px 0 25px 0;
+  padding: 0;
 }
 
+/* line 75, ../assets/scss/includes/_typo.scss */
+h3 {
+  font-family: 'LeagueGothicRegular';
+  font-size: 40px;
+  font-weight: 100;
+  font-style: normal;
+  text-align: center;
+  text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
+  color: #e5e5e5;
+  line-height: 1;
+  margin: 20px 0 25px 0;
+  padding: 0;
+}
+
+/* line 90, ../assets/scss/includes/_typo.scss */
 h4 {
-  font-size: 18px;
-}
-a {
-color: #555;
-text-decoration: none;
-outline: none;
-}
-
-a:hover {
-color: #000;
-text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  text-transform: capitalize;
+  color: #e5e5e5;
+  line-height: 1;
+  margin: 20px 0 20px 0;
+  padding: 0;
 }
 
+/* line 101, ../assets/scss/includes/_typo.scss */
 p {
-font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
-font-size: 12px;
-line-height: 1.5;
-font-style: normal;
-font-weight: normal;
-padding: 10px 0 10px 0;
+  text-align: justify;
+  font-size: 1.2em;
+  line-height: 1.5;
 }
 
+/* line 107, ../assets/scss/includes/_typo.scss */
 p a {
-color: #555;
-text-decoration: none;
+  color: #555;
+  text-decoration: none;
 }
 
+/* line 112, ../assets/scss/includes/_typo.scss */
 p a:hover {
-color: #000;
-text-decoration: none;
-transition: color 0.5s;
+  color: #000;
+  text-decoration: none;
+  transition: color 0.5s;
 }
 
-::-moz-selection { background: #555; color: #fff;      /* Firefox */ }
-     ::selection { background: #555; color: #fff;      /* Safari */  }
-
-/* layout */
-/*#main {
-    padding-top:80px;
+/* line 3, ../assets/scss/partials/items-grid.scss */
+.col-item {
+  border: 1px solid #fff;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  /*
+  .col-item:hover .info {
+      background-color: rgba(256,256,256,.2);
+  }
+  */
 }
-*/
+/* line 9, ../assets/scss/partials/items-grid.scss */
+.col-item .photo img {
+  margin: 0 auto;
+  width: 100%;
+}
+/* line 15, ../assets/scss/partials/items-grid.scss */
+.col-item .info {
+  padding: 10px;
+  border-radius: 0 0 5px 5px;
+  margin-top: 1px;
+}
+/* line 32, ../assets/scss/partials/items-grid.scss */
+.col-item .price {
+  /*width: 50%;*/
+  float: left;
+  margin-top: 10px;
+}
+/* line 39, ../assets/scss/partials/items-grid.scss */
+.col-item .price h5 {
+  line-height: 20px;
+  margin: 0;
+}
+/* line 55, ../assets/scss/partials/items-grid.scss */
+.col-item .rating {
+  /*width: 50%;*/
+  float: left;
+  font-size: 17px;
+  text-align: right;
+  line-height: 52px;
+  margin-bottom: 10px;
+  height: 52px;
+}
+/* line 66, ../assets/scss/partials/items-grid.scss */
+.col-item .separator {
+  border-top: 1px solid #000;
+}
+/* line 70, ../assets/scss/partials/items-grid.scss */
+.col-item .separator p {
+  line-height: 20px;
+  margin-bottom: 0;
+  margin-top: 10px;
+  text-align: center;
+}
+/* line 76, ../assets/scss/partials/items-grid.scss */
+.col-item .separator p i {
+  margin-right: 5px;
+}
+/* line 84, ../assets/scss/partials/items-grid.scss */
+.col-item .btn-add {
+  width: 50%;
+  float: left;
+  border-right: 1px solid #E1E1E1;
+}
+/* line 91, ../assets/scss/partials/items-grid.scss */
+.col-item .btn-details {
+  width: 50%;
+  float: left;
+  padding-left: 10px;
+}
+
+/* line 100, ../assets/scss/partials/items-grid.scss */
+.clear-left {
+  clear: left;
+}
+
+/* line 105, ../assets/scss/partials/items-grid.scss */
+.controls {
+  margin-top: 20px;
+}
+
+/* line 24, ../assets/scss/style.scss */
+em {
+  color: #fff;
+  font-weight: 800;
+}
+
+/* line 29, ../assets/scss/style.scss */
+a, a:visited {
+  text-decoration: none;
+  color: #555;
+}
+
+/* line 34, ../assets/scss/style.scss */
+a:hover {
+  color: #000;
+}
+
+/* line 38, ../assets/scss/style.scss */
+h3:hover, p:hover {
+  color: #DDB313;
+}
+
+/* line 42, ../assets/scss/style.scss */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* line 47, ../assets/scss/style.scss */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 85px;
+  z-index: 15;
+}
+/* line 55, ../assets/scss/style.scss */
+.footer .footer-bg {
+  position: fixed;
+  width: 300px;
+  height: 85px;
+  left: 0;
+  bottom: 0;
+  background: url(../img/footer-bg.png) no-repeat left bottom;
+}
+
+/* line 65, ../assets/scss/style.scss */
+.nav-menu {
+  font-family: 'LeagueGothicRegular', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  width: auto;
+  bottom: 3px;
+  left: 14px;
+  padding: 0;
+  position: absolute;
+  z-index: 10;
+}
+/* line 80, ../assets/scss/style.scss */
+.nav-menu a.menu-trigger {
+  background: url(../img/menu-trigger-black.png) no-repeat;
+  width: 30px;
+  height: 30px;
+  margin: 0 0 0 20px;
+  padding: 0;
+  text-indent: -10000px;
+}
+/* line 89, ../assets/scss/style.scss */
+.nav-menu a.menu-trigger:hover {
+  background: url(../img/menu-trigger-white.png) no-repeat;
+  width: 30px;
+  height: 30px;
+  text-indent: -10000px;
+}
+/* line 96, ../assets/scss/style.scss */
+.nav-menu a {
+  color: #000;
+  font-weight: normal;
+  text-decoration: none;
+}
+/* line 102, ../assets/scss/style.scss */
+.nav-menu a:hover {
+  color: #555;
+}
+/* line 106, ../assets/scss/style.scss */
+.nav-menu ul, .nav-menu li {
+  margin: 0;
+  padding: 0;
+}
+/* line 111, ../assets/scss/style.scss */
+.nav-menu .lifting {
+  margin: 0 0 8px 10px;
+  height: 20px;
+}
+/* line 116, ../assets/scss/style.scss */
+.nav-menu .left-bottom .lifting-first {
+  margin: 0 0 14px 0;
+  height: 20px;
+}
+/* line 121, ../assets/scss/style.scss */
+.nav-menu li a, .nav-menu li {
+  float: left;
+  text-transform: uppercase;
+  height: 20px;
+}
+/* line 127, ../assets/scss/style.scss */
+.nav-menu li {
+  position: relative;
+  margin: 7px 0 0 0;
+  padding: 0 0 10px 0;
+  background: none;
+}
+/* line 134, ../assets/scss/style.scss */
+.nav-menu li a {
+  padding: 0 5px 10px 5px;
+  text-decoration: none;
+  -moz-transition: 0.2s ease-in;
+  -webkit-transition: 0.2s ease-in;
+}
+/* line 141, ../assets/scss/style.scss */
+.nav-menu li a:hover {
+  background: none;
+}
+/* line 145, ../assets/scss/style.scss */
+.nav-menu li ul {
+  display: none;
+  left: 0;
+  position: absolute;
+  bottom: 100%;
+  background: none;
+}
+/* line 153, ../assets/scss/style.scss */
+.nav-menu li:hover ul {
+  display: block;
+  width: auto;
+}
+/* line 158, ../assets/scss/style.scss */
+.nav-menu li ul a {
+  white-space: nowrap;
+}
+/* line 162, ../assets/scss/style.scss */
+.nav-menu li ul a:hover {
+  color: #555;
+}
+
+/* line 168, ../assets/scss/style.scss */
+#home .header {
+  position: relative;
+  top: 190px;
+  text-align: center;
+}
+/* line 173, ../assets/scss/style.scss */
+#home .header p.intro-line {
+  font-size: 20px;
+}
+/* line 176, ../assets/scss/style.scss */
+#home .header p:hover {
+  color: #DDB313;
+}
+/* line 180, ../assets/scss/style.scss */
+#home .header p {
+  font-family: 'Roboto', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: center;
+  font-weight: 100;
+  color: #bbb;
+  font-size: 14px;
+}
+
+/* line 193, ../assets/scss/style.scss */
+#about .pic {
+  float: left;
+  width: 83.33333%;
+  margin-left: -8.33333%;
+  margin-right: -75%;
+  padding-left: 10px;
+  padding-right: 10px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+/* line 197, ../assets/scss/style.scss */
+#about .text {
+  float: left;
+  width: 25%;
+  margin-left: 75%;
+  margin-right: -100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+/* line 199, ../assets/scss/style.scss */
+#about .text p {
+  padding-right: 20px;
+  padding-bottom: 15px;
+}
+
+/* line 206, ../assets/scss/style.scss */
+.pic-strip {
+  background: rgba(0, 0, 0, 0.9);
+}
+/* line 208, ../assets/scss/style.scss */
+.pic-strip img {
+  width: 33%;
+}
+
+/* line 214, ../assets/scss/style.scss */
+#zine {
+  background: rgba(0, 0, 0, 0.9);
+}
+/* line 218, ../assets/scss/style.scss */
+#zine h3 {
+  font-size: 40px;
+}
+/* line 221, ../assets/scss/style.scss */
+#zine h4 {
+  margin-top: 10px;
+}
+/* line 224, ../assets/scss/style.scss */
+#zine .text {
+  float: left;
+  width: 33.33333%;
+  margin-left: 0%;
+  margin-right: -33.33333%;
+  padding-left: 10px;
+  padding-right: 10px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+/* line 227, ../assets/scss/style.scss */
+#zine .text p {
+  padding-left: 30px;
+  padding-bottom: .8em;
+}
+/* line 231, ../assets/scss/style.scss */
+#zine .text h5 {
+  padding-left: 30px;
+  text-align: justify;
+}
+/* line 237, ../assets/scss/style.scss */
+#zine .pic {
+  float: left;
+  width: 66.66667%;
+  margin-left: 33.33333%;
+  margin-right: -100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+
+/* line 243, ../assets/scss/style.scss */
+#galerie {
+  background: rgba(0, 0, 0, 0.9);
+}
+/* line 246, ../assets/scss/style.scss */
+#galerie .galerie {
+  max-height: 100%;
+}
+
+/* line 252, ../assets/scss/style.scss */
+#contact .page-section {
+  padding-top: 10%;
+}
+/* line 255, ../assets/scss/style.scss */
+#contact p {
+  text-align: center;
+  padding-bottom: 8px;
+}
+/* line 259, ../assets/scss/style.scss */
+#contact .special-request {
+  width: 50%;
+  margin: 0 auto;
+}

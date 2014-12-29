@@ -9,7 +9,7 @@ from Junk import Junk, JunkList
 @app.route('/')
 def home():
     junks= [x for x in mongo.db.junks.find()]
-    return render_template('home.html', junks=junks)
+    return render_template('home/index.html', junks=junks)
 
 @app.route('/terminal')
 def terminal():
@@ -52,25 +52,24 @@ def data_static_proxy(path):
 @app.route('/junks')
 def junk_index():
     junks= [x for x in mongo.db.junks.find()]
-    return render_template('index.html', junks=junks)
+    return render_template('junks/index.html', junks=junks)
 
 @app.route('/junk/<ObjectId:objectId>')
 def junwkare(objectId):
     junk=mongo.db.junks.find_one_or_404({"_id": objectId})
     del junk["_id"]
-    return render_template('junk/view.html', objectId=objectId, junk=junk)
+    return render_template('junks/single.html', objectId=objectId, junk=junk)
 
 @app.route('/junk/partials/<path:path>')
 def partials(path):
     print path
-    return render_template(os.path.join('partials',path+".html"))
-
+    return render_template(os.path.join("junks", os.path.join('partials',path+".html")))
 
 @app.route('/junk/<ObjectId:objectId>/<path:path>')
 def single_junk(objectId, path):
     junk=mongo.db.junks.find_one_or_404({"_id": objectId})
     del junk["_id"]
-    return render_template(os.path.join('partials',path+".html"), objectId=objectId, junk=junk)
+    return render_template(os.path.join("junks",os.path.join('partials',path+".html")), objectId=objectId, junk=junk)
 
 # API
 api.add_resource(JunkList, '/api/junks')

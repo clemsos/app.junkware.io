@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+{% block navbar %}
+    <div class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Junkware</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav main-nav navbar-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/junks">Shop</a></li>
+            <li class="active"><a href="/junk/new">Create new</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right object-navbar hidden">
+            <li>
+             <a href="/junk/{{ objectId }}/text" class="btn btn-link">
+              <i class="fa fa-file-text"></i> Description
+            </a>
+          </li>
+          <li>
+            <a href="/junk/{{ objectId }}/3d" class="btn btn-link">
+              <i class="fa fa-question"></i> 3D Shape
+            </a>
+          </li>
+          <li>
+            <a href="/junk/{{ objectId }}/dna" class="btn btn-link">
+              <i class="fa fa-leaf"></i> DNA
+            </a>
+          </li>
+          <li>
+            <a href="/junk/{{ objectId }}/molecule" class="btn btn-link">
+              <i class="fa fa-meh-o"></i> Molecule
+            </a>
+          </li>
+             <!--  <li>
+                <a href="#" data-toggle="collapse" data-target="#devices">
+                <i class="fa fa-caret-down"></i> Devices 
+                </a>
+              </li>
+            --> 
+            <li>
+              <a href="/junk/{{ objectId }}/print" class="btn btn-lin active junk-print">
+                <i class="fa fa-print"></i> Print
+              </a>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+
+      </div>
+    </div>
+{% endblock %}
+
+
+
+{% block content %}
+
+<div id="dashboard-header row">
+    <h2 class="junk-title">{{ junk.title }} <small class="objectId">#{{ objectId }}</small></h2>
+</div>
+
+<div class="container">
+    {% block junkview %}
+    {% endblock %}
+</div>
+{% endblock %}    
+
+{% block scripts %}
+
+    <script type="text/javascript" src="/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+        var junk = {{ junk | tojson }};
+        $("ul.object-navbar").removeClass('hidden');
+        $(".main-nav").addClass('hidden');
+
+    </script>
+{% block junkscripts %}
+{% endblock %}
+
+{% endblock %}
+
+
+{% block styles %}
+<!--     {% assets "bootstrap_css" %}
+      <link rel=stylesheet type=text/css href="{{ ASSET_URL }}">
+    {% endassets %} -->
+
+    {% assets "dashboard_css" %}
+      <link rel=stylesheet type=text/css href="{{ ASSET_URL }}">
+    {% endassets %}
+
+
+    {% block junkstyles %}
+    {% endblock %}
+{% endblock %}

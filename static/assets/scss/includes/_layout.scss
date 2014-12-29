@@ -1,0 +1,36 @@
+@import "plugins/zen";
+
+section {
+    @include zen-grid-container;
+}
+
+section.fullwidth {
+    width: 100%;
+}
+.page {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.page-section {
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+    z-index: 1;
+}
+
+.upper-page {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.lower-page {
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.9);
+}

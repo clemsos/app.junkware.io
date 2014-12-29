@@ -1,6 +1,8 @@
 <html>
 <head>
-    <link rel="stylesheet" href="/css/print.css">
+  {% assets "print_css" %}
+    <link rel=stylesheet type=text/css href="{{ ASSET_URL }}">
+  {% endassets %}
 </head>
 <body>
 

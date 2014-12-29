@@ -1,7 +1,8 @@
 venv
 data
 deploy.md
-
+static/.webassets-cache
+assets/old_css
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

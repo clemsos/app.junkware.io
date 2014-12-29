@@ -2,15 +2,13 @@
 {% block content %}
     <div class="row">
         {% for junk in junks %}
-                {% include "junk/single.html" %}
+                {% include "junks/_item.html" %}
         {% endfor %}
     </div>
 {% endblock %}
 
 {% block styles %}
 {{super()}}
-<link rel="stylesheet" href="{{url_for('static', filename='css/index-grid.css')}}">
-
 <style>
 
 </style>

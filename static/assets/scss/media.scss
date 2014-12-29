@@ -1,0 +1,154 @@
+@import "zen";
+
+/* Media Queries */
+
+
+
+/* Smaller than standard 960 (devices and browsers) */
+@media only screen and (max-width: 959px) {
+
+   body {
+      $zen-column-count :1;
+   }
+   
+   #about {
+      .pic {
+           // padding-top:30px;
+           @include zen-grid-item(1, 1);
+      }
+
+      .text {
+         // width: 80;
+         @include zen_clear();
+         @include zen-grid-item(1, 1);
+      }
+   }
+
+   #zine {
+       .text {
+            @include zen_clear();
+           @include zen-grid-item(1, 1);
+       }
+       .pic {
+            @include zen_clear();
+           @include zen-grid-item(1, 1);
+       }
+   }
+}
+
+
+/* Tablet Portrait size to standard 960 (devices and browsers) */
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+
+   h1 {
+      font-size: 100px;
+      margin-top: 50px;
+   }
+
+   #home .header p.intro-line {
+      font-size: 16px;
+   }
+
+   #about .text p, #zine .text p {
+      padding: 5px 25px;
+   }
+
+   .lower-page {
+      padding : 50px 0;
+   }
+
+   #zine .text h5 {
+      padding:10px 25px 40px 25px;
+   }
+
+   #contact .special-request {
+      width:60%;
+   }
+
+   h2 {
+      font-size: 40px;
+   }
+
+
+}
+
+
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 767px) {
+}
+
+
+/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+   h1 {
+      padding-top:35px;
+      font-size: 105px;
+   }
+
+   .lower-page {
+      padding : 50px 0;
+   }
+
+   #home .header p.intro-line {
+      font-size: 16px;
+   }
+
+   h3 {
+      font-size: 55px;
+   }
+
+   #zine .text {
+      padding-bottom: 20px;
+   }
+
+   #about .text p, #zine .text p {
+      padding: 5px 20px;
+   }
+
+   #zine .text h5 {
+      padding: 5px 20px 20px 20px;
+   }
+
+   #contact .special-request {
+      width: 70%;
+   }
+
+}
+
+
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+@media only screen and (max-width: 479px) {
+
+   h1 {
+      margin-top: 50px;
+      font-size: 80px;
+   }
+
+   h2 {
+      font-size: 30px;
+   }
+
+   p {
+      padding: 5px 5px;
+   }
+
+   #home .header p {
+
+      .intro-line {
+         font-size: 12px;
+      }
+   }
+
+   #about .text p, #zine .text p {
+      padding: 5px 5px;
+   }
+
+   #zine .text h5 {
+      padding:10px 5px 20px 5px;
+   }
+
+   #contact .special-request {
+      width:100%;
+   }
+}

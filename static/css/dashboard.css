@@ -1,58 +1,60 @@
 @font-face {
-    font-family: 'Oxygen Mono2';
-    src: url('OxygenMono-Regular-webfont.eot'), 
-        url('fonts/OxygenMono-Regular-webfont.woff') format('woff'), 
-        url('fonts/OxygenMono-Regular-webfont.ttf') format('truetype'),
-        url('fonts/OxygenMono-Regular-webfont.otf') format('opentype'),
-        url('fonts/OxygenMono-Regular-webfont.svg#Oxygen Mono2') format('svg');
+  font-family: 'Oxygen Mono2';
+  src: url("OxygenMono-Regular-webfont.eot"), url("fonts/OxygenMono-Regular-webfont.woff") format("woff"), url("fonts/OxygenMono-Regular-webfont.ttf") format("truetype"), url("fonts/OxygenMono-Regular-webfont.otf") format("opentype"), url("fonts/OxygenMono-Regular-webfont.svg#Oxygen Mono2") format("svg");
 }
-
-
 /* typo */
-.objectId{
-    /*text-align:right;*/
-    color: #ff0000;
-    margin-right:10px;
+/* line 11, ../assets/scss/dashboard.scss */
+.objectId {
+  /*text-align:right;*/
+  color: #ff0000;
+  margin-right: 10px;
 }
 
+/* line 17, ../assets/scss/dashboard.scss */
 h2 {
-    color : #00cc00;
-}
-h4 {
-    color : #fff;
+  color: #00cc00;
 }
 
-p{
-    margin:0;
-    padding:0;
-    display: inline;
-    font-weight: lighter;
+/* line 20, ../assets/scss/dashboard.scss */
+h4 {
+  color: #fff;
+}
+
+/* line 24, ../assets/scss/dashboard.scss */
+p {
+  margin: 0;
+  padding: 0;
+  display: inline;
+  font-weight: lighter;
 }
 
 /* layout */
-
+/* line 33, ../assets/scss/dashboard.scss */
 #dashboard-main {
-    font-family: 'Oxygen Mono', 'Oxygen Mono2', Monaco, Menlo, Andale, Arial, sans-serif;
-    text-align: left;
-    line-height: 1em;
-    font-weight: light;
+  font-family: 'Oxygen Mono', 'Oxygen Mono2', Monaco, Menlo, Andale, Arial, sans-serif;
+  text-align: left;
+  line-height: 1em;
+  font-weight: light;
 }
 
 /* components */
-
+/* line 42, ../assets/scss/dashboard.scss */
 .bar {
   fill: #00CC00;
 }
 
+/* line 46, ../assets/scss/dashboard.scss */
 .bar:hover {
   fill: brown;
 }
 
+/* line 50, ../assets/scss/dashboard.scss */
 .axis {
   fill: #00CC00;
   font: 10px sans-serif;
 }
 
+/* line 55, ../assets/scss/dashboard.scss */
 .axis path,
 .axis line {
   fill: none;
@@ -63,40 +65,43 @@ p{
 /*.x.axis path {
   display: none;
 }*/
-
-#three-axis  {
-    width: 100px;
-    height: 100px;
-    background-color: transparent; 
-    border: none;
-    margin: 20px;
-    padding: 0px;
-    position: absolute;
-    left: 10px;
-    bottom: 50px;
-    z-index: 100;
+/* line 66, ../assets/scss/dashboard.scss */
+#three-axis {
+  width: 100px;
+  height: 100px;
+  background-color: transparent;
+  border: none;
+  margin: 20px;
+  padding: 0px;
+  position: absolute;
+  left: 10px;
+  bottom: 50px;
+  z-index: 100;
 }
 
-#molecules  {
-    background-color: transparent;
-    border: none;
-    margin: 0px;
-    padding: 0px;
-    /*position: absolute;
-    right: 0px;
-    bottom: 100px;
-    z-index: 100;*/
-    width: 100%;
-    height: 960px;
+/* line 79, ../assets/scss/dashboard.scss */
+#molecules {
+  background-color: transparent;
+  border: none;
+  margin: 0px;
+  padding: 0px;
+  /*position: absolute;
+  right: 0px;
+  bottom: 100px;
+  z-index: 100;*/
+  width: 100%;
+  height: 960px;
 }
 
+/* line 92, ../assets/scss/dashboard.scss */
 .bond {
-    width: 5px;
-    height: 10px;
-    background: #eee;
-    display: block;
+  width: 5px;
+  height: 10px;
+  background: #eee;
+  display: block;
 }
 
+/* line 99, ../assets/scss/dashboard.scss */
 .junk-description {
-    text-align:justify;
+  text-align: justify;
 }
