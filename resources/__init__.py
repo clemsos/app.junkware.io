@@ -18,23 +18,23 @@ app.config['SECRET_KEY'] = 'secret!'
 app.debug = True
 app.jinja_loader=jinja2.FileSystemLoader('templates')
 
+
 # compass config
 assets = Environment(app)
+app.config['ASSETS_DEBUG'] = True
 
-main_scss = Bundle('assets/scss/style.scss', 'assets/scss/media.scss', filters='compass', output='css/style.css')
+main_scss = Bundle('scss/style.scss', 'scss/media.scss', filters='compass', output='css/style.css', depends='scss/includes/*.scss')
 assets.register('main_scss', main_scss)
 
-dashboard_css = Bundle('assets/scss/dashboard.scss', filters='compass', output='css/dashboard.css')
+dashboard_css = Bundle('scss/dashboard.scss', filters='compass', output='css/dashboard.css', depends='*.scss')
 assets.register('dashboard_css', dashboard_css)
 
-# bootstrap_css = Bundle('assets/dashboard/bootstrap-cyborg.min.css', output='css/bootstrap.css')
-# assets.register('bootstrap_css', bootstrap_css)
-
-print_css = Bundle('assets/scss/print.scss', filters='compass', output='css/print.css')
+print_css = Bundle('scss/print.scss', filters='compass', output='css/print.css', depends='*.sass')
 assets.register('print_css', print_css)
 
-terminal_css = Bundle('assets/scss/partials/terminal.scss', filters='compass', output='css/terminal.css')
+terminal_css = Bundle('scss/partials/terminal.scss', filters='compass', output='css/terminal.css', depends='*.scss')
 assets.register('terminal_css', terminal_css)
+
 
 # mongo db
 app.config['MONGO_URI'] = MONGO_URL
