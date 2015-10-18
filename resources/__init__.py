@@ -26,13 +26,16 @@ app.config['ASSETS_DEBUG'] = True
 main_scss = Bundle('scss/style.scss', 'scss/media.scss', filters='compass', output='css/style.css', depends='scss/includes/*.scss')
 assets.register('main_scss', main_scss)
 
+bootstrap_css = Bundle('scss/bootstrap/bootstrap-cyborg.css', output='css/bootstrap.css')
+assets.register('bootstrap_css', bootstrap_css)
+
 dashboard_css = Bundle('scss/dashboard.scss', filters='compass', output='css/dashboard.css', depends='*.scss')
 assets.register('dashboard_css', dashboard_css)
 
 print_css = Bundle('scss/print.scss', filters='compass', output='css/print.css', depends='*.sass')
 assets.register('print_css', print_css)
 
-terminal_css = Bundle('scss/partials/terminal.scss', filters='compass', output='css/terminal.css', depends='*.scss')
+terminal_css = Bundle('scss/includes/terminal.scss', filters='compass', output='css/terminal.css', depends='*.scss')
 assets.register('terminal_css', terminal_css)
 
 

@@ -7,8 +7,8 @@
 
     {% include "home/_intro.html" %}
     {% include "home/_about.html" %}
-    {% include "home/_book.html" %}
     {% include "home/_install.html" %}
+    {% include "home/_book.html" %}
     {% include "home/_credits.html" %}
 
 {% endblock %}
@@ -42,7 +42,6 @@
     <script type="text/javascript" src="/js/jquery.timer.js"></script>
     <script  type="text/javascript" src="/js/jquery.nicescroll.js"></script>
     <script  type="text/javascript" src="/js/jquery.fancybox.js"></script>
-    <script  type="text/javascript" src="/js/jquery.masonry.min.js"></script>
     <script  type="text/javascript" src="/libs/d3/d3.min.js"></script>
     <script type="text/javascript" src="/js/jquery.shuffleLetters.js"></script>
     <script type="text/javascript" src="/js/Terminal.js"></script>
@@ -62,13 +61,6 @@
                 }
             }
         });
-
-      // junk gallery
-        $('#junks').masonry({
-              columnWidth: 150,
-              itemSelector: '.item'
-        });
-
 
       // terminal
       var terminal = new Terminal("#terminal", "user@machine $ ")

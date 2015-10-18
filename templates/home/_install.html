@@ -1,12 +1,22 @@
 <section id="install" class="lower-page">
-<h3>Installation</h3>
-    {% for pic in gallery %}
-        <a href="uploads/gallery/{{ pic }}" class="fancybox">
-            <img src="uploads/gallery/thumb/{{ pic }}"
-                alt="Junkware image"
-                title="Junkware pic"
-                data-fullsrc="uploads/gallery/{{ pic }}"
-                />
-        </a>
-    {% endfor %}
+    <div class="page-section">
+        <div class="text">
+            <h3>Installation</h3>
+            <h4>Biometrics Generative Data</h4>
+            <p>The fictional character of Pr. Lafleche invites the audience to input DNA samples and neural activity (EEG) into a machine called <em>Junk Sequencer</em>. Using a large database of existing patents, the machine generates a visual and textual representation of a new futuristic object based on the biometric data. 
+            <h4>Authoritarian Science Fiction</h4>
+            <p>The authority figure of the <em>scientific team in white lab coats</em> help people feel insecure. A serie of fake psychological tests achieve turning them into docile guinea pigs eager to provide any information about themselves and their family. </p>
+            <h4>Junk Gallery</h4>
+            <p> 
+            At the end of the process, a <em>"Junk honorary credential"</em> featuring is given to each participant as a compensation for their contribution to this incredible pseudo-scientific experience. The 3D-printed shapes of generated objects are form a strange gallery where people can browse random agencements of patents and people. 
+            </p>
+        </div>
+        <div class="pic">
+            {% for pic in gallery %}
+            <a href="uploads/gallery/{{ pic }}" class="fancybox">
+                <img src="uploads/gallery/thumb/{{ pic }}" alt="Junkware image" title="Junkware pic" data-fullsrc="uploads/gallery/{{ pic }}" />
+            </a>
+            {% endfor %}
+        </div>
+    </div>
 </section>

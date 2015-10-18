@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
-    <div class="row">
+    <div id="junks" class="row">
         {% for junk in junks %}
                 {% include "junks/_item.html" %}
         {% endfor %}
@@ -8,18 +8,31 @@
 {% endblock %}
 
 {% block styles %}
-{{super()}}
-<style>
+    {{super()}}
 
-</style>
+    {% assets "bootstrap_css" %}
+      <link rel=stylesheet type=text/css href="{{ ASSET_URL }}">
+    {% endassets %}
+
+    {% assets "main_scss" %}
+      <link rel=stylesheet type=text/css href="{{ ASSET_URL }}">
+    {% endassets %}
 {% endblock %}
 
 
 {% block scripts %}
+<script  type="text/javascript" src="/js/jquery.masonry.min.js"></script>
 <script>
     $(".price").each(function(d){
         $(this).find("h4").html("$"+Math.floor(Math.random()*1000));
     });
+
+      // junk gallery
+    $('#junks').masonry({
+          columnWidth: 200,
+          itemSelector: '.item'
+    });
+
 </script>
 
 {% endblock %}

@@ -8,10 +8,9 @@
 @import "includes/layout";
 @import "includes/typo";
 @import "includes/colors";
-  
 
-@import "partials/items-grid"; 
-@import "partials/terminal"; 
+@import "includes/terminal"; 
+@import "includes/items-grid"; 
 
 $zen-column-count: 12;  
 // $zen-gutter-width:0;
@@ -31,13 +30,17 @@ a:hover {
     color:$link-hover-color;
 }
 
-h3:hover, p:hover {
-    color:$title-hover-color;
-}
+// h3:hover, p:hover {
+//     color:$title-hover-color;
+// }
 
 img {
     max-width: 100%;
     height: auto;
+}
+
+#about {
+    padding-top: 15px;
 }
 
 .footer {
@@ -56,6 +59,7 @@ img {
         bottom: 0;
         background: url(../img/footer-bg.png) no-repeat left bottom;
     }
+
 }
 
 .nav-menu {
@@ -192,22 +196,6 @@ img {
 
 #about {
     $zen-column-count: 16;
-
-    .pic {
-        @include zen-grid-item(9, 1);
-        #terminal {
-            max-height :600px;
-        }
-    }
-
-    .text {
-        @include zen-grid-item(3, 10);
-        p {
-            padding-right:20px;
-            padding-bottom: 15px;
-        }
-    }
-
         #bargraph {
         
         .bar {
@@ -233,6 +221,8 @@ img {
         .x.axis path {
           /*display: none;*/
         }
+        
+        
     }
 }
 
@@ -249,18 +239,7 @@ img {
         // width: calc(100%/3);
     }
 }
-
-#zine {
-    // padding: 60px 0 ;
-    background: rgba(0,0,0,.9);
-
-    h3 {
-        font-size:40px;
-    }
-    h4 {
-        margin-top: 10px;
-    }
-    .text {
+.text {
         @include zen-grid-item(4, 1);
         // padding: 0 30px 15px 30px;
         p {
@@ -277,18 +256,26 @@ img {
         // padding-top: 50px;
         @include zen-grid-item(8, 5);
     }
-}
 
+#zine {
+
+    h3 {
+        font-size:40px;
+    }
+    h4 {
+        margin-top: 10px;
+    }
+}
 
 #galerie {
     background: rgba(0,0,0,.9);
-    
     .galerie {
         max-height:100%;
     }
 }
 
 #contact {
+    text-align: center;
     .page-section {
         padding-top: 10%;
     }
@@ -300,5 +287,8 @@ img {
         // @include zen-grid-item(6, 6);
         width:50%;
         margin: 0 auto;
+    }
+    .logo {
+        max-width: 150px ;
     }
 }

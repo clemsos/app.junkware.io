@@ -34,18 +34,17 @@ Terminal.prototype.blink = function(){
     },500);
 }
 
-Terminal.prototype.addMessage = function(_header, _text){
+Terminal.prototype.addMessage = function(_header, _id, _text){
     this.caret().remove();
     var from = _header || this.header;
     var text = _text;
 
-    console.log(from);
+    console.log(_id);
     var div = $("<div class='message'></div>");
     $(this.div).append(div);
 
     var self = this;
-    div.append("<p class='terminal-header'>" + from + " </p>");
-    // div.find(".terminal-header").css("color", "green");
+    div.append("<p class='terminal-header'><a href='/junk/"+_id+"'>" + from + "</a></p>");
 
     //text
     var t = 0;
@@ -60,11 +59,10 @@ Terminal.prototype.addMessage = function(_header, _text){
             self.createCaret(div);
         }, t);
     }
-    
+
     if(this.infiniteLoop ==true) {
-        while($(this.parentDiv).height() > $(this.div).height()){
+        if($(this.parentDiv).height() < $(this.div).height()){
             $('.message').first().remove();
-            // console.log($('#content').height(), window.innerHeight);
         }
     }
 }
@@ -78,7 +76,7 @@ Terminal.prototype.addMessages = function(data) {
             setTimeout(function () {
                 console.log(i);
                 if(i < texts.length) {
-                    self.addMessage(texts[i].title, texts[i].abstract);
+                    self.addMessage(texts[i].title, texts[i]._id.$oid, texts[i].abstract);
                     i++;
                     messageTimeout();
                 } else if ( i == texts.length && this.infiniteLoop == true) {
@@ -87,17 +85,6 @@ Terminal.prototype.addMessages = function(data) {
             }, 500+Math.floor(Math.random()>.8 ? 1000+Math.random()*2000 : Math.random()*1000));
         }
         messageTimeout();
-        // for (i = 0; i < data.length; i++) {
-            
-        //     (function(ind) {
-        //        setTimeout(function(){setContentOpacity(ind);}, (ind*3));
-        //         setTimeout(autoAddMessage, 200); //
-
-        //     })(i);
-        // }
-
-        // function autoAddMessage () {
-        // }
 }
 
 ////////SplitTokens function take from Processing.js
