@@ -31,3 +31,10 @@ To deploy, use [those Fabric scripts](https://github.com/clemsos/flask-fabric-de
 
     sudo apt-get install openscad 
     python make/create_stl_files.py
+
+## Generate thumbnails
+
+    sudo apt-get install povray
+    cd make/stl2png
+    npm install
+    node stl2png.js

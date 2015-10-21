@@ -97,28 +97,38 @@ h4 {
 }
 
 /* line 103, ../scss/includes/_typo.scss */
-p.lead {
+h5 {
   font-size: 1.5em;
 }
 
 /* line 107, ../scss/includes/_typo.scss */
+p.lead {
+  font-size: 1.5em;
+}
+
+/* line 111, ../scss/includes/_typo.scss */
 p {
   text-align: justify;
   font-size: 1.2em;
   line-height: 1.5;
 }
 
-/* line 113, ../scss/includes/_typo.scss */
+/* line 117, ../scss/includes/_typo.scss */
 p a {
-  color: #555;
+  color: #e5e5e5;
   text-decoration: none;
 }
 
-/* line 118, ../scss/includes/_typo.scss */
+/* line 122, ../scss/includes/_typo.scss */
 p a:hover {
   color: #00CC00;
   text-decoration: none;
   transition: color 0.5s;
+}
+
+/* line 128, ../scss/includes/_typo.scss */
+strong {
+  font-weight: bold;
 }
 
 /* line 14, ../scss/dashboard.scss */

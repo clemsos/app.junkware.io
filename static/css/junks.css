@@ -1,0 +1,315 @@
+/* fonts */
+@font-face {
+  font-family: 'BebasNeueRegular';
+  src: url("fonts/bebasneue-webfont.eot");
+  src: url("fonts/bebasneue-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/bebasneue-webfont.woff") format("woff"), url("fonts/bebasneue-webfont.ttf") format("truetype"), url("fonts/bebasneue-webfont.svg#BebasNeueRegular") format("svg");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'LeagueGothicRegular';
+  src: url("fonts/leaguegothic-regular-webfont.eot");
+  src: url("fonts/leaguegothic-regular-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/leaguegothic-regular-webfont.woff") format("woff"), url("fonts/leaguegothic-regular-webfont.ttf") format("truetype"), url("fonts/leaguegothic-regular-webfont.svg#LeagueGothicRegular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* line 28, ../scss/includes/_typo.scss */
+html {
+  line-height: 1;
+  height: 100%;
+}
+
+/* line 33, ../scss/includes/_typo.scss */
+body {
+  font-family: 'Roboto', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+  font-style: normal;
+  font-weight: normal;
+  text-align: center;
+  color: #bbb;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 49, ../scss/includes/_typo.scss */
+h1 {
+  font-family: 'LeagueGothicRegular';
+  font-size: 150px;
+  font-weight: 100;
+  font-style: normal;
+  text-align: center;
+  text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
+  color: #e5e5e5;
+  line-height: 1;
+  margin: 20px 0 0 0;
+  padding: 0;
+}
+
+/* line 63, ../scss/includes/_typo.scss */
+h2 {
+  font-family: 'LeagueGothicRegular';
+  font-size: 60px;
+  font-weight: 100;
+  font-style: normal;
+  text-align: center;
+  text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
+  color: #e5e5e5;
+  line-height: 1;
+  margin: 20px 0 25px 0;
+  padding: 0;
+}
+
+/* line 77, ../scss/includes/_typo.scss */
+h3 {
+  font-family: 'LeagueGothicRegular';
+  font-size: 40px;
+  font-weight: 100;
+  font-style: normal;
+  text-align: center;
+  text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
+  color: #e5e5e5;
+  line-height: 1;
+  margin: 20px 0 25px 0;
+  padding: 0;
+}
+
+/* line 92, ../scss/includes/_typo.scss */
+h4 {
+  font-family: 'LeagueGothicRegular', sans-serif;
+  font-size: 26px;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #e5e5e5;
+  line-height: 1.2;
+  margin: 20px 0 20px 0;
+  padding: 0;
+}
+
+/* line 103, ../scss/includes/_typo.scss */
+h5 {
+  font-size: 1.5em;
+}
+
+/* line 107, ../scss/includes/_typo.scss */
+p.lead {
+  font-size: 1.5em;
+}
+
+/* line 111, ../scss/includes/_typo.scss */
+p {
+  text-align: justify;
+  font-size: 1.2em;
+  line-height: 1.5;
+}
+
+/* line 117, ../scss/includes/_typo.scss */
+p a {
+  color: #e5e5e5;
+  text-decoration: none;
+}
+
+/* line 122, ../scss/includes/_typo.scss */
+p a:hover {
+  color: #00CC00;
+  text-decoration: none;
+  transition: color 0.5s;
+}
+
+/* line 128, ../scss/includes/_typo.scss */
+strong {
+  font-weight: bold;
+}
+
+/* line 2, ../scss/junks.scss */
+#junks {
+  /* entire container, keeps perspective */
+  /* flip the pane when hovered */
+  /* flip speed goes here */
+  /* hide back of pane during swap */
+  /* front pane, placed above back */
+  /* back, initially hidden pane */
+  /*        Style       */
+}
+/* line 4, ../scss/junks.scss */
+#junks:hover, #junks a:hover, #junks p:hover {
+  text-decoration: none;
+}
+/* line 8, ../scss/junks.scss */
+#junks .card-container {
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+  -o-perspective: 800px;
+  perspective: 800px;
+  margin-bottom: 30px;
+}
+/* line 16, ../scss/junks.scss */
+#junks .card-container:not(.manual-flip):hover .card,
+#junks .card-container.hover.manual-flip .card {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+/* line 23, ../scss/junks.scss */
+#junks .card-container.static:hover .card,
+#junks .card-container.static.hover .card {
+  -webkit-transform: none;
+  -moz-transform: none;
+  -o-transform: none;
+  transform: none;
+}
+/* line 31, ../scss/junks.scss */
+#junks .card {
+  -webkit-transition: -webkit-transform 1s;
+  -moz-transition: -moz-transform 1s;
+  -o-transition: -o-transform 1s;
+  transition: transform 1s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  position: relative;
+}
+/* line 43, ../scss/junks.scss */
+#junks .front,
+#junks .back {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.14);
+}
+/* line 56, ../scss/junks.scss */
+#junks .front {
+  z-index: 2;
+}
+/* line 60, ../scss/junks.scss */
+#junks .back {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  z-index: 3;
+}
+/* line 67, ../scss/junks.scss */
+#junks .back .btn-simple {
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+}
+/* line 73, ../scss/junks.scss */
+#junks .card {
+  background: none repeat scroll 0 0 #FFFFFF;
+  border-radius: 4px;
+  color: #444444;
+}
+/* line 78, ../scss/junks.scss */
+#junks .card-container,
+#junks .front,
+#junks .back {
+  width: 100%;
+  height: 420px;
+  border-radius: 4px;
+}
+/* line 85, ../scss/junks.scss */
+#junks .card .cover {
+  height: 300px;
+  overflow: hidden;
+  border-radius: 4px 4px 0 0;
+}
+/* line 90, ../scss/junks.scss */
+#junks .card .cover img {
+  width: 100%;
+}
+/* line 93, ../scss/junks.scss */
+#junks .card .user {
+  border-radius: 50%;
+  display: block;
+  height: 120px;
+  margin: -55px auto 0;
+  overflow: hidden;
+  width: 120px;
+}
+/* line 101, ../scss/junks.scss */
+#junks .card .user img {
+  background: none repeat scroll 0 0 #FFFFFF;
+  border: 4px solid #FFFFFF;
+  width: 100%;
+}
+/* line 106, ../scss/junks.scss */
+#junks .card .content {
+  background-color: transparent;
+  box-shadow: none;
+  padding: 10px 20px 20px;
+}
+/* line 111, ../scss/junks.scss */
+#junks .card .content .main {
+  min-height: 160px;
+}
+/* line 114, ../scss/junks.scss */
+#junks .card .back .content .main {
+  height: 215px;
+}
+/* line 117, ../scss/junks.scss */
+#junks .card .name {
+  font-size: 22px;
+  line-height: 28px;
+  margin: 10px 0 0;
+  text-align: center;
+  text-transform: capitalize;
+}
+/* line 124, ../scss/junks.scss */
+#junks .card h5 {
+  margin: 5px 0;
+  font-weight: 400;
+  line-height: 20px;
+}
+/* line 129, ../scss/junks.scss */
+#junks .card .profession {
+  color: #999999;
+  text-align: center;
+  margin-bottom: 20px;
+}
+/* line 134, ../scss/junks.scss */
+#junks .card .footer {
+  border-top: 1px solid #EEEEEE;
+  color: #999999;
+  margin: 30px 0 0;
+  padding: 10px 0 0;
+  text-align: center;
+}
+/* line 141, ../scss/junks.scss */
+#junks .card .footer .social-links {
+  font-size: 18px;
+}
+/* line 144, ../scss/junks.scss */
+#junks .card .footer .social-links a {
+  margin: 0 7px;
+}
+/* line 147, ../scss/junks.scss */
+#junks .card .footer .btn-simple {
+  margin-top: -6px;
+}
+/* line 150, ../scss/junks.scss */
+#junks .card .header {
+  padding: 15px 20px;
+  height: 90px;
+}
+/* line 154, ../scss/junks.scss */
+#junks .card .motto {
+  border-bottom: 1px solid #EEEEEE;
+  color: #999999;
+  font-size: 14px;
+  font-weight: 400;
+  padding-bottom: 10px;
+  text-align: center;
+}

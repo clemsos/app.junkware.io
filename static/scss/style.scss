@@ -1,39 +1,34 @@
 @import "compass/reset";
 @import "compass/css3";
-
 @import "plugins/zen";
 @import "plugins/fancybox";
-
 @import "includes/mixins";
 @import "includes/layout";
 @import "includes/typo";
 @import "includes/colors";
-
-@import "includes/terminal"; 
-@import "includes/items-grid"; 
-
-$zen-column-count: 12;  
+@import "includes/terminal";
+@import "includes/items-grid";
+$zen-column-count: 12;
 // $zen-gutter-width:0;
 $zen-grid-width:100%;
-
-em  {
-    color : $highlight-color;
-    font-weight:800;
-
+em {
+    color: $highlight-color;
+    font-weight: 800;
 }
-a, a:visited {
+
+a,
+a:visited {
     text-decoration: none;
-    color:$link-color;
+    color: $link-color;
 }
 
 a:hover {
-    color:$link-hover-color;
+    color: $link-hover-color;
 }
 
 // h3:hover, p:hover {
 //     color:$title-hover-color;
 // }
-
 img {
     max-width: 100%;
     height: auto;
@@ -50,7 +45,6 @@ img {
     width: 100%;
     height: 85px;
     z-index: 15;
-
     .footer-bg {
         position: fixed;
         width: 300px;
@@ -59,13 +53,10 @@ img {
         bottom: 0;
         background: url(../img/footer-bg.png) no-repeat left bottom;
     }
-
 }
 
 .nav-menu {
-
     font-family: 'LeagueGothicRegular', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
-
     font-size: 20px;
     font-style: normal;
     font-weight: normal;
@@ -76,7 +67,6 @@ img {
     padding: 0;
     position: absolute;
     z-index: 10;
-
     a.menu-trigger {
         background: url(../img/menu-trigger-black.png) no-repeat;
         width: 30px;
@@ -85,63 +75,54 @@ img {
         padding: 0;
         text-indent: -10000px;
     }
-
     a.menu-trigger:hover {
         background: url(../img/menu-trigger-white.png) no-repeat;
         width: 30px;
         height: 30px;
         text-indent: -10000px;
     }
-
     a {
         color: #000;
         font-weight: normal;
         text-decoration: none;
     }
-
     a:hover {
         color: #555;
     }
-
-    ul, li {
+    ul,
+    li {
         margin: 0;
         padding: 0;
     }
-
     .lifting {
         margin: 0 0 8px 10px;
         height: 20px;
     }
-
     .left-bottom .lifting-first {
         margin: 0 0 14px 0;
         height: 20px;
     }
-
-    li a, li {
+    li a,
+    li {
         float: left;
         text-transform: uppercase;
         height: 20px;
     }
-
     li {
         position: relative;
         margin: 7px 0 0 0;
         padding: 0 0 10px 0;
         background: none;
     }
-
     li a {
         padding: 0 5px 10px 5px;
         text-decoration: none;
         -moz-transition: 0.2s ease-in;
         -webkit-transition: 0.2s ease-in;
     }
-
     li a:hover {
         background: none;
     }
-
     li ul {
         display: none;
         left: 0;
@@ -149,41 +130,34 @@ img {
         bottom: 100%;
         background: none;
     }
-
     li:hover ul {
         display: block;
         width: auto;
     }
-
     li ul a {
         white-space: nowrap;
     }
-
     li ul a:hover {
         color: #555;
     }
 }
 
 #home {
-
-    background: url(/uploads/finger_tent.jpg) no-repeat center center fixed; 
+    background: url(/uploads/finger_tent.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-
     .header {
         position: relative;
-        top : 190px;
+        top: 190px;
         text-align: center;
-
         p.intro-line {
             font-size: 20px;
         }
         p:hover {
-            color:$title-hover-color;
+            color: $title-hover-color;
         }
-
         p {
             font-family: 'Roboto', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
             text-align: center;
@@ -196,42 +170,34 @@ img {
 
 #about {
     $zen-column-count: 16;
-        #bargraph {
-        
+    #bargraph {
         .bar {
-          fill: #00CC00;
+            fill: #00CC00;
         }
-
         .bar:hover {
-          fill: brown;
+            fill: brown;
         }
-
         .axis {
-          fill: #00CC00;
-          font: 10px sans-serif;
+            fill: #00CC00;
+            font: 10px sans-serif;
         }
-
         .axis path,
         .axis line {
-          fill: none;
-          stroke: #00CC00;
-          shape-rendering: crispEdges;
+            fill: none;
+            stroke: #00CC00;
+            shape-rendering: crispEdges;
         }
-
         .x.axis path {
-          /*display: none;*/
+            /*display: none;*/
         }
-        
-        
     }
 }
 
 #junks {
-    background: rgba(0,0,0,.9);
-
+    background: rgba(0, 0, 0, .9);
     .page-section {
         width: 90%;
-        margin : 0 auto;
+        margin: 0 auto;
     }
     .item {
         width: 130px;
@@ -239,28 +205,28 @@ img {
         // width: calc(100%/3);
     }
 }
-.text {
-        @include zen-grid-item(4, 1);
-        // padding: 0 30px 15px 30px;
-        p {
-            padding-left: 30px;
-            padding-bottom: .8em;
-        }
-        h5 {
-            padding-left: 30px;
-            text-align: justify;
 
-        }
+.text {
+    @include zen-grid-item(4, 1);
+    // padding: 0 30px 15px 30px;
+    p {
+        padding-left: 30px;
+        padding-bottom: .8em;
     }
-    .pic {
-        // padding-top: 50px;
-        @include zen-grid-item(8, 5);
+    h5 {
+        padding-left: 30px;
+        text-align: justify;
     }
+}
+
+.pic {
+    // padding-top: 50px;
+    @include zen-grid-item(8, 5);
+}
 
 #zine {
-
     h3 {
-        font-size:40px;
+        font-size: 40px;
     }
     h4 {
         margin-top: 10px;
@@ -268,9 +234,9 @@ img {
 }
 
 #galerie {
-    background: rgba(0,0,0,.9);
+    background: rgba(0, 0, 0, .9);
     .galerie {
-        max-height:100%;
+        max-height: 100%;
     }
 }
 
@@ -285,40 +251,34 @@ img {
     }
     .special-request {
         // @include zen-grid-item(6, 6);
-        width:50%;
+        width: 50%;
         margin: 0 auto;
     }
-    a.logo img{
-        max-width: 150px ;
-        max-height: 80px ;
+    a.logo img {
+        max-width: 150px;
+        max-height: 80px;
         margin-right: 10px;
     }
-    .team {
-    }
+    .team {}
     /* Rounded avatars */
     .team-pic {
-        max-width: 60% ;
+        max-width: 60%;
         margin: 1em 0;
         -webkit-border-radius: 50%;
         -moz-border-radius: 50%;
         border-radius: 50%;
     }
-
     .prod {
-
-        margin-top :  10px;
+        margin-top: 10px;
         h5 {
-            margin-bottom :  15px;
+            margin-bottom: 15px;
         }
-
         a.logo {
             margin-right: 20px;
-            img{
-                max-width: 200px ;
-                max-height: 200px ;
+            img {
+                max-width: 200px;
+                max-height: 200px;
             }
         }
     }
-
 }
-

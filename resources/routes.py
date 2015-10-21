@@ -109,8 +109,7 @@ def get_molecule_file(path):
     print molecule_path
     return send_from_directory(molecule_path, path)
 
-
-# 3D web
+# STL files (3D print)
 @app.route('/data/stl/<ObjectId:objectId>') 
 def getSTL(objectId):
     junk=mongo.db.junks.find_one_or_404({"_id": objectId})
@@ -126,16 +125,20 @@ def getSTL(objectId):
     return response
 
 # 3D print
-@app.route('/data/threejs/<ObjectId:objectId>') 
-def getThreeJson(objectId):
+@app.route('/data/img3D/<ObjectId:objectId>') 
+def getPNG(objectId):
+
     junk=mongo.db.junks.find_one_or_404({"_id": objectId})
     slug = slugify(junk["title"])
-    threejs_path = os.path.join(os.path.join(os.getcwd(),"data"), "threejs_path")
-    threejs_file = os.path.join(threejs_path,str(slug)+".json")
 
-    with open(stl_file, "r") as f :
-        stl= f.read()
+    png_path = os.path.join(os.path.join(os.getcwd(),"data"), "png")
+    png_file = os.path.join(png_path,str(slug)+".png")
+    print png_file 
 
-    response = make_response(stl)
-    response.headers["Content-Disposition"] = "attachment; filename=" + str(objectId)+ ".stl"
+    with open(png_file, "r") as f :
+        png= f.read()
+
+    response = make_response(png)
+    response.headers['Content-Type'] = 'image/png'
+    response.headers['Content-Disposition'] = 'attachment; filename=' + str(slug)+ '.png'
     return response

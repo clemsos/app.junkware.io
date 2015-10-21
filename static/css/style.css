@@ -690,35 +690,36 @@ strong {
   margin-top: 20px;
 }
 
-/* line 19, ../scss/style.scss */
+/* line 14, ../scss/style.scss */
 em {
   color: #fff;
   font-weight: 800;
 }
 
-/* line 24, ../scss/style.scss */
-a, a:visited {
+/* line 19, ../scss/style.scss */
+a,
+a:visited {
   text-decoration: none;
   color: #e5e5e5;
 }
 
-/* line 29, ../scss/style.scss */
+/* line 25, ../scss/style.scss */
 a:hover {
   color: #00CC00;
 }
 
-/* line 37, ../scss/style.scss */
+/* line 32, ../scss/style.scss */
 img {
   max-width: 100%;
   height: auto;
 }
 
-/* line 42, ../scss/style.scss */
+/* line 37, ../scss/style.scss */
 #about {
   padding-top: 15px;
 }
 
-/* line 46, ../scss/style.scss */
+/* line 41, ../scss/style.scss */
 .footer {
   position: fixed;
   bottom: 0;
@@ -727,7 +728,7 @@ img {
   height: 85px;
   z-index: 15;
 }
-/* line 54, ../scss/style.scss */
+/* line 48, ../scss/style.scss */
 .footer .footer-bg {
   position: fixed;
   width: 300px;
@@ -737,7 +738,7 @@ img {
   background: url(../img/footer-bg.png) no-repeat left bottom;
 }
 
-/* line 65, ../scss/style.scss */
+/* line 58, ../scss/style.scss */
 .nav-menu {
   font-family: 'LeagueGothicRegular', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 20px;
@@ -751,7 +752,7 @@ img {
   position: absolute;
   z-index: 10;
 }
-/* line 80, ../scss/style.scss */
+/* line 70, ../scss/style.scss */
 .nav-menu a.menu-trigger {
   background: url(../img/menu-trigger-black.png) no-repeat;
   width: 30px;
@@ -760,63 +761,65 @@ img {
   padding: 0;
   text-indent: -10000px;
 }
-/* line 89, ../scss/style.scss */
+/* line 78, ../scss/style.scss */
 .nav-menu a.menu-trigger:hover {
   background: url(../img/menu-trigger-white.png) no-repeat;
   width: 30px;
   height: 30px;
   text-indent: -10000px;
 }
-/* line 96, ../scss/style.scss */
+/* line 84, ../scss/style.scss */
 .nav-menu a {
   color: #000;
   font-weight: normal;
   text-decoration: none;
 }
-/* line 102, ../scss/style.scss */
+/* line 89, ../scss/style.scss */
 .nav-menu a:hover {
   color: #555;
 }
-/* line 106, ../scss/style.scss */
-.nav-menu ul, .nav-menu li {
+/* line 92, ../scss/style.scss */
+.nav-menu ul,
+.nav-menu li {
   margin: 0;
   padding: 0;
 }
-/* line 111, ../scss/style.scss */
+/* line 97, ../scss/style.scss */
 .nav-menu .lifting {
   margin: 0 0 8px 10px;
   height: 20px;
 }
-/* line 116, ../scss/style.scss */
+/* line 101, ../scss/style.scss */
 .nav-menu .left-bottom .lifting-first {
   margin: 0 0 14px 0;
   height: 20px;
 }
-/* line 121, ../scss/style.scss */
-.nav-menu li a, .nav-menu li {
+/* line 105, ../scss/style.scss */
+.nav-menu li a,
+.nav-menu li {
   float: left;
   text-transform: uppercase;
   height: 20px;
 }
-/* line 127, ../scss/style.scss */
+/* line 111, ../scss/style.scss */
 .nav-menu li {
   position: relative;
   margin: 7px 0 0 0;
   padding: 0 0 10px 0;
   background: none;
 }
-/* line 134, ../scss/style.scss */
+/* line 117, ../scss/style.scss */
 .nav-menu li a {
   padding: 0 5px 10px 5px;
   text-decoration: none;
   -moz-transition: 0.2s ease-in;
   -webkit-transition: 0.2s ease-in;
 }
-/* line 141, ../scss/style.scss */
+/* line 123, ../scss/style.scss */
 .nav-menu li a:hover {
   background: none;
 }
-/* line 145, ../scss/style.scss */
+/* line 126, ../scss/style.scss */
 .nav-menu li ul {
   display: none;
   left: 0;
@@ -824,21 +827,21 @@ img {
   bottom: 100%;
   background: none;
 }
-/* line 153, ../scss/style.scss */
+/* line 133, ../scss/style.scss */
 .nav-menu li:hover ul {
   display: block;
   width: auto;
 }
-/* line 158, ../scss/style.scss */
+/* line 137, ../scss/style.scss */
 .nav-menu li ul a {
   white-space: nowrap;
 }
-/* line 162, ../scss/style.scss */
+/* line 140, ../scss/style.scss */
 .nav-menu li ul a:hover {
   color: #555;
 }
 
-/* line 167, ../scss/style.scss */
+/* line 145, ../scss/style.scss */
 #home {
   background: url(/uploads/finger_tent.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -846,21 +849,21 @@ img {
   -o-background-size: cover;
   background-size: cover;
 }
-/* line 175, ../scss/style.scss */
+/* line 151, ../scss/style.scss */
 #home .header {
   position: relative;
   top: 190px;
   text-align: center;
 }
-/* line 180, ../scss/style.scss */
+/* line 155, ../scss/style.scss */
 #home .header p.intro-line {
   font-size: 20px;
 }
-/* line 183, ../scss/style.scss */
+/* line 158, ../scss/style.scss */
 #home .header p:hover {
   color: #00CC00;
 }
-/* line 187, ../scss/style.scss */
+/* line 161, ../scss/style.scss */
 #home .header p {
   font-family: 'Roboto', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-align: center;
@@ -869,46 +872,46 @@ img {
   font-size: 14px;
 }
 
-/* line 201, ../scss/style.scss */
+/* line 174, ../scss/style.scss */
 #about #bargraph .bar {
   fill: #00CC00;
 }
-/* line 205, ../scss/style.scss */
+/* line 177, ../scss/style.scss */
 #about #bargraph .bar:hover {
   fill: brown;
 }
-/* line 209, ../scss/style.scss */
+/* line 180, ../scss/style.scss */
 #about #bargraph .axis {
   fill: #00CC00;
   font: 10px sans-serif;
 }
-/* line 214, ../scss/style.scss */
+/* line 184, ../scss/style.scss */
 #about #bargraph .axis path,
 #about #bargraph .axis line {
   fill: none;
   stroke: #00CC00;
   shape-rendering: crispEdges;
 }
-/* line 221, ../scss/style.scss */
+/* line 190, ../scss/style.scss */
 #about #bargraph .x.axis path {
   /*display: none;*/
 }
 
-/* line 229, ../scss/style.scss */
+/* line 196, ../scss/style.scss */
 #junks {
   background: rgba(0, 0, 0, 0.9);
 }
-/* line 232, ../scss/style.scss */
+/* line 198, ../scss/style.scss */
 #junks .page-section {
   width: 90%;
   margin: 0 auto;
 }
-/* line 236, ../scss/style.scss */
+/* line 202, ../scss/style.scss */
 #junks .item {
   width: 130px;
 }
 
-/* line 242, ../scss/style.scss */
+/* line 209, ../scss/style.scss */
 .text {
   float: left;
   width: 33.33333%;
@@ -922,18 +925,18 @@ img {
   box-sizing: border-box;
   word-wrap: break-word;
 }
-/* line 245, ../scss/style.scss */
+/* line 212, ../scss/style.scss */
 .text p {
   padding-left: 30px;
   padding-bottom: .8em;
 }
-/* line 249, ../scss/style.scss */
+/* line 216, ../scss/style.scss */
 .text h5 {
   padding-left: 30px;
   text-align: justify;
 }
 
-/* line 255, ../scss/style.scss */
+/* line 222, ../scss/style.scss */
 .pic {
   float: left;
   width: 66.66667%;
@@ -948,50 +951,50 @@ img {
   word-wrap: break-word;
 }
 
-/* line 262, ../scss/style.scss */
+/* line 228, ../scss/style.scss */
 #zine h3 {
   font-size: 40px;
 }
-/* line 265, ../scss/style.scss */
+/* line 231, ../scss/style.scss */
 #zine h4 {
   margin-top: 10px;
 }
 
-/* line 270, ../scss/style.scss */
+/* line 236, ../scss/style.scss */
 #galerie {
   background: rgba(0, 0, 0, 0.9);
 }
-/* line 272, ../scss/style.scss */
+/* line 238, ../scss/style.scss */
 #galerie .galerie {
   max-height: 100%;
 }
 
-/* line 277, ../scss/style.scss */
+/* line 243, ../scss/style.scss */
 #credits {
   text-align: center;
   /* Rounded avatars */
 }
-/* line 279, ../scss/style.scss */
+/* line 245, ../scss/style.scss */
 #credits p {
   text-align: center;
   padding-bottom: 8px;
 }
-/* line 283, ../scss/style.scss */
+/* line 249, ../scss/style.scss */
 #credits .row {
   margin-top: 15px;
 }
-/* line 286, ../scss/style.scss */
+/* line 252, ../scss/style.scss */
 #credits .special-request {
   width: 50%;
   margin: 0 auto;
 }
-/* line 291, ../scss/style.scss */
+/* line 257, ../scss/style.scss */
 #credits a.logo img {
   max-width: 150px;
   max-height: 80px;
   margin-right: 10px;
 }
-/* line 299, ../scss/style.scss */
+/* line 264, ../scss/style.scss */
 #credits .team-pic {
   max-width: 60%;
   margin: 1em 0;
@@ -999,19 +1002,19 @@ img {
   -moz-border-radius: 50%;
   border-radius: 50%;
 }
-/* line 307, ../scss/style.scss */
+/* line 271, ../scss/style.scss */
 #credits .prod {
   margin-top: 10px;
 }
-/* line 310, ../scss/style.scss */
+/* line 273, ../scss/style.scss */
 #credits .prod h5 {
   margin-bottom: 15px;
 }
-/* line 314, ../scss/style.scss */
+/* line 276, ../scss/style.scss */
 #credits .prod a.logo {
   margin-right: 20px;
 }
-/* line 316, ../scss/style.scss */
+/* line 278, ../scss/style.scss */
 #credits .prod a.logo img {
   max-width: 200px;
   max-height: 200px;

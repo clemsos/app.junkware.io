@@ -5,7 +5,7 @@ from pymongo import MongoClient
 client = MongoClient()
 
 
-make_path = os.path.join(os.getcwd(), "make")
+make_path = os.path.join(os.path.join(os.getcwd(), "make"), "stl")
 scad_file = os.path.join(make_path,"STLconverter.scad")
 template_path = os.path.join(make_path,'template.scad')
 output_path = os.path.join(os.path.join(os.getcwd(), "data"),"stl")
@@ -53,16 +53,3 @@ for junk in junks.find() :
 
     with open(stl_file, "r") as f :
         stl= f.read()
-
-# @app.route('/data/getStlFile/<ObjectId:objectId>') 
-# def getSTL(objectId):
-#     print objectId
-#     make_path = os.path.join(os.getcwd(),"make")
-#     stl_file = os.path.join(make_path,str(objectId)+".stl")
-
-#     with open(stl_file, "r") as f :
-#         stl= f.read()
-#     response = make_response(stl)
-#     response.headers["Content-Disposition"] = "attachment; filename=" + str(objectId)+ ".stl"
-#     return response
-

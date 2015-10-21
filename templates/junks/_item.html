@@ -1,39 +1,38 @@
-<div class="junk item">
-    <div class="photo">
-        <!-- <img src="http://placehold.it/350x260" class="img-responsive" alt="a" /> -->
-    </div>
-    <div class="info">
-        <div class="row">
-            <h3>
-                <a href="/junk/{{junk._id }}">
-                    {{ junk.title }}
-                </a>
-            </h3>
-            <p>{{ junk.created_at }}
-            </p>
-            <p>{{ junk.abstract }}</p>
-            <div class="price col-md-6">
-                <h4 class="price-text-color">
-                    $XXX
-                </h4>
+<div class="col-md-4 col-sm-6">
+<a href="/junk/{{junk._id }}">
+    <div class="card-container">
+        <div class="junk card">
+            <div class="front">
+                <div class="cover">
+                    <img src="/data/img3D/{{junk._id }}" alt="junk image" />
+
+                </div>
+                <div class="content">
+                    <div class="main">
+                        <h3>{{ junk.title }}</h3>
+                        <!-- <p class="profession">{{ junk.created_at }}</p> -->
+                    </div>
+                </div>
             </div>
-            <div class="rating hidden-sm col-md-6">
-                <i class="price-text-color fa fa-star"></i>
-                <i class="price-text-color fa fa-star"></i>
-                <i class="price-text-color fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-            </div>
-            <div class="separator clear-left">
-                <p class="btn-add">
-                    <i class="fa fa-shopping-cart"></i>
-                    <a href="#" class="add-junk-to-cart hidden-sm">Add to cart</a>
-                </p>
-                <p class="btn-details">
-                    <i class="fa fa-list"></i><a href="/junk/{{junk._id }}" class="hidden-sm">More details</a>
-                </p>
+            <div class="back">
+                <div class="header">
+                    <h4>{{ junk.title }}</h4>
+                </div>
+                <div class="content">
+                    <div class="main">
+                        <p>{{ junk.abstract }}</p>
+                    </div>
+                </div>
+                <div class="footer">
+                    <div class="price col-md-6">
+                            <h4 class="price-text-color">$XXX</h4>
+                    </div>
+                    <div class="col-md-6 social-links text-center">
+                        <h4><i class="fa fa-list"></i> More details</h4>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+</a>
 </div>
-
