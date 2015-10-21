@@ -7,3 +7,4 @@ pymongo==2.7.2
 datetime
 pyScss
 compass-stylesheets
+python- slugify

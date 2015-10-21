@@ -3,6 +3,7 @@ import json
 import random
 from flask import render_template, jsonify, send_from_directory, request, make_response
 from resources import app, api, mongo
+from slugify import slugify
 from Junk import Junk, JunkList
 
 GALLERY_PATH=os.path.join("uploads","gallery")
@@ -108,80 +109,33 @@ def get_molecule_file(path):
     print molecule_path
     return send_from_directory(molecule_path, path)
 
-'''
-@app.route('/data/toStl/<ObjectId:objectId>', methods = ['POST']) 
-def convertToSTL(objectId):
 
-    shapeData = json.loads(request.form["shape"])
-
-    print str(shapeData["m1"])+"ha"
-
-    shape1="shape1=supershape(" + "m=" + str(shapeData["m1"]) + ", n1=" + str(shapeData["n11"]) + ", n2=" + str(shapeData["n12"]) + ", n3=" + str(shapeData["n13"]) + ", a=1, b=1),"
-    
-    shape2="shape2=supershape(" + "m=" + str(shapeData["m2"]) + ", n1=" + str(shapeData["n21"]) + ", n2=" + str(shapeData["n22"]) + ", n3=" + str(shapeData["n23"]) + ", a=1, b=1),"
-    
-    print shape1, shape2
-
-    scad = template_scad.replace("#SHAPE1#", shape1).replace("#SHAPE2#", shape2)
-    print scad
-    print 'creating STL shape...'
- 
-    make_path = os.path.join(os.getcwd(),"make")
-    scad_file = os.path.join(make_path,"STLconverter.scad")
-    stl_file = os.path.join(make_path,str(objectId)+".stl")
-
-    with open(scad_file, "w") as f:
-        f.write(scad)
-
-    cmd = "/usr/bin/openscad -o " + " " + stl_file + " " +scad_file
-
-    # no block, it start a sub process.
-    p = subprocess.Popen(cmd , shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-
-    # and you can block util the cmd execute finish
-    p.wait()
-
-    print "STL file saved at %s"%stl_file
-
-    with open(stl_file, "r") as f :
-        stl= f.read()
-
-    response = make_response(stl)
-    response.headers["Content-Disposition"] = "attachment; filename=" + str(objectId)+ ".stl"
-    return response
-    # return jsonify({'fileUrl' : "/data/stlFile/"+str(objectId)+"/download" })
-
-@app.route('/data/getStlFile/<ObjectId:objectId>') 
+# 3D web
+@app.route('/data/stl/<ObjectId:objectId>') 
 def getSTL(objectId):
-    print objectId
-    make_path = os.path.join(os.getcwd(),"make")
-    stl_file = os.path.join(make_path,str(objectId)+".stl")
+    junk=mongo.db.junks.find_one_or_404({"_id": objectId})
+    slug = slugify(junk["title"])
+    stl_path = os.path.join(os.path.join(os.getcwd(),"data"), "stl")
+    stl_file = os.path.join(stl_path,str(slug)+".stl")
 
     with open(stl_file, "r") as f :
         stl= f.read()
+
     response = make_response(stl)
     response.headers["Content-Disposition"] = "attachment; filename=" + str(objectId)+ ".stl"
     return response
 
+# 3D print
+@app.route('/data/threejs/<ObjectId:objectId>') 
+def getThreeJson(objectId):
+    junk=mongo.db.junks.find_one_or_404({"_id": objectId})
+    slug = slugify(junk["title"])
+    threejs_path = os.path.join(os.path.join(os.getcwd(),"data"), "threejs_path")
+    threejs_file = os.path.join(threejs_path,str(slug)+".json")
 
-template_scad = """
-include <supershape.scad>
+    with open(stl_file, "r") as f :
+        stl= f.read()
 
-create_supershape();
-
-module create_supershape()
-{
-    scale([10,10,10])
-    RenderSuperShape(
-        #SHAPE1#
-        #SHAPE2#
-        phisteps = 8,
-        thetasteps = 64,
-        points=false,
-        pointcolor=[1,1,1],
-        wireframe=false,
-        faces=true);
-
-}
-"""
-'''
+    response = make_response(stl)
+    response.headers["Content-Disposition"] = "attachment; filename=" + str(objectId)+ ".stl"
+    return response

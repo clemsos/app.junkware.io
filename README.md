@@ -26,3 +26,8 @@ To deploy, use [those Fabric scripts](https://github.com/clemsos/flask-fabric-de
 
     mongoimport -d junks -c junks db.json 
     # 2015-01-31T17:15:39.281+0100 imported 41 objects
+
+## Generate STL 3D models
+
+    sudo apt-get install openscad 
+    python make/create_stl_files.py
