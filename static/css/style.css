@@ -421,6 +421,14 @@ section.fullwidth {
   background: black;
 }
 
+/* line 38, ../scss/includes/_layout.scss */
+.bottom-page {
+  min-height: 30%;
+  margin: 0;
+  padding: 0;
+  background: black;
+}
+
 /* fonts */
 @font-face {
   font-family: 'BebasNeueRegular';
@@ -515,28 +523,38 @@ h4 {
 }
 
 /* line 103, ../scss/includes/_typo.scss */
-p.lead {
+h5 {
   font-size: 1.5em;
 }
 
 /* line 107, ../scss/includes/_typo.scss */
+p.lead {
+  font-size: 1.5em;
+}
+
+/* line 111, ../scss/includes/_typo.scss */
 p {
   text-align: justify;
   font-size: 1.2em;
   line-height: 1.5;
 }
 
-/* line 113, ../scss/includes/_typo.scss */
+/* line 117, ../scss/includes/_typo.scss */
 p a {
   color: #e5e5e5;
   text-decoration: none;
 }
 
-/* line 118, ../scss/includes/_typo.scss */
+/* line 122, ../scss/includes/_typo.scss */
 p a:hover {
   color: #00CC00;
   text-decoration: none;
   transition: color 0.5s;
+}
+
+/* line 128, ../scss/includes/_typo.scss */
+strong {
+  font-weight: bold;
 }
 
 @font-face {
@@ -949,26 +967,54 @@ img {
 }
 
 /* line 277, ../scss/style.scss */
-#contact {
+#credits {
   text-align: center;
+  /* Rounded avatars */
 }
 /* line 279, ../scss/style.scss */
-#contact .page-section {
-  padding-top: 10%;
-}
-/* line 282, ../scss/style.scss */
-#contact p {
+#credits p {
   text-align: center;
   padding-bottom: 8px;
 }
+/* line 283, ../scss/style.scss */
+#credits .row {
+  margin-top: 15px;
+}
 /* line 286, ../scss/style.scss */
-#contact .special-request {
+#credits .special-request {
   width: 50%;
   margin: 0 auto;
 }
 /* line 291, ../scss/style.scss */
-#contact .logo {
+#credits a.logo img {
   max-width: 150px;
+  max-height: 80px;
+  margin-right: 10px;
+}
+/* line 299, ../scss/style.scss */
+#credits .team-pic {
+  max-width: 60%;
+  margin: 1em 0;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+/* line 307, ../scss/style.scss */
+#credits .prod {
+  margin-top: 10px;
+}
+/* line 310, ../scss/style.scss */
+#credits .prod h5 {
+  margin-bottom: 15px;
+}
+/* line 314, ../scss/style.scss */
+#credits .prod a.logo {
+  margin-right: 20px;
+}
+/* line 316, ../scss/style.scss */
+#credits .prod a.logo img {
+  max-width: 200px;
+  max-height: 200px;
 }
 
 /* Media Queries */

@@ -274,21 +274,51 @@ img {
     }
 }
 
-#contact {
+#credits {
     text-align: center;
-    .page-section {
-        padding-top: 10%;
-    }
     p {
         text-align: center;
         padding-bottom: 8px;
+    }
+    .row {
+        margin-top: 15px;
     }
     .special-request {
         // @include zen-grid-item(6, 6);
         width:50%;
         margin: 0 auto;
     }
-    .logo {
+    a.logo img{
         max-width: 150px ;
+        max-height: 80px ;
+        margin-right: 10px;
     }
+    .team {
+    }
+    /* Rounded avatars */
+    .team-pic {
+        max-width: 60% ;
+        margin: 1em 0;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+    }
+
+    .prod {
+
+        margin-top :  10px;
+        h5 {
+            margin-bottom :  15px;
+        }
+
+        a.logo {
+            margin-right: 20px;
+            img{
+                max-width: 200px ;
+                max-height: 200px ;
+            }
+        }
+    }
+
 }
+
