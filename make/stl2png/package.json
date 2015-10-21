@@ -1,0 +1,11 @@
+{
+  "name": "junkware-STL-to-PNG",
+  "version": "0.0.1",
+  "description": "Junkware convert STL to PNG",
+  "author": "Clément Renaud <hi@clementrenaud.com>",
+  "dependencies": {
+    "glob": "^5.0.15",
+    "mkdirp": "^0.5.1",
+    "stljs": "^0.1.5"
+  }
+}
