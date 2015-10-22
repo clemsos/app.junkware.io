@@ -132,23 +132,28 @@ strong {
 }
 
 /* line 14, ../scss/dashboard.scss */
+.page {
+  padding-top: 40px;
+}
+
+/* line 17, ../scss/dashboard.scss */
 .objectId {
   /*text-align:right;*/
   color: #ff0000;
   margin-right: 10px;
 }
 
-/* line 20, ../scss/dashboard.scss */
+/* line 23, ../scss/dashboard.scss */
 h2 {
   color: #00cc00;
 }
 
-/* line 23, ../scss/dashboard.scss */
+/* line 26, ../scss/dashboard.scss */
 h4 {
   color: #fff;
 }
 
-/* line 27, ../scss/dashboard.scss */
+/* line 30, ../scss/dashboard.scss */
 p {
   color: #eee;
   margin: 0;
@@ -156,7 +161,7 @@ p {
 }
 
 /* layout */
-/* line 35, ../scss/dashboard.scss */
+/* line 38, ../scss/dashboard.scss */
 #dashboard-main {
   font-family: 'Oxygen Mono', 'Oxygen Mono2', Monaco, Menlo, Andale, Arial, sans-serif;
   text-align: left;
@@ -165,23 +170,23 @@ p {
 }
 
 /* components */
-/* line 44, ../scss/dashboard.scss */
+/* line 47, ../scss/dashboard.scss */
 .bar {
   fill: #00CC00;
 }
 
-/* line 48, ../scss/dashboard.scss */
+/* line 51, ../scss/dashboard.scss */
 .bar:hover {
   fill: brown;
 }
 
-/* line 52, ../scss/dashboard.scss */
+/* line 55, ../scss/dashboard.scss */
 .axis {
   fill: #00CC00;
   font: 10px sans-serif;
 }
 
-/* line 57, ../scss/dashboard.scss */
+/* line 60, ../scss/dashboard.scss */
 .axis path,
 .axis line {
   fill: none;
@@ -192,7 +197,7 @@ p {
 /*.x.axis path {
   display: none;
 }*/
-/* line 68, ../scss/dashboard.scss */
+/* line 71, ../scss/dashboard.scss */
 #three-axis {
   width: 100px;
   height: 100px;
@@ -206,7 +211,7 @@ p {
   z-index: 100;
 }
 
-/* line 81, ../scss/dashboard.scss */
+/* line 84, ../scss/dashboard.scss */
 #molecules {
   background-color: transparent;
   border: none;
@@ -220,12 +225,12 @@ p {
   height: 960px;
 }
 
-/* line 94, ../scss/dashboard.scss */
+/* line 97, ../scss/dashboard.scss */
 .molecule {
   height: 250px;
 }
 
-/* line 99, ../scss/dashboard.scss */
+/* line 102, ../scss/dashboard.scss */
 .bond {
   width: 5px;
   height: 10px;
@@ -233,7 +238,7 @@ p {
   display: block;
 }
 
-/* line 106, ../scss/dashboard.scss */
+/* line 109, ../scss/dashboard.scss */
 .junk-description {
   text-align: justify;
 }

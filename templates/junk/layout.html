@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block navbar %}
-    <div class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
@@ -12,12 +12,13 @@
           <a class="navbar-brand" href="/">Junkware</a>
         </div>
         <div class="navbar-collapse collapse">
-          <ul class="nav main-nav navbar-nav">
+          <ul class="nav navbar-nav">
             <li><a href="/">Home</a></li>
             <li><a href="/junks">Shop</a></li>
-            <li class="active"><a href="/junk/new">Create new</a></li>
+            <!-- <li class="active"><a href="/junk/new">Create new</a></li> -->
           </ul>
-          <ul class="nav navbar-nav navbar-right object-navbar hidden">
+          {% if objectId %}
+          <ul class="nav navbar-nav navbar-right object-navbar">
             <li>
              <a href="/junk/{{ objectId }}/text" class="btn btn-link">
               <i class="fa fa-file-text"></i> Description
@@ -55,6 +56,7 @@
               </a>
             </li>
           </ul>
+          {% endif %}
         </div><!--/.nav-collapse -->
 
       </div>
@@ -65,9 +67,11 @@
 
 {% block content %}
 
+{% if objectId %}
 <div id="dashboard-header row">
     <h2 class="junk-title">{{ junk.title }} <small class="objectId">#{{ objectId }}</small></h2>
 </div>
+{% endif %}
 
 <div class="container">
     {% block junkview %}
@@ -78,12 +82,13 @@
 {% block scripts %}
 
     <script type="text/javascript" src="/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    {% if objectId %}
     <script>
         var junk = {{ junk | tojson }};
         $("ul.object-navbar").removeClass('hidden');
         $(".main-nav").addClass('hidden');
-
     </script>
+    {% endif %}
 {% block junkscripts %}
 {% endblock %}
 
