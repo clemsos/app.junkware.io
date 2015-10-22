@@ -126,7 +126,7 @@ strong {
   font-weight: bold;
 }
 
-/* line 2, ../scss/junks.scss */
+/* line 1, ../scss/includes/_junk.scss */
 #junks {
   /* entire container, keeps perspective */
   /* flip the pane when hovered */
@@ -136,11 +136,15 @@ strong {
   /* back, initially hidden pane */
   /*        Style       */
 }
-/* line 4, ../scss/junks.scss */
+/* line 2, ../scss/includes/_junk.scss */
+#junks h3 {
+  font-size: 26pt;
+}
+/* line 5, ../scss/includes/_junk.scss */
 #junks:hover, #junks a:hover, #junks p:hover {
   text-decoration: none;
 }
-/* line 8, ../scss/junks.scss */
+/* line 9, ../scss/includes/_junk.scss */
 #junks .card-container {
   -webkit-perspective: 800px;
   -moz-perspective: 800px;
@@ -148,7 +152,7 @@ strong {
   perspective: 800px;
   margin-bottom: 30px;
 }
-/* line 16, ../scss/junks.scss */
+/* line 17, ../scss/includes/_junk.scss */
 #junks .card-container:not(.manual-flip):hover .card,
 #junks .card-container.hover.manual-flip .card {
   -webkit-transform: rotateY(180deg);
@@ -156,7 +160,7 @@ strong {
   -o-transform: rotateY(180deg);
   transform: rotateY(180deg);
 }
-/* line 23, ../scss/junks.scss */
+/* line 24, ../scss/includes/_junk.scss */
 #junks .card-container.static:hover .card,
 #junks .card-container.static.hover .card {
   -webkit-transform: none;
@@ -164,7 +168,7 @@ strong {
   -o-transform: none;
   transform: none;
 }
-/* line 31, ../scss/junks.scss */
+/* line 32, ../scss/includes/_junk.scss */
 #junks .card {
   -webkit-transition: -webkit-transform 1s;
   -moz-transition: -moz-transform 1s;
@@ -176,7 +180,7 @@ strong {
   transform-style: preserve-3d;
   position: relative;
 }
-/* line 43, ../scss/junks.scss */
+/* line 44, ../scss/includes/_junk.scss */
 #junks .front,
 #junks .back {
   -webkit-backface-visibility: hidden;
@@ -188,11 +192,11 @@ strong {
   left: 0;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.14);
 }
-/* line 56, ../scss/junks.scss */
+/* line 57, ../scss/includes/_junk.scss */
 #junks .front {
   z-index: 2;
 }
-/* line 60, ../scss/junks.scss */
+/* line 61, ../scss/includes/_junk.scss */
 #junks .back {
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
@@ -200,19 +204,19 @@ strong {
   transform: rotateY(180deg);
   z-index: 3;
 }
-/* line 67, ../scss/junks.scss */
+/* line 68, ../scss/includes/_junk.scss */
 #junks .back .btn-simple {
   position: absolute;
   left: 0;
   bottom: 4px;
 }
-/* line 73, ../scss/junks.scss */
+/* line 74, ../scss/includes/_junk.scss */
 #junks .card {
   background: none repeat scroll 0 0 #FFFFFF;
   border-radius: 4px;
   color: #444444;
 }
-/* line 78, ../scss/junks.scss */
+/* line 79, ../scss/includes/_junk.scss */
 #junks .card-container,
 #junks .front,
 #junks .back {
@@ -220,17 +224,17 @@ strong {
   height: 420px;
   border-radius: 4px;
 }
-/* line 85, ../scss/junks.scss */
+/* line 86, ../scss/includes/_junk.scss */
 #junks .card .cover {
-  height: 300px;
+  height: 230px;
   overflow: hidden;
   border-radius: 4px 4px 0 0;
 }
-/* line 90, ../scss/junks.scss */
+/* line 91, ../scss/includes/_junk.scss */
 #junks .card .cover img {
   width: 100%;
 }
-/* line 93, ../scss/junks.scss */
+/* line 94, ../scss/includes/_junk.scss */
 #junks .card .user {
   border-radius: 50%;
   display: block;
@@ -239,27 +243,27 @@ strong {
   overflow: hidden;
   width: 120px;
 }
-/* line 101, ../scss/junks.scss */
+/* line 102, ../scss/includes/_junk.scss */
 #junks .card .user img {
   background: none repeat scroll 0 0 #FFFFFF;
   border: 4px solid #FFFFFF;
   width: 100%;
 }
-/* line 106, ../scss/junks.scss */
+/* line 107, ../scss/includes/_junk.scss */
 #junks .card .content {
   background-color: transparent;
   box-shadow: none;
   padding: 10px 20px 20px;
 }
-/* line 111, ../scss/junks.scss */
+/* line 112, ../scss/includes/_junk.scss */
 #junks .card .content .main {
   min-height: 160px;
 }
-/* line 114, ../scss/junks.scss */
+/* line 115, ../scss/includes/_junk.scss */
 #junks .card .back .content .main {
   height: 215px;
 }
-/* line 117, ../scss/junks.scss */
+/* line 118, ../scss/includes/_junk.scss */
 #junks .card .name {
   font-size: 22px;
   line-height: 28px;
@@ -267,19 +271,19 @@ strong {
   text-align: center;
   text-transform: capitalize;
 }
-/* line 124, ../scss/junks.scss */
+/* line 125, ../scss/includes/_junk.scss */
 #junks .card h5 {
   margin: 5px 0;
   font-weight: 400;
   line-height: 20px;
 }
-/* line 129, ../scss/junks.scss */
+/* line 130, ../scss/includes/_junk.scss */
 #junks .card .profession {
   color: #999999;
   text-align: center;
   margin-bottom: 20px;
 }
-/* line 134, ../scss/junks.scss */
+/* line 135, ../scss/includes/_junk.scss */
 #junks .card .footer {
   border-top: 1px solid #EEEEEE;
   color: #999999;
@@ -287,24 +291,24 @@ strong {
   padding: 10px 0 0;
   text-align: center;
 }
-/* line 141, ../scss/junks.scss */
+/* line 142, ../scss/includes/_junk.scss */
 #junks .card .footer .social-links {
   font-size: 18px;
 }
-/* line 144, ../scss/junks.scss */
+/* line 145, ../scss/includes/_junk.scss */
 #junks .card .footer .social-links a {
   margin: 0 7px;
 }
-/* line 147, ../scss/junks.scss */
+/* line 148, ../scss/includes/_junk.scss */
 #junks .card .footer .btn-simple {
   margin-top: -6px;
 }
-/* line 150, ../scss/junks.scss */
+/* line 151, ../scss/includes/_junk.scss */
 #junks .card .header {
   padding: 15px 20px;
   height: 90px;
 }
-/* line 154, ../scss/junks.scss */
+/* line 155, ../scss/includes/_junk.scss */
 #junks .card .motto {
   border-bottom: 1px solid #EEEEEE;
   color: #999999;

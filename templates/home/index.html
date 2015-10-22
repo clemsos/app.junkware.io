@@ -2,15 +2,12 @@
 
 {% block content %}
 
-    <!-- <div id="curtains"></div>
-    <iframe id="terminal" src="/terminal" frameborder="0" width="100%" ></iframe>  -->
-
     {% include "home/_intro.html" %}
     {% include "home/_about.html" %}
+    {% include "home/_junks.html" %}
     {% include "home/_install.html" %}
     {% include "home/_book.html" %}
     {% include "home/_credits.html" %}
-    {% include "home/_contact.html" %}
 
 {% endblock %}
 
@@ -20,10 +17,11 @@
             <ul>
                 <li>
                     <ul>
-                        <li class="lifting"><a class="go-way-up" href="#home"><strong>Home</strong></a></li>
-                        <li class="lifting"><a class="go-under" href="#about"><strong></strong>About</a></li>
+                        <li class="lifting"><a class="go-way-up" href="#home">Home</a></li>
+                        <li class="lifting"><a class="go-under" href="#about">About</a></li>
+                        <li class="lifting"><a class="go-under" href="#junks">Junks</a></li>
+                        <li class="lifting"><a class="go-way-under" href="#install">Installation</a></li>
                         <li class="lifting"><a class="go-way-under" href="#zine">Book</a></li>
-                        <li class="lifting"><a class="go-way-under" href="#galerie">Installation</a></li>
                         <li class="lifting"><a class="go-way-under" href="#contact">Contact</a></li>
                     </ul>
                     <a class="menu-trigger" href="#">Menu</a>
@@ -36,6 +34,14 @@
 {% endblock%}
 
 {% block styles %}
+
+<!--     {% assets "skeleton_css" %}
+        <link rel=stylesheet type=text/css href="{{ ASSET_URL }}"> 
+    {% endassets %} -->
+
+    {% assets "main_scss" %}
+      <link rel=stylesheet type=text/css href="{{ ASSET_URL }}"> 
+    {% endassets %}
 {% endblock %}
 
 {% block scripts %}

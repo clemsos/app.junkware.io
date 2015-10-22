@@ -1,15 +1,16 @@
-<section id="junks" class="">
-    <div class="page-section">
-        {% for junk in junks %}
-        <div class="junk item">
-            <h4>
-                <a href="/junk/{{junk._id }}"> 
-                    {{ junk.title }}
-                </a>
-            </h4>
-            <p>{{ junk.created_at }}</p>
-            <p>{{ junk.abstract }}</p>
+<section id="junk-show" class="lower-page">
+    <div class="page-section group section">
+        <div class="col span_3_of_12">
+            <div id="terminal"></div>
         </div>
-        {% endfor %}
+        <div class="col span_9_of_12">
+            <div id="junks">
+                {% for junk in junks %}
+                <div class="junk-item">
+                    {% include "junks/_item.html" %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
     </div>
 </section>

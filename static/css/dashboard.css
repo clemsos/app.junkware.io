@@ -32,7 +32,7 @@ body {
   font-style: normal;
   font-weight: normal;
   text-align: center;
-  color: #bbb;
+  color: #eee;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
   width: 100%;
@@ -106,27 +106,27 @@ p.lead {
   font-size: 1.5em;
 }
 
-/* line 111, ../scss/includes/_typo.scss */
+/* line 112, ../scss/includes/_typo.scss */
 p {
   text-align: justify;
   font-size: 1.2em;
   line-height: 1.5;
 }
 
-/* line 117, ../scss/includes/_typo.scss */
+/* line 118, ../scss/includes/_typo.scss */
 p a {
-  color: #e5e5e5;
+  color: green;
   text-decoration: none;
 }
 
-/* line 122, ../scss/includes/_typo.scss */
+/* line 123, ../scss/includes/_typo.scss */
 p a:hover {
   color: #00CC00;
   text-decoration: none;
   transition: color 0.5s;
 }
 
-/* line 128, ../scss/includes/_typo.scss */
+/* line 129, ../scss/includes/_typo.scss */
 strong {
   font-weight: bold;
 }
@@ -150,14 +150,13 @@ h4 {
 
 /* line 27, ../scss/dashboard.scss */
 p {
+  color: #eee;
   margin: 0;
-  padding: 0;
-  display: inline;
-  font-weight: lighter;
+  padding: 5px 0;
 }
 
 /* layout */
-/* line 36, ../scss/dashboard.scss */
+/* line 35, ../scss/dashboard.scss */
 #dashboard-main {
   font-family: 'Oxygen Mono', 'Oxygen Mono2', Monaco, Menlo, Andale, Arial, sans-serif;
   text-align: left;
@@ -166,23 +165,23 @@ p {
 }
 
 /* components */
-/* line 45, ../scss/dashboard.scss */
+/* line 44, ../scss/dashboard.scss */
 .bar {
   fill: #00CC00;
 }
 
-/* line 49, ../scss/dashboard.scss */
+/* line 48, ../scss/dashboard.scss */
 .bar:hover {
   fill: brown;
 }
 
-/* line 53, ../scss/dashboard.scss */
+/* line 52, ../scss/dashboard.scss */
 .axis {
   fill: #00CC00;
   font: 10px sans-serif;
 }
 
-/* line 58, ../scss/dashboard.scss */
+/* line 57, ../scss/dashboard.scss */
 .axis path,
 .axis line {
   fill: none;
@@ -193,7 +192,7 @@ p {
 /*.x.axis path {
   display: none;
 }*/
-/* line 69, ../scss/dashboard.scss */
+/* line 68, ../scss/dashboard.scss */
 #three-axis {
   width: 100px;
   height: 100px;
@@ -207,7 +206,7 @@ p {
   z-index: 100;
 }
 
-/* line 82, ../scss/dashboard.scss */
+/* line 81, ../scss/dashboard.scss */
 #molecules {
   background-color: transparent;
   border: none;
@@ -221,7 +220,12 @@ p {
   height: 960px;
 }
 
-/* line 95, ../scss/dashboard.scss */
+/* line 94, ../scss/dashboard.scss */
+.molecule {
+  height: 250px;
+}
+
+/* line 99, ../scss/dashboard.scss */
 .bond {
   width: 5px;
   height: 10px;
@@ -229,7 +233,7 @@ p {
   display: block;
 }
 
-/* line 102, ../scss/dashboard.scss */
+/* line 106, ../scss/dashboard.scss */
 .junk-description {
   text-align: justify;
 }

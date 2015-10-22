@@ -8,6 +8,8 @@ from Junk import Junk, JunkList
 
 GALLERY_PATH=os.path.join("uploads","gallery")
 
+def get_random_junks():
+    return [x for x in mongo.db.junks.find().limit(8).skip( random.randint(0, mongo.db.junks.count()) )]
 # routes
 @app.route('/')
 def home():
@@ -15,7 +17,8 @@ def home():
     gallery_files = [pic for pic in os.listdir(gallery_path) if not os.path.isdir(pic)]
     gallery_files.remove("thumb")
     for f in gallery_files : print f
-    junks= [x for x in mongo.db.junks.find().limit(8)]
+    junks= get_random_junks()
+    if len(junks) is not 8 : get_random_junks()
     return render_template('home/index.html', junks=junks, gallery=gallery_files)
 
 @app.route('/terminal')
@@ -72,18 +75,18 @@ def junk_index():
 def junwkare(objectId):
     junk=mongo.db.junks.find_one_or_404({"_id": objectId})
     del junk["_id"]
-    return render_template('junks/single.html', objectId=objectId, junk=junk)
+    return render_template('junk/single.html', objectId=objectId, junk=junk)
 
 @app.route('/junk/partials/<path:path>')
 def partials(path):
     print path
-    return render_template(os.path.join("junks", os.path.join('partials',path+".html")))
+    return render_template(os.path.join("junk", os.path.join('partials',path+".html")))
 
 @app.route('/junk/<ObjectId:objectId>/<path:path>')
 def single_junk(objectId, path):
     junk=mongo.db.junks.find_one_or_404({"_id": objectId})
     del junk["_id"]
-    return render_template(os.path.join("junks",os.path.join('partials',path+".html")), objectId=objectId, junk=junk)
+    return render_template(os.path.join("junk",os.path.join('partials',path+".html")), objectId=objectId, junk=junk)
 
 # API
 api.add_resource(JunkList, '/api/junks')

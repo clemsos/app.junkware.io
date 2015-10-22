@@ -8,12 +8,31 @@
 @import "includes/colors";
 @import "includes/terminal";
 @import "includes/items-grid";
+@import "includes/junk";
+@import "includes/grid";
 $zen-column-count: 12;
-// $zen-gutter-width:0;
 $zen-grid-width:100%;
+body {
+    background: #000;
+}
+
 em {
     color: $highlight-color;
     font-weight: 800;
+}
+
+.page-section {
+    border-bottom: 1px solid #555;
+    width: 90%;
+    margin: 20px auto 0 auto;
+}
+
+#home .page-section {
+    border: none;
+}
+
+p i {
+    font-style: italic;
 }
 
 a,
@@ -32,10 +51,6 @@ a:hover {
 img {
     max-width: 100%;
     height: auto;
-}
-
-#about {
-    padding-top: 15px;
 }
 
 .footer {
@@ -68,7 +83,7 @@ img {
     position: absolute;
     z-index: 10;
     a.menu-trigger {
-        background: url(../img/menu-trigger-black.png) no-repeat;
+        background: url(../img/menu-trigger-white.png) no-repeat;
         width: 30px;
         height: 30px;
         margin: 0 0 0 20px;
@@ -76,18 +91,18 @@ img {
         text-indent: -10000px;
     }
     a.menu-trigger:hover {
-        background: url(../img/menu-trigger-white.png) no-repeat;
+        background: url(../img/menu-trigger-green.png) no-repeat;
         width: 30px;
         height: 30px;
         text-indent: -10000px;
     }
     a {
-        color: #000;
+        color: white;
         font-weight: normal;
         text-decoration: none;
     }
     a:hover {
-        color: #555;
+        color: white;
     }
     ul,
     li {
@@ -169,8 +184,80 @@ img {
 }
 
 #about {
-    $zen-column-count: 16;
+    padding-top: 15px;
+    margin: 0 auto;
+    .about-section {
+        margin:30px auto;
+        border-bottom: 1px solid #555;
+    }
+    .about-section-last {
+        border:none;
+    }
+    p {
+        font-size: 1.3em;
+        margin-bottom: 10px;
+    }
+    #lead {
+        margin: 40px 0 60px 0;
+        p {
+            font-size: 2em;
+        }
+    }
+    .screenshot {
+        border: 2px solid rgba(255, 255, 255, .2);
+        padding: -2px;
+    }
+    .prof {
+        padding-top: 25px;
+        p {
+            text-align: center;
+            padding-top: 10px;
+        }
+        img {
+            width: 250px;
+            height: 250px;
+            border-radius: 250px;
+            -webkit-border-radius: 250px;
+            -moz-border-radius: 250px;
+            background: url(http://link-to-your/image.jpg) no-repeat;
+        }
+    }
+    .lab {
+        img {
+            max-height: 300px;
+        }
+    }
+    #blurbs {
+        color: rgba(255, 255, 255, .9);
+        blockquote {
+            text-align: left;
+            font-size: 17pt;
+            font-style: italic;
+            line-height: 1.25;
+            position: relative;
+            padding: 15px 0 10px 15px;
+        }
+        .blurb-legend p {
+            text-align: left;
+            font-size: 12pt;
+            font-style: normal;
+            padding-left: 15px;
+        }
+        .patient {
+            float: left;
+            max-width: 100%;
+        }
+        .circular {
+            width: 150px;
+            height: 150px;
+            border-radius: 150px;
+            -webkit-border-radius: 150px;
+            -moz-border-radius: 150px;
+            background: url(http://link-to-your/image.jpg) no-repeat;
+        }
+    }
     #bargraph {
+        margin: 0 auto;
         .bar {
             fill: #00CC00;
         }
@@ -193,16 +280,36 @@ img {
     }
 }
 
+#junk-show {
+    $zen-column-count: 16;
+}
+
+.page-section {
+    @include clearfix;
+}
+
 #junks {
-    background: rgba(0, 0, 0, .9);
-    .page-section {
-        width: 90%;
-        margin: 0 auto;
+    @include clearfix;
+    .junk-item {
+        .junk h3 {
+            font-size: 20pt;
+        }
+        .card-container {
+            height: 350px;
+        }
+        width: 25%;
+        min-width:150px;
+        float:left;
+        display:block;
+        .price {
+            width: 50%
+        }
     }
-    .item {
-        width: 130px;
-        // padding: 5px;
-        // width: calc(100%/3);
+    @media screen and (max-width: 767px) {
+        div.one {
+            width: 100%
+        }
+        float:none;
     }
 }
 
@@ -224,7 +331,21 @@ img {
     @include zen-grid-item(8, 5);
 }
 
-#zine {
+#install {
+    .gallery {
+        width: 80%;
+        margin: 0 auto;
+        padding-bottom: 20px;
+        img {
+            // max-width: 180px;
+        }
+    }
+}
+
+#book {
+    .page-section {
+        padding: 20px 0;
+    }
     h3 {
         font-size: 40px;
     }
@@ -242,6 +363,15 @@ img {
 
 #credits {
     text-align: center;
+
+    #contact {
+        font-size: 1.4em;
+        margin : 80px 0;
+    }
+
+    .junkware-logo {
+        max-width: 300px;
+    }
     p {
         text-align: center;
         padding-bottom: 8px;

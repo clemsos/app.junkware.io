@@ -2,66 +2,42 @@
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
 <html>
+
 <head>
-  <title>Junkware</title>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1">
-
-  <meta name="description" content="Junkware, an art+tech generative project." />
-  <meta name="keywords" content="junkware, biohack, DNA, biometrics, NLG, patents, three.js, d3.js, generative design" />
-  <link rel="canonical" href="http://junkware.io" />
-
-
-  <script type="text/javascript" src="/libs/jquery/dist/jquery.js"></script>
-  <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
-
-  {% assets "main_scss" %}
-  <link rel=stylesheet type=text/css href="{{ ASSET_URL }}">
-  {% endassets %}
+    <title>Junkware</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1">
+    <meta name="description" content="Junkware, an art+tech generative project." />
+    <meta name="keywords" content="junkware, biohack, DNA, biometrics, NLG, patents, three.js, d3.js, generative design" />
+    <link rel="canonical" href="http://junkware.io" />
+    <script type="text/javascript" src="/libs/jquery/dist/jquery.js"></script>
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css"> 
 
 
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
   <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
-
-  <!--[if lt IE 9]>
+    <!--[if lt IE 9]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
-
-  <!--[if lt IE 9]>
+    <!--[if lt IE 9]>
   <link rel="stylesheet" type="text/css" media="all" href="css/IE.css">
   <![endif]-->
-
-  {% block styles %}{% endblock %}
+    {% block styles %}{% endblock %}
 </head>
+
 <body>
-
-  <div class="page" role="main" id="main">
-    {% block navbar %}{% endblock %}
-    {% for message in get_flashed_messages() %}
-    <div class="flash">{{ message }}</div>
-    {% endfor %}
-    {% block content %}{% endblock %}
-  </body>
-  <script type="text/javascript" src="/js/main.js"></script>
-  
-  <script>
-    // jQuery(document).ready(function($){
-    //   $("#devices a").click(function(e){
-    //     console.log($(this).attr('href'));
-    //     $.get($(this).attr('href'), function (data) {
-    //       console.log(data);
-    //     })
-    //     e.preventDefault();
-    //   })
-    // })
- </script>
-
-  {% block scripts %}{% endblock %}
-
-  <html>
+    <div class="page" role="main" id="main">
+        {% block navbar %}{% endblock %} 
+        {% block content %}{% endblock %}
+</body>
+<script type="text/javascript" src="/js/main.js"></script>
+{% block scripts %}{% endblock %}
+<html>

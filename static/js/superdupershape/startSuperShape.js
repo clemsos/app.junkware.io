@@ -7,7 +7,6 @@ requirejs(['camera', 'renderer','scene', 'mesh', 'stats', 'controls', 'settings'
   }
 
   // additional axis
-  console.log(settings.axisHeight);
   var axisContainer, axisRenderer, axisScene, axisCamera, axis;
   function initAxis() {
       // dom
@@ -56,6 +55,7 @@ requirejs(['camera', 'renderer','scene', 'mesh', 'stats', 'controls', 'settings'
 
   initAxis();
   var mesh = new Mesh(shapeData);
+
   // gui.onChange(mesh.update.bind(mesh));
   // eventHandler.init(mesh);
 

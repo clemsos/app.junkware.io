@@ -41,6 +41,7 @@ assets.register('terminal_css', terminal_css)
 junk_index_css = Bundle('scss/junks.scss', filters='compass', output='css/junks.css', depends='includes/*.scss')
 assets.register('junks_css', junk_index_css)
 
+
 # mongo db
 app.config['MONGO_URI'] = MONGO_URL
 mongo = PyMongo(app)

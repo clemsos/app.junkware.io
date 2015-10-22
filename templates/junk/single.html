@@ -1,0 +1,75 @@
+{% extends "junk/layout.html" %} {% block junkview %}
+<div class="row">
+<div class="tab-content col-xs-8 col-sm-8 col-md-8 col-lg-8">
+    <div id="mesh"></div>
+    <p class="junk-abstract"></p>
+</div>
+<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+    <h4>Molecule</h4>
+    <!-- <p id="glmol01_pdbTitle"></p> -->
+    <div id="glmol01" class="molecule"></div>
+    <div id="glmol01_src"></div>
+    <h4>DNA Sequence</h4>
+    <div class="dna"></div>
+</div>
+</div>
+
+<div id="description">
+    <h4>Complete Specification</h4>
+    {% for line in junk.description %}
+    <p>{{line}}</p>
+    {% endfor %}
+</div>
+{% endblock %} {% block junkscripts %}
+<script src="/js/jquery.shuffleLetters.js"></script>
+<script src="/js/Terminal.js"></script>
+<script src="/libs/d3/d3.min.js"></script>
+<script src="/js/electrophoresis.js"></script>
+<script src="/js/jquery.shuffleLetters.js"></script>
+<script src="/js/Three49custom.js"></script>
+<script src="/js/GLmol.js"></script>
+<script type="x-shader/x-vertex" id="vertexshader">
+    attribute vec3 a_color; varying vec3 cl; varying vec3 vNormal; void main() { vNormal = normal; gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0); cl = a_color; }
+</script>
+<script type="x-shader/x-fragment" id="fragmentshader">
+    varying vec3 cl; varying vec3 vNormal; void main() { vec3 light = vec3(0.5,0.2,1.0); light = normalize(light); float dProd = max(0.0, dot(abs(vNormal), light)); gl_FragColor = vec4(cl*(dProd), 1.0); }
+</script>
+<script src="/libs/dat.gui/dat.gui.js"></script>
+<script src="/libs/stats.js/build/stats.min.js"></script>
+<script src="/js/superdupershape/lib/threejs/three.min.js"></script>
+<script src="/js/superdupershape/lib/threejs/Detector.js"></script>
+<script src="/js/superdupershape/lib/threex/THREEx.WindowResize.js"></script>
+<script src="/js/superdupershape/lib/orbitControls.js"></script>
+<script src="/libs/requirejs/require.js" data-main="/js/superdupershape/basicDisplay.js">
+</script>
+<script>
+// text 
+var terminal = new Terminal(".junk-description", "    ", ["ok", "test"]);
+terminal.init();
+$(".junk-abstract").text(junk.abstract);
+$(".junk-abstract").shuffleLetters();
+// $(".junk-description").html("");
+// terminal.addMessages(junk.description)
+
+
+
+// load DNA Sequence
+// $(".dna-seq").shuffleLetters();
+
+var dnaViewer = new DNAViewer(junk.dna, ".dna", 300, 200);
+dnaViewer.cutSequences();
+dnaViewer.createSvg();
+dnaViewer.display()
+
+// molecule
+var url = "/data/molecules/" + junk.molecule;
+console.log(url);
+$.get(url, function(data) {
+    glmol01 = new GLmol('glmol01', true);
+    $("#glmol01_src").val(data);
+    glmol01.loadMolecule();
+    
+});
+
+</script>
+{% endblock %}

@@ -415,13 +415,12 @@ section.fullwidth {
 
 /* line 31, ../scss/includes/_layout.scss */
 .lower-page {
-  min-height: 100%;
   margin: 0;
   padding: 0;
   background: black;
 }
 
-/* line 38, ../scss/includes/_layout.scss */
+/* line 37, ../scss/includes/_layout.scss */
 .bottom-page {
   min-height: 30%;
   margin: 0;
@@ -458,7 +457,7 @@ body {
   font-style: normal;
   font-weight: normal;
   text-align: center;
-  color: #bbb;
+  color: #eee;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
   width: 100%;
@@ -532,27 +531,27 @@ p.lead {
   font-size: 1.5em;
 }
 
-/* line 111, ../scss/includes/_typo.scss */
+/* line 112, ../scss/includes/_typo.scss */
 p {
   text-align: justify;
   font-size: 1.2em;
   line-height: 1.5;
 }
 
-/* line 117, ../scss/includes/_typo.scss */
+/* line 118, ../scss/includes/_typo.scss */
 p a {
-  color: #e5e5e5;
+  color: green;
   text-decoration: none;
 }
 
-/* line 122, ../scss/includes/_typo.scss */
+/* line 123, ../scss/includes/_typo.scss */
 p a:hover {
   color: #00CC00;
   text-decoration: none;
   transition: color 0.5s;
 }
 
-/* line 128, ../scss/includes/_typo.scss */
+/* line 129, ../scss/includes/_typo.scss */
 strong {
   font-weight: bold;
 }
@@ -690,36 +689,363 @@ strong {
   margin-top: 20px;
 }
 
-/* line 14, ../scss/style.scss */
+/* line 1, ../scss/includes/_junk.scss */
+#junks {
+  /* entire container, keeps perspective */
+  /* flip the pane when hovered */
+  /* flip speed goes here */
+  /* hide back of pane during swap */
+  /* front pane, placed above back */
+  /* back, initially hidden pane */
+  /*        Style       */
+}
+/* line 2, ../scss/includes/_junk.scss */
+#junks h3 {
+  font-size: 26pt;
+}
+/* line 5, ../scss/includes/_junk.scss */
+#junks:hover, #junks a:hover, #junks p:hover {
+  text-decoration: none;
+}
+/* line 9, ../scss/includes/_junk.scss */
+#junks .card-container {
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+  -o-perspective: 800px;
+  perspective: 800px;
+  margin-bottom: 30px;
+}
+/* line 17, ../scss/includes/_junk.scss */
+#junks .card-container:not(.manual-flip):hover .card,
+#junks .card-container.hover.manual-flip .card {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+/* line 24, ../scss/includes/_junk.scss */
+#junks .card-container.static:hover .card,
+#junks .card-container.static.hover .card {
+  -webkit-transform: none;
+  -moz-transform: none;
+  -o-transform: none;
+  transform: none;
+}
+/* line 32, ../scss/includes/_junk.scss */
+#junks .card {
+  -webkit-transition: -webkit-transform 1s;
+  -moz-transition: -moz-transform 1s;
+  -o-transition: -o-transform 1s;
+  transition: transform 1s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  position: relative;
+}
+/* line 44, ../scss/includes/_junk.scss */
+#junks .front,
+#junks .back {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.14);
+}
+/* line 57, ../scss/includes/_junk.scss */
+#junks .front {
+  z-index: 2;
+}
+/* line 61, ../scss/includes/_junk.scss */
+#junks .back {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  z-index: 3;
+}
+/* line 68, ../scss/includes/_junk.scss */
+#junks .back .btn-simple {
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+}
+/* line 74, ../scss/includes/_junk.scss */
+#junks .card {
+  background: none repeat scroll 0 0 #FFFFFF;
+  border-radius: 4px;
+  color: #444444;
+}
+/* line 79, ../scss/includes/_junk.scss */
+#junks .card-container,
+#junks .front,
+#junks .back {
+  width: 100%;
+  height: 420px;
+  border-radius: 4px;
+}
+/* line 86, ../scss/includes/_junk.scss */
+#junks .card .cover {
+  height: 230px;
+  overflow: hidden;
+  border-radius: 4px 4px 0 0;
+}
+/* line 91, ../scss/includes/_junk.scss */
+#junks .card .cover img {
+  width: 100%;
+}
+/* line 94, ../scss/includes/_junk.scss */
+#junks .card .user {
+  border-radius: 50%;
+  display: block;
+  height: 120px;
+  margin: -55px auto 0;
+  overflow: hidden;
+  width: 120px;
+}
+/* line 102, ../scss/includes/_junk.scss */
+#junks .card .user img {
+  background: none repeat scroll 0 0 #FFFFFF;
+  border: 4px solid #FFFFFF;
+  width: 100%;
+}
+/* line 107, ../scss/includes/_junk.scss */
+#junks .card .content {
+  background-color: transparent;
+  box-shadow: none;
+  padding: 10px 20px 20px;
+}
+/* line 112, ../scss/includes/_junk.scss */
+#junks .card .content .main {
+  min-height: 160px;
+}
+/* line 115, ../scss/includes/_junk.scss */
+#junks .card .back .content .main {
+  height: 215px;
+}
+/* line 118, ../scss/includes/_junk.scss */
+#junks .card .back .content .main p {
+  margin: auto 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+/* line 122, ../scss/includes/_junk.scss */
+#junks .card .name {
+  font-size: 22px;
+  line-height: 28px;
+  margin: 10px 0 0;
+  text-align: center;
+  text-transform: capitalize;
+}
+/* line 129, ../scss/includes/_junk.scss */
+#junks .card h5 {
+  margin: 5px 0;
+  font-weight: 400;
+  line-height: 20px;
+}
+/* line 134, ../scss/includes/_junk.scss */
+#junks .card .profession {
+  color: #999999;
+  text-align: center;
+  margin-bottom: 20px;
+}
+/* line 139, ../scss/includes/_junk.scss */
+#junks .card .footer {
+  border-top: 1px solid #EEEEEE;
+  color: #999999;
+  margin: 30px 0 0;
+  padding: 10px 0 0;
+  text-align: center;
+}
+/* line 146, ../scss/includes/_junk.scss */
+#junks .card .footer .social-links {
+  font-size: 18px;
+}
+/* line 149, ../scss/includes/_junk.scss */
+#junks .card .footer .social-links a {
+  margin: 0 7px;
+}
+/* line 152, ../scss/includes/_junk.scss */
+#junks .card .footer .btn-simple {
+  margin-top: -6px;
+}
+/* line 155, ../scss/includes/_junk.scss */
+#junks .card .header {
+  padding: 15px 20px;
+  height: 90px;
+}
+/* line 159, ../scss/includes/_junk.scss */
+#junks .card .motto {
+  border-bottom: 1px solid #EEEEEE;
+  color: #999999;
+  font-size: 14px;
+  font-weight: 400;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+/*  SECTIONS  */
+/* line 2, ../scss/includes/_grid.scss */
+.section {
+  clear: both;
+  padding: 0px;
+  margin: 0px;
+}
+
+/*  COLUMN SETUP  */
+/* line 9, ../scss/includes/_grid.scss */
+.col {
+  display: block;
+  float: left;
+  margin: 1% 0 1% 1.6%;
+}
+
+/* line 14, ../scss/includes/_grid.scss */
+.col:first-child {
+  margin-left: 0;
+}
+
+/*  GROUPING  */
+/* line 17, ../scss/includes/_grid.scss */
+.group:before,
+.group:after {
+  content: "";
+  display: table;
+}
+
+/* line 19, ../scss/includes/_grid.scss */
+.group:after {
+  clear: both;
+}
+
+/* line 20, ../scss/includes/_grid.scss */
+.group {
+  zoom: 1;
+  /* For IE 6/7 */
+}
+
+/*  GRID OF TWELVE  */
+/* line 22, ../scss/includes/_grid.scss */
+.span_12_of_12 {
+  width: 100%;
+}
+
+/* line 26, ../scss/includes/_grid.scss */
+.span_11_of_12 {
+  width: 91.53%;
+}
+
+/* line 29, ../scss/includes/_grid.scss */
+.span_10_of_12 {
+  width: 83.06%;
+}
+
+/* line 33, ../scss/includes/_grid.scss */
+.span_9_of_12 {
+  width: 74.6%;
+}
+
+/* line 37, ../scss/includes/_grid.scss */
+.span_8_of_12 {
+  width: 66.13%;
+}
+
+/* line 41, ../scss/includes/_grid.scss */
+.span_7_of_12 {
+  width: 57.66%;
+}
+
+/* line 45, ../scss/includes/_grid.scss */
+.span_6_of_12 {
+  width: 49.2%;
+}
+
+/* line 49, ../scss/includes/_grid.scss */
+.span_5_of_12 {
+  width: 40.73%;
+}
+
+/* line 53, ../scss/includes/_grid.scss */
+.span_4_of_12 {
+  width: 32.26%;
+}
+
+/* line 57, ../scss/includes/_grid.scss */
+.span_3_of_12 {
+  width: 23.8%;
+}
+
+/* line 61, ../scss/includes/_grid.scss */
+.span_2_of_12 {
+  width: 15.33%;
+}
+
+/* line 65, ../scss/includes/_grid.scss */
+.span_1_of_12 {
+  width: 6.866%;
+}
+
+/*  GO FULL WIDTH BELOW 480 PIXELS */
+@media only screen and (max-width: 480px) {
+  /* line 71, ../scss/includes/_grid.scss */
+  .col {
+    margin: 1% 0 1% 0%;
+  }
+
+  /* line 73, ../scss/includes/_grid.scss */
+  .span_1_of_12, .span_2_of_12, .span_3_of_12, .span_4_of_12, .span_5_of_12, .span_6_of_12, .span_7_of_12, .span_8_of_12, .span_9_of_12, .span_10_of_12, .span_11_of_12, .span_12_of_12 {
+    width: 100%;
+  }
+}
+/* line 15, ../scss/style.scss */
+body {
+  background: #000;
+}
+
+/* line 19, ../scss/style.scss */
 em {
   color: #fff;
   font-weight: 800;
 }
 
-/* line 19, ../scss/style.scss */
+/* line 24, ../scss/style.scss */
+.page-section {
+  border-bottom: 1px solid #555;
+  width: 90%;
+  margin: 20px auto 0 auto;
+}
+
+/* line 30, ../scss/style.scss */
+#home .page-section {
+  border: none;
+}
+
+/* line 34, ../scss/style.scss */
+p i {
+  font-style: italic;
+}
+
+/* line 38, ../scss/style.scss */
 a,
 a:visited {
   text-decoration: none;
-  color: #e5e5e5;
+  color: green;
 }
 
-/* line 25, ../scss/style.scss */
+/* line 44, ../scss/style.scss */
 a:hover {
   color: #00CC00;
 }
 
-/* line 32, ../scss/style.scss */
+/* line 51, ../scss/style.scss */
 img {
   max-width: 100%;
   height: auto;
 }
 
-/* line 37, ../scss/style.scss */
-#about {
-  padding-top: 15px;
-}
-
-/* line 41, ../scss/style.scss */
+/* line 56, ../scss/style.scss */
 .footer {
   position: fixed;
   bottom: 0;
@@ -728,7 +1054,7 @@ img {
   height: 85px;
   z-index: 15;
 }
-/* line 48, ../scss/style.scss */
+/* line 63, ../scss/style.scss */
 .footer .footer-bg {
   position: fixed;
   width: 300px;
@@ -738,7 +1064,7 @@ img {
   background: url(../img/footer-bg.png) no-repeat left bottom;
 }
 
-/* line 58, ../scss/style.scss */
+/* line 73, ../scss/style.scss */
 .nav-menu {
   font-family: 'LeagueGothicRegular', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 20px;
@@ -752,74 +1078,74 @@ img {
   position: absolute;
   z-index: 10;
 }
-/* line 70, ../scss/style.scss */
+/* line 85, ../scss/style.scss */
 .nav-menu a.menu-trigger {
-  background: url(../img/menu-trigger-black.png) no-repeat;
+  background: url(../img/menu-trigger-white.png) no-repeat;
   width: 30px;
   height: 30px;
   margin: 0 0 0 20px;
   padding: 0;
   text-indent: -10000px;
 }
-/* line 78, ../scss/style.scss */
+/* line 93, ../scss/style.scss */
 .nav-menu a.menu-trigger:hover {
-  background: url(../img/menu-trigger-white.png) no-repeat;
+  background: url(../img/menu-trigger-green.png) no-repeat;
   width: 30px;
   height: 30px;
   text-indent: -10000px;
 }
-/* line 84, ../scss/style.scss */
+/* line 99, ../scss/style.scss */
 .nav-menu a {
-  color: #000;
+  color: white;
   font-weight: normal;
   text-decoration: none;
 }
-/* line 89, ../scss/style.scss */
+/* line 104, ../scss/style.scss */
 .nav-menu a:hover {
-  color: #555;
+  color: white;
 }
-/* line 92, ../scss/style.scss */
+/* line 107, ../scss/style.scss */
 .nav-menu ul,
 .nav-menu li {
   margin: 0;
   padding: 0;
 }
-/* line 97, ../scss/style.scss */
+/* line 112, ../scss/style.scss */
 .nav-menu .lifting {
   margin: 0 0 8px 10px;
   height: 20px;
 }
-/* line 101, ../scss/style.scss */
+/* line 116, ../scss/style.scss */
 .nav-menu .left-bottom .lifting-first {
   margin: 0 0 14px 0;
   height: 20px;
 }
-/* line 105, ../scss/style.scss */
+/* line 120, ../scss/style.scss */
 .nav-menu li a,
 .nav-menu li {
   float: left;
   text-transform: uppercase;
   height: 20px;
 }
-/* line 111, ../scss/style.scss */
+/* line 126, ../scss/style.scss */
 .nav-menu li {
   position: relative;
   margin: 7px 0 0 0;
   padding: 0 0 10px 0;
   background: none;
 }
-/* line 117, ../scss/style.scss */
+/* line 132, ../scss/style.scss */
 .nav-menu li a {
   padding: 0 5px 10px 5px;
   text-decoration: none;
   -moz-transition: 0.2s ease-in;
   -webkit-transition: 0.2s ease-in;
 }
-/* line 123, ../scss/style.scss */
+/* line 138, ../scss/style.scss */
 .nav-menu li a:hover {
   background: none;
 }
-/* line 126, ../scss/style.scss */
+/* line 141, ../scss/style.scss */
 .nav-menu li ul {
   display: none;
   left: 0;
@@ -827,21 +1153,21 @@ img {
   bottom: 100%;
   background: none;
 }
-/* line 133, ../scss/style.scss */
+/* line 148, ../scss/style.scss */
 .nav-menu li:hover ul {
   display: block;
   width: auto;
 }
-/* line 137, ../scss/style.scss */
+/* line 152, ../scss/style.scss */
 .nav-menu li ul a {
   white-space: nowrap;
 }
-/* line 140, ../scss/style.scss */
+/* line 155, ../scss/style.scss */
 .nav-menu li ul a:hover {
   color: #555;
 }
 
-/* line 145, ../scss/style.scss */
+/* line 160, ../scss/style.scss */
 #home {
   background: url(/uploads/finger_tent.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -849,21 +1175,21 @@ img {
   -o-background-size: cover;
   background-size: cover;
 }
-/* line 151, ../scss/style.scss */
+/* line 166, ../scss/style.scss */
 #home .header {
   position: relative;
   top: 190px;
   text-align: center;
 }
-/* line 155, ../scss/style.scss */
+/* line 170, ../scss/style.scss */
 #home .header p.intro-line {
   font-size: 20px;
 }
-/* line 158, ../scss/style.scss */
+/* line 173, ../scss/style.scss */
 #home .header p:hover {
   color: #00CC00;
 }
-/* line 161, ../scss/style.scss */
+/* line 176, ../scss/style.scss */
 #home .header p {
   font-family: 'Roboto', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-align: center;
@@ -872,46 +1198,181 @@ img {
   font-size: 14px;
 }
 
-/* line 174, ../scss/style.scss */
+/* line 186, ../scss/style.scss */
+#about {
+  padding-top: 15px;
+  margin: 0 auto;
+}
+/* line 189, ../scss/style.scss */
+#about .about-section {
+  margin: 30px auto;
+  border-bottom: 1px solid #555;
+}
+/* line 193, ../scss/style.scss */
+#about .about-section-last {
+  border: none;
+}
+/* line 196, ../scss/style.scss */
+#about p {
+  font-size: 1.3em;
+  margin-bottom: 10px;
+}
+/* line 200, ../scss/style.scss */
+#about #lead {
+  margin: 40px 0 60px 0;
+}
+/* line 202, ../scss/style.scss */
+#about #lead p {
+  font-size: 2em;
+}
+/* line 206, ../scss/style.scss */
+#about .screenshot {
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  padding: -2px;
+}
+/* line 210, ../scss/style.scss */
+#about .prof {
+  padding-top: 25px;
+}
+/* line 212, ../scss/style.scss */
+#about .prof p {
+  text-align: center;
+  padding-top: 10px;
+}
+/* line 216, ../scss/style.scss */
+#about .prof img {
+  width: 250px;
+  height: 250px;
+  border-radius: 250px;
+  -webkit-border-radius: 250px;
+  -moz-border-radius: 250px;
+  background: url(http://link-to-your/image.jpg) no-repeat;
+}
+/* line 226, ../scss/style.scss */
+#about .lab img {
+  max-height: 300px;
+}
+/* line 230, ../scss/style.scss */
+#about #blurbs {
+  color: rgba(255, 255, 255, 0.9);
+}
+/* line 232, ../scss/style.scss */
+#about #blurbs blockquote {
+  text-align: left;
+  font-size: 17pt;
+  font-style: italic;
+  line-height: 1.25;
+  position: relative;
+  padding: 15px 0 10px 15px;
+}
+/* line 240, ../scss/style.scss */
+#about #blurbs .blurb-legend p {
+  text-align: left;
+  font-size: 12pt;
+  font-style: normal;
+  padding-left: 15px;
+}
+/* line 246, ../scss/style.scss */
+#about #blurbs .patient {
+  float: left;
+  max-width: 100%;
+}
+/* line 250, ../scss/style.scss */
+#about #blurbs .circular {
+  width: 150px;
+  height: 150px;
+  border-radius: 150px;
+  -webkit-border-radius: 150px;
+  -moz-border-radius: 150px;
+  background: url(http://link-to-your/image.jpg) no-repeat;
+}
+/* line 259, ../scss/style.scss */
+#about #bargraph {
+  margin: 0 auto;
+}
+/* line 261, ../scss/style.scss */
 #about #bargraph .bar {
   fill: #00CC00;
 }
-/* line 177, ../scss/style.scss */
+/* line 264, ../scss/style.scss */
 #about #bargraph .bar:hover {
   fill: brown;
 }
-/* line 180, ../scss/style.scss */
+/* line 267, ../scss/style.scss */
 #about #bargraph .axis {
   fill: #00CC00;
   font: 10px sans-serif;
 }
-/* line 184, ../scss/style.scss */
+/* line 271, ../scss/style.scss */
 #about #bargraph .axis path,
 #about #bargraph .axis line {
   fill: none;
   stroke: #00CC00;
   shape-rendering: crispEdges;
 }
-/* line 190, ../scss/style.scss */
+/* line 277, ../scss/style.scss */
 #about #bargraph .x.axis path {
   /*display: none;*/
 }
 
-/* line 196, ../scss/style.scss */
-#junks {
-  background: rgba(0, 0, 0, 0.9);
+/* line 287, ../scss/style.scss */
+.page-section {
+  zoom: 1;
 }
-/* line 198, ../scss/style.scss */
-#junks .page-section {
-  width: 90%;
-  margin: 0 auto;
+/* line 3, ../scss/includes/_mixins.scss */
+.page-section:before, .page-section:after {
+  content: "";
+  display: table;
 }
-/* line 202, ../scss/style.scss */
-#junks .item {
-  width: 130px;
+/* line 5, ../scss/includes/_mixins.scss */
+.page-section:after {
+  clear: both;
 }
 
-/* line 209, ../scss/style.scss */
+/* line 291, ../scss/style.scss */
+#junks {
+  zoom: 1;
+}
+/* line 3, ../scss/includes/_mixins.scss */
+#junks:before, #junks:after {
+  content: "";
+  display: table;
+}
+/* line 5, ../scss/includes/_mixins.scss */
+#junks:after {
+  clear: both;
+}
+/* line 293, ../scss/style.scss */
+#junks .junk-item {
+  width: 25%;
+  min-width: 150px;
+  float: left;
+  display: block;
+}
+/* line 294, ../scss/style.scss */
+#junks .junk-item .junk h3 {
+  font-size: 20pt;
+}
+/* line 297, ../scss/style.scss */
+#junks .junk-item .card-container {
+  height: 350px;
+}
+/* line 304, ../scss/style.scss */
+#junks .junk-item .price {
+  width: 50%;
+}
+@media screen and (max-width: 767px) {
+  /* line 291, ../scss/style.scss */
+  #junks {
+    float: none;
+  }
+  /* line 309, ../scss/style.scss */
+  #junks div.one {
+    width: 100%;
+  }
+}
+
+/* line 316, ../scss/style.scss */
 .text {
   float: left;
   width: 33.33333%;
@@ -925,18 +1386,18 @@ img {
   box-sizing: border-box;
   word-wrap: break-word;
 }
-/* line 212, ../scss/style.scss */
+/* line 319, ../scss/style.scss */
 .text p {
   padding-left: 30px;
   padding-bottom: .8em;
 }
-/* line 216, ../scss/style.scss */
+/* line 323, ../scss/style.scss */
 .text h5 {
   padding-left: 30px;
   text-align: justify;
 }
 
-/* line 222, ../scss/style.scss */
+/* line 329, ../scss/style.scss */
 .pic {
   float: left;
   width: 66.66667%;
@@ -951,50 +1412,70 @@ img {
   word-wrap: break-word;
 }
 
-/* line 228, ../scss/style.scss */
-#zine h3 {
+/* line 335, ../scss/style.scss */
+#install .gallery {
+  width: 80%;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+
+/* line 346, ../scss/style.scss */
+#book .page-section {
+  padding: 20px 0;
+}
+/* line 349, ../scss/style.scss */
+#book h3 {
   font-size: 40px;
 }
-/* line 231, ../scss/style.scss */
-#zine h4 {
+/* line 352, ../scss/style.scss */
+#book h4 {
   margin-top: 10px;
 }
 
-/* line 236, ../scss/style.scss */
+/* line 357, ../scss/style.scss */
 #galerie {
   background: rgba(0, 0, 0, 0.9);
 }
-/* line 238, ../scss/style.scss */
+/* line 359, ../scss/style.scss */
 #galerie .galerie {
   max-height: 100%;
 }
 
-/* line 243, ../scss/style.scss */
+/* line 364, ../scss/style.scss */
 #credits {
   text-align: center;
   /* Rounded avatars */
 }
-/* line 245, ../scss/style.scss */
+/* line 367, ../scss/style.scss */
+#credits #contact {
+  font-size: 1.4em;
+  margin: 80px 0;
+}
+/* line 372, ../scss/style.scss */
+#credits .junkware-logo {
+  max-width: 300px;
+}
+/* line 375, ../scss/style.scss */
 #credits p {
   text-align: center;
   padding-bottom: 8px;
 }
-/* line 249, ../scss/style.scss */
+/* line 379, ../scss/style.scss */
 #credits .row {
   margin-top: 15px;
 }
-/* line 252, ../scss/style.scss */
+/* line 382, ../scss/style.scss */
 #credits .special-request {
   width: 50%;
   margin: 0 auto;
 }
-/* line 257, ../scss/style.scss */
+/* line 387, ../scss/style.scss */
 #credits a.logo img {
   max-width: 150px;
   max-height: 80px;
   margin-right: 10px;
 }
-/* line 264, ../scss/style.scss */
+/* line 394, ../scss/style.scss */
 #credits .team-pic {
   max-width: 60%;
   margin: 1em 0;
@@ -1002,19 +1483,19 @@ img {
   -moz-border-radius: 50%;
   border-radius: 50%;
 }
-/* line 271, ../scss/style.scss */
+/* line 401, ../scss/style.scss */
 #credits .prod {
   margin-top: 10px;
 }
-/* line 273, ../scss/style.scss */
+/* line 403, ../scss/style.scss */
 #credits .prod h5 {
   margin-bottom: 15px;
 }
-/* line 276, ../scss/style.scss */
+/* line 406, ../scss/style.scss */
 #credits .prod a.logo {
   margin-right: 20px;
 }
-/* line 278, ../scss/style.scss */
+/* line 408, ../scss/style.scss */
 #credits .prod a.logo img {
   max-width: 200px;
   max-height: 200px;
