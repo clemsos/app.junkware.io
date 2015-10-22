@@ -8,6 +8,8 @@ config/servers.py
 tests
 uploads/original/
 
+static/css/*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

@@ -42,6 +42,11 @@ def lib_static_proxy(path):
     # send_static_file will guess the correct MIME type
     return app.send_static_file(os.path.join('lib', path))
 
+@app.route('/fonts/<path:path>')
+def fonts_static_proxy(path):
+    # send_static_file will guess the correct MIME type
+    return app.send_static_file(os.path.join('fonts', path))
+
 @app.route('/libs/<path:path>')
 def libs_static_proxy(path):
     # send_static_file will guess the correct MIME type
