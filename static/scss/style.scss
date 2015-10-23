@@ -326,10 +326,7 @@ img {
     }
 }
 
-.pic {
-    // padding-top: 50px;
-    @include zen-grid-item(8, 5);
-}
+
 
 #install {
     .gallery {
@@ -351,6 +348,11 @@ img {
     }
     h4 {
         margin-top: 10px;
+    }
+    .pic {
+        max-width: 100%;
+        // padding-top: 50px;
+        // @include zen-grid-item(8, 5);
     }
 }
 
