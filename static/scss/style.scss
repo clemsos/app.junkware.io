@@ -365,6 +365,9 @@ img {
 
 #credits {
     text-align: center;
+    .page-section {
+        border: none;
+    }
 
     #contact {
         font-size: 1.4em;
@@ -413,4 +416,9 @@ img {
             }
         }
     }
+}
+
+#license p {
+    text-align: center;
+    padding-bottom: 50px;
 }
