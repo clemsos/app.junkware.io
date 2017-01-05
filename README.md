@@ -30,6 +30,8 @@ To deploy, use [those Fabric scripts](https://github.com/clemsos/flask-fabric-de
 ## Generate STL 3D models
 
     sudo apt-get install openscad 
+    mkdir data && cd data
+    mkdir stl
     python make/create_stl_files.py
 
 ## Generate thumbnails
